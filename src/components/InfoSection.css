@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+
+.infoContainer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 5%;
+}
+
+
+
+.infoContainer img {
+	width: 40em;
+    height: 40em;
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
+
+    
+ 
+}
+
+
+.paragraphContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+
+    
+  
+
+}
+
+.paragraphContainer h1{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color:  black;
+    padding: 2%;
+}
+
+.infoContainer p{
+    width: 80%;
+    padding: 2%;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 200;
+    text-align: left;
+    font-size: 20px;
+    color:  black;
+}
+
+section#aboutNasa{
+    height: 100%;
+    width: 100%;   
+
+}
+
+/* mobile styles */
+
+@media only screen and (max-width: 480px) {
+
+    .infoContainer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .infoContainer img {
+        width: 150px;
+        height: 150px;
+        filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
+    }
+
+    .infoContainer h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .infoContainer p{
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+       /* tablet portrait and landscape styles */
+       @media only screen and (min-width: 481px) and (max-width:1080px) {
+        .infoContainer {
+            flex-direction: column;
+            justify-content: center;
+        }
+    
+        .infoContainer img {
+            width: 150px;
+            height: 150px;
+            filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
+        }
+    
+        .infoContainer h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+    
+        .infoContainer p{
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+
+}
+
+ 
+
+
+

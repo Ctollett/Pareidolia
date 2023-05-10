@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+
+.infoContainer2 {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: right;
+    background-color: black;
+    width: 100%;
+
+    
+}     
+
+.infoContainer2 img{
+    width: 40em;
+    height: 40em;
+}
+
+.paragraphContainer2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    text-align: right;
+    width: 70%;
+
+}
+
+.infoContainer2 p{
+    width: 60%;
+   margin-left: 20%;
+   font-family: 'Noto sans', sans-serif;
+    font-weight: 200;
+    text-align: right;
+    font-size: 20px;
+    color:  white;
+}
+
+
+
+    
+
+.paragraphContainer2 h1{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    padding: 2%;
+    margin-right: 18%;
+    color:  white;
+}
+
+
+section#aboutNasa{
+    height: 100%;
+    width: 100%;   
+
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .infoContainer2 {
+        flex-direction: column;
+        justify-content: center;
+        padding: 5%;
+        align-items: center;
+        padding-bottom: 10%;
+    
+    }
+
+    .infoContainer2 img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .infoContainer2 h1 {
+        font-size: 30px;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .infoContainer2 p{
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .paragraphContainer2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    
+    }
+
+}
+
+    /* tablet portrait and landscape styles */
+    @media only screen and (min-width: 481px) and (max-width:1080px) {
+        .infoContainer2 {
+            flex-direction: column;
+            justify-content: center;
+            padding: 5%;
+            align-items: center;
+            padding-bottom: 10%;
+        
+        }
+    
+        .infoContainer2 img {
+          width: 150px;
+          height: 150px;
+        }
+    
+        .infoContainer2 h1 {
+            font-size: 30px;
+            text-align: center;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    
+        .infoContainer2 p{
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+    
+        .paragraphContainer2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+        
+        }
+
+
+}
+
+

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+
+  
+  .contactContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 500px);
+    grid-template-rows: repeat(3, 700px);
+    grid-gap: 5px;
+    padding: 5%;
+    background-color: #f2f2f2;
+    height: 100em;
+  }
+
+  .person #portrait{
+    width: 20em;
+    height: 20em;
+    border-radius: 180px;
+    object-fit: cover;
+    filter: drop-shadow(0 0.5rem 0.25rem rgba(0,0,0,0.2));
+  }  
+  
+  .contactContainer h2{
+    font-family: 'Playfair Display', serif;
+    
+  }
+
+  .contactContainer h5{
+    font-family: 'Playfair Display', serif;
+    
+  }
+
+  .contactContainer p{
+    font-family: 'Noto sans', sans-serif;
+    font-size: 15px;
+    width: 90%;
+    
+  }
+
+  .person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+  .person h5{
+    margin-top: 10%;
+
+  }
+
+  .person h2{
+    margin-bottom: 2%;
+
+  }
+
+   .person #socialImage{
+    width: 25px;
+    height: 20px;
+  }
+
+  .socials{
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: row;
+    column-gap: 2em;
+    margin-top: 1em;
+
+  }
+
+  .socials a{
+    background-color: black;
+    border-radius: 100px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0.5rem 0.25rem rgba(0,0,0,0.2));
+
+  }
+
+
+  
+
+      

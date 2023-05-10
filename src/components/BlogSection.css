@@ -1,0 +1,81 @@
+.blogContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  row-gap: 40px;
+}
+
+.blogSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 100px;
+  width: 1500px;
+}
+
+.largeDiv {
+  grid-column: span 3;
+  grid-row: span 1;
+
+}
+
+.mediumDiv {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.smallDiv {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+  
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: space-between;
+  column-gap: 950px;
+}
+
+.buttonSection input {
+    border: none;
+    background-color: white;
+    border-radius: 105px;
+    padding: 15px;
+    font-size: 20px;
+  
+}
+
+.buttonSection button {
+    border: none;
+    background-color: white;
+    border-radius: 105px;
+    padding: 15px;
+  
+}
+
+
+.buttonSection select {
+    border: none;
+    background-color: white;
+    border-radius: 20px;  
+    padding: 20px;
+    font-size: 20px;
+  
+}
+
+input:focus {
+    outline: none;
+}
+
+#searchIcon {
+    width: 20px;
+    height: 20px;
+}    
+
