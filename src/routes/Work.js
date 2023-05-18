@@ -8,7 +8,7 @@ function Work() {
     <>
       <Switch>
         <Route exact path="/work" component={BlogSection} />
-        <Route path="/work/:postId/:title" component={BlogPost} />
+        <Route path="/work/:id/:title" component={BlogPost} />
       </Switch>
     </>
   );

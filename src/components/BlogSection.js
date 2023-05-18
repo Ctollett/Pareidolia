@@ -7,15 +7,16 @@ import BlogHeader from "./BlogHeader";
 
 
 
+
 const BlogSection = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blog, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("all");
 
   const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchQuery(event.target.value);  
   };
 
   const handleFilter = (event) => {
@@ -25,9 +26,11 @@ const BlogSection = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:1337/blogs");
-        const data = await response.json();
-        setBlogs(data);
+        const response = await fetch("http://localhost:1337/api/blogs?populate=coverimage");
+        const responseData = await response.json();
+        const blogs = responseData.data; // Access the array of blogs from the 'data' property
+    
+        setBlogs(blogs);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -38,12 +41,13 @@ const BlogSection = () => {
     fetchBlogs();
   }, []);
 
-  const filteredBlogs = blogs.filter((blog) => {
-    const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesFilter = selectedFilter === "all" ? true : blog.category === selectedFilter;
+  const filteredBlogs = blog.filter((blog) => {
+    const blogTitle = blog.attributes.title ? blog.attributes.title.toLowerCase() : ""; // Check if title exists
+    const matchesSearch = blogTitle.includes(searchQuery.toLowerCase());
+    const matchesFilter = selectedFilter === "all" ? true : blog.attributes.category === selectedFilter;
     return matchesSearch && matchesFilter;
   });
-
+  
   return (
     <>
     <BlogHeader/>
@@ -63,11 +67,13 @@ const BlogSection = () => {
           <option value="category4">Category 4</option>
         </select>
       </div>
-  
+    
       <div className="blogSection">
         {filteredBlogs.map((blog, index) => {
-          const urlFriendlyTitle = blog.title.toLowerCase().replace(/\s+/g, "-");
+          const urlFriendlyTitle = blog.attributes.title.toLowerCase().replace(/\s+/g, "-");
           const blogLink = `/work/${blog.id}/${encodeURIComponent(urlFriendlyTitle)}`;
+
+          const imageURL = blog.attributes.coverimage.data.attributes.url
   
           let gridArea = ""; // Grid area for the div
   
@@ -87,12 +93,13 @@ const BlogSection = () => {
               <Link to={blogLink}>
                 <div className="blogPreview">
                   <BlogPreview
-                    title={blog.title}
-                    description={blog.description}
-                    category={blog.category}
-                    coverimage={`http://localhost:1337${blog.coverimage.url}`}
+                    title={blog.attributes.title}
+                    description={blog.attributes.description}
+                    category={blog.attributes.category}
+                    coverimage={`http://localhost:1337${imageURL}`} 
+            
                   />
-                </div>
+                </div>   
               </Link>
             </div>
           );

@@ -23,7 +23,7 @@ function BlogPreview ({title, description, id, category, coverimage, onClick}){
             </div>
          </div>
       </div>
-    );
+    );   
     }
 
     

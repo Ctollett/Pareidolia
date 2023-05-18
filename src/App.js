@@ -28,7 +28,7 @@ export default function App() {
                     <Route path={"/about"}>
                         <About />
                     </Route> 
-                    <Route path="/work/:postId"/>
+                    <Route path="/work/:id"/>
                 </Switch>
             </div>
         </div>
