@@ -1,65 +1,65 @@
-import React, { useEffect, useState, useRef } from 'react';
-import "./globalstyles.css";
-import Typist from 'react-typist';
+import React, { useEffect, useState } from 'react';
+import './globalstyles.css';
 
 
+const Background = ({ cursorX, movementSpeed }) => {
+  const [prevCursorX, setPrevCursorX] = useState(cursorX);
 
-const Header = () => {
-   const [cursorX, setCursorX] = useState(window.innerWidth / 2);
-   const [prevCursorX, setPrevCursorX] = useState(window.innerWidth / 2);
-   const maxTranslation = 30;
+  useEffect(() => {
+    const updateBackgroundPosition = () => {
+      setPrevCursorX((prevCursorX) => {
+        if (prevCursorX !== cursorX) {
+          const background = document.querySelector('.background');
+          const windowWidth = window.innerWidth;
+          const backgroundWidth = background.offsetWidth;
+          const maxTranslation = (windowWidth - backgroundWidth) / 2;
+          const translation = (cursorX - windowWidth / 2) * movementSpeed;
+          const clampedTranslation = Math.max(-maxTranslation, Math.min(maxTranslation, translation));
+          background.style.transform = `translate(-50%, -50%) translateX(${clampedTranslation}px)`;
+          return cursorX;
+        }
+        return prevCursorX;
+      });
+    };
 
+    const animationFrame = requestAnimationFrame(updateBackgroundPosition);
 
-   
-   useEffect(() => {
-   const handleMouseMove = (e) => {
-    setCursorX(e.clientX);
-    setPrevCursorX(cursorX)
-   };
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [cursorX, movementSpeed]);
 
-   document.addEventListener('mousemove', handleMouseMove);
+  return <div className="background"></div>;
+};
 
-   return () => {
-    document.removeEventListener('mousemove', handleMouseMove);
-   };
+const Header = ({ isContentVisible }) => {
+  const [cursorX, setCursorX] = useState(window.innerWidth / 2);
 
-}, []);
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setCursorX(event.clientX);
+    };
 
-const calculateTranslation = () => {
-    const windowWidth = window.innerWidth;
-    const translationRange = maxTranslation * 2;
-    const cursorRange = windowWidth - translationRange;
-    const translationPercentage = ((cursorX - translationRange / 2) / cursorRange) * 100;
- 
-    return translationPercentage;
-  };  
+    document.addEventListener('mousemove', handleMouseMove);
 
-  const calculateTransitionDuration = () => {
-    const transitionDuration = Math.abs(cursorX - prevCursorX) * 0.005;
-    return `${transitionDuration}s`;
-  }
-  
-  
-        return(
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
-        <header>
-            <div className="background" style={{
-                transform: `translateX(${calculateTranslation()}%`,
-                transitionDuration: calculateTransitionDuration(),
-                
-                }} ></div>
-            <div class="titleSection">   
-            <p class="hidden3">
-            <Typist> <Typist.Delay ms={500} />Pareidolia: n. misperception of random stimuli as real things or people, as when faces are vividly seen in the flames of a fire.</Typist></p>
-            <a id="exploreButton">Explore</a>
-            <div class="socialsSection">
-            </div>
-            <h1 class="hidden3">Pareidolia.</h1>
-       </div>
-       
-       
-       </header>
-        )
-    }
+  return (
+    <header>
+      <Background cursorX={cursorX} movementSpeed={1} />
+      <div className={`titleSection ${isContentVisible ? '' : 'fade-out'}`}>
+        <p className="hidden3">
+          
+            Pareidolia: n. misperception of random stimuli as real things or people, <br /> as when faces are vividly seen in the flames of a fire.
+
+        </p>
+        <h1 className="hidden3">Pareidolia.</h1>
+      </div>
+    </header>
+  );
+};
 
 export default Header;

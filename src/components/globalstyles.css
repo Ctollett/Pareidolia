@@ -13,6 +13,8 @@
     src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
 }
 
+
+
 *{   
     padding: 0;
     margin: 0;
@@ -28,35 +30,80 @@ header {
     position: relative;   
     overflow: hidden;
     width: 100%;
-    height: 100%;
-    background-color: black;
+    height: 100vh;
+    background-color: #FDF7EF;
     z-index: -1;
+
   }
 
+  .titleSection.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
 
   .background {
-    display: flex;
     position: absolute;
     transform: translate(-50%, -50%);
-    width: 70%;
-    height: 90%;
+    top: 50%;
+    left: 50%;
+    opacity: 100;
+    width: 60%;
+    height: 100vh;
     border-radius: 50%;
-    filter: blur(200px);
+    filter: blur(400px) saturate(120%);
     z-index: -2;
     animation: swirlingGradient 10s infinite linear;
-    background: linear-gradient(to bottom right, #FFAC33, #FF4D94, #3379FF, #33FF7D);
-    background-size: 300% 300%;
+    background: linear-gradient(to bottom right, #FFAC33, #FF4D94, #3379FF, #33FF7D); 
+    background-size:400% 400%;
+    transition: opacity 1s translate 0.2s;
   }
-
+  
+  .openingBackground {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: 60%;
+    height: 100vh;
+    border-radius: 50%;
+    filter: blur(400px) saturate(120%);
+    z-index: -2;
+    animation: swirlingGradient 10s infinite linear, fadeBackground 5s ease-in-out forwards;
+    animation-delay: 3s; /* Delay the fade-in animation */
+    background: linear-gradient(to bottom right, #FFAC33, #FF4D94, #3379FF, #33FF7D); 
+    background-size: 400% 400%;
+    transition: opacity 1s translate 0.2s;
+  }
+  
   @keyframes swirlingGradient {
     0% {
       background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 100% 25%;
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+  
+  
+  @keyframes fadeBackground {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
   
@@ -67,138 +114,164 @@ header {
 
 /* mobile and desktop navigation styles */
 
-nav{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;   
-    align-items: center;
-    z-index: 1000;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-left: 10%;
-    padding-right: 10%; 
-    transition: 0.6s; 
-    width: 100%;
-    height: 150px;
-  
-}
-
-nav.active {
-    background-color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-#navLogo{
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
- 
-}
-
-nav.sticky{
- background-color: white;
-}
 
 
-nav.sticky ul li a{
-   color: black;
-}
-
-nav.sticky .mobile-icon span{
-    color: black;
-}
-
-.main-menu li{
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-.main-menu li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    font-size: 20px;
-}
-
-nav ul li a:hover{
-    color: #722F37;
-}
-
-
-.main-menu {
-    display: flex;
-    align-items: center;
-}
-
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    color: crimson;
-}
-
-.mobile-icon{
-    display: none;
-    appearance: none;
-    outline: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;  
-}
-
-
-.mobile-icon span{
-    color: #483C32;
-    font-size: 2rem;
-}
-
-.mobile-menu{
+.navContainer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;  
-    padding-top: 8rem;  
-    background-color: black;
-    color: white;
-    transition: 0.3s;
-}
+    height: 100vh;
+    padding: 2%;
+    color: black;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
 
-.mobile-menu.open{
+
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 100;
+    background-color: transparent;
+
+  }
+
+ 
+  #navLogo{
+    font-family: 'LeonardoFascia';
+    font-size: 55px;
+
+  }
+  
+  #navLine {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+  }
+
+  .mobile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+  }
+  
+  .mobile-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+
+  .mobile-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(13px, 2px);
+  }
+  
+  .mobile-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(13px, -2px);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20%;
+    transform: translateY(-100%);
+    transition: transform 0.8s ease;
+  }
+  
+  .mobile-menu.open {
+    transform: translateY(0);
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  
+  
+
+  .mobile-menu ul{  
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'LeonardoFascia';
+    font-weight: 100;
+    font-size: 100px;
+   
+  }
+
+  .mobile-menu ul li a{  
+    text-decoration: none;
+    color: black;
+   
+
+  }
+
+  .mobile-menu ul li a img{  
+    width: 100px;
+    padding-right: 20px;
+    transition: transform 0.3s;
+
+
+  }
+
+  .mobile-menu ul li a:hover img{  
+    transform: rotate(45deg);
+
+  }
+
+  
+  .mobile-menu ul li {
+    opacity: 0;
+    transform: translateY(-100%);  
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .mobile-menu.open ul li {
     opacity: 1;
     transform: translateY(0);
-}
+  }
+  
+  .mobile-menu ul li:nth-child(1) {
+    transition-delay: 0.5s;
+  }
+  
+  .mobile-menu ul li:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  
+  .mobile-menu ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
 
-.mobile-menu li a{
-    display: block;
-    padding: 1rem;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    transition: 0.3s;
+
+
     
-}
-
-.mobile-menu a:hover{
-  color: crimson;
-  background-color: white;
-    
-}
-
-
-
-
+  
+  
 /* General page text styles */
 
 
@@ -209,33 +282,40 @@ nav ul li a:hover{
     height: 100%;
     margin: 0 auto;
     padding-top: 20em;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'LeonardoFascia';
+    opacity: 100;
+   
   
    
 }
 
 
 .titleSection p{
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     font-family: 'Noto sans', sans-serif;
+    color: white;
     font-weight: 100;
-    width: 100%;   
+    width: 100%;
+    margin-top: 100px;   
+    height: 100%;
   
     
 }
 
 .titleSection h1{
-
-    font-size: 350px;
-    text-align: left;
-    float: left;
+ 
+    font-size: 290px;
     padding-top: 20%;
-    padding-right: 10%;
+    color: black; /* Set the initial text color */
+    animation: fadeIn 1s ease-in-out forwards;
+
+
+
 
 }
 
