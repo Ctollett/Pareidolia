@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import ReactCurvedText from 'react-curved-text';
 import './globalstyles.css';
+import arrow2 from "./arrow2.svg";
 
 
 const Background = ({ cursorX, movementSpeed }) => {
@@ -51,13 +53,34 @@ const Header = ({ isContentVisible }) => {
     <header>
       <Background cursorX={cursorX} movementSpeed={1} />
       <div className={`titleSection ${isContentVisible ? '' : 'fade-out'}`}>
-        <p className="hidden3">
-          
+        <p className="hidden3">        
             Pareidolia: n. misperception of random stimuli as real things or people, <br /> as when faces are vividly seen in the flames of a fire.
-
         </p>
-        <h1 className="hidden3">Pareidolia.</h1>
-      </div>
+        <div className='titleInformation'>
+          <div className='titleContainer'>
+           <h1>Pareidolia.</h1>
+           </div>
+        <div className='scrollText-container rotate fadeIn'>
+        <img src={arrow2} alt="Circular Text"/>
+          <ReactCurvedText
+            width={300}
+            height={300}
+            cx={150}  
+            cy={150}
+            rx={36}
+            ry={36}
+            startOffset={0}
+            reversed={false}
+            text="Scroll Down - Scroll Down - Scroll Down -"
+            textProps={{ style: { fontSize: 12 } }}
+            textPathProps={null}
+            tspanProps={{"dy": "30"}}
+            ellipseProps={null}
+            svgProps={null}
+        />
+         </div> 
+         </div>  
+        </div>
     </header>
   );
 };

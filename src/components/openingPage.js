@@ -7,7 +7,7 @@ const OpeningPage = ({ onAnimationComplete }) => {
     const background = document.querySelector('.openingBackground');
     background.classList.add('fade-background');
 
-    const openingAnimationDuration = 13000; // Adjust the duration as needed
+    const openingAnimationDuration = 0; // Adjust the duration as needed
 
     const animationTimeout = setTimeout(() => {
       onAnimationComplete();
