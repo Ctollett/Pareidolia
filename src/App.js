@@ -6,6 +6,7 @@ import Work from "./routes/Work";
 import About from "./routes/About";
 import BlogSection from "./components/BlogSection"
 import BlogPost from "./components/BlogPost"
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 
@@ -13,7 +14,8 @@ import BlogPost from "./components/BlogPost"
 export default function App() {
 
     return(
-        <Router>
+        <ParallaxProvider>
+         <Router>
         <div className="App">
               
             <div className="content">
@@ -32,5 +34,6 @@ export default function App() {
             </div>
         </div>
         </Router>
+    </ParallaxProvider>
     )
 }

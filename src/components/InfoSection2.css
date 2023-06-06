@@ -1,66 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
 
-
-
-.infoContainer2 {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
-    align-items: right;
-    background-color: black;
-    width: 100%;
-
-    
-}     
-
-.infoContainer2 img{
-    width: 40em;
-    height: 40em;
+@font-face {
+    font-family: 'LeonardoFascia';
+    src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
 }
 
-.paragraphContainer2 {
+.infoSection2Container {
+    display: flex;
+    position: relative;
+    height: 10000px;
+    flex-direction: column;
+    align-items: center;  
+    overflow-x: scroll;
+    row-gap: 5%;
+    background-color: black;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); /* Add a slight box shadow */
+}     
+
+.infoSection2Title {
+   height: 150px;
+   background-color: black;
+   z-index: 2;
+   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.7);
+
+}
+
+
+  
+.InfoSection2Menu {
+height: 100vh;
+  width: 50%;
+
+}
+
+.InfoSection2Menu li{   
+   display: flex;
+   flex-direction: column;
+   row-gap: 50px;
+   
+  }
+
+.InfoSection2Menu a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: right;
-    text-align: right;
-    width: 70%;
-
-}
-
-.infoContainer2 p{
-    width: 60%;
-   margin-left: 20%;
-   font-family: 'Noto sans', sans-serif;
-    font-weight: 200;
-    text-align: right;
-    font-size: 20px;
+    align-items: center;
+    text-align: center;
+   font-family: 'Noto sans', sans-serif;  
+    font-weight: 100;
+    text-align: center;
+    font-size: 100px;
     color:  white;
+    cursor: pointer;
+    margin-top: 20%;
+    transform: translateY(100%);
+    animation: none;
 }
 
+.InfoSection2Menu h3{
+   font-family: 'Noto sans', sans-serif;  
+    font-size: 30px;
+    font-weight: 100;
+    color: #28282B;
+    cursor: pointer;
+    transform: translateY(100%);
+    animation: none;
+}
+
+.InfoSection2Menu h3:hover{
+    font-family: 'Noto sans', sans-serif;  
+     font-size: 30px;
+     font-weight: 100;
+     color: white;
+     cursor: pointer;
+     transform: translateY(10%);
+     animation: none;
+ }
 
 
-    
 
-.paragraphContainer2 h1{
-    font-size: 50px;
-    font-family: 'Playfair Display', serif;
+.infoSection2Title h1 {
+    font-size: 120px;  
+    font-family: 'LeonardoFascia';
     font-weight: 700;
-    padding: 2%;
-    margin-right: 18%;
-    color:  white;
-}
+    margin-left: 250px;
+    color: #28282B;
+    white-space: nowrap; 
+    overflow: hidden;
+    animation: scrollText 10s linear infinite;
+  }
+
+  .menu-item {
+    position: relative; /* Ensure menu items can be stacked above the images */
+    z-index: 2; 
+    opacity: 0;
+    transform: translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .menu-item-image {
+    position: absolute; /* Position the images absolutely within the container */
+
+    left: 0;
+    width: 50%;
+    height: 50%;
+    object-fit: cover; /* Adjust image sizing as needed */
+    z-index: 1; /* Set a lower z-index to position the images behind the menu items */
+  }
 
 
-section#aboutNasa{
-    height: 100%;
-    width: 100%;   
+  
+  
+  .fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-}
 
+  
+     
 
+  
+  
+
+  
 @media only screen and (max-width: 480px) {
 
     .infoContainer2 {

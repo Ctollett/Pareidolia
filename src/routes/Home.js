@@ -7,17 +7,26 @@ import InfoSection2 from '../components/InfoSection2';
 import FeaturedWork from '../components/FeaturedWork';
 import Background from '../components/Background';
 import Footer from '../components/Footer';
-import '../components/globalstyles.css';
-
-
-   
+import '../components/Locomotive.css';
+import { Parallax } from 'react-scroll-parallax';
+import LocomotiveScroll from 'locomotive-scroll';
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import { useRef } from 'react';
 
 function Home() {
   const [isContentVisible, setContentVisible] = useState(true);
   const [isOpeningAnimationComplete, setOpeningAnimationComplete] = useState(false);
   const [isHeaderVisible, setHeaderVisible] = useState(false);
+  const [isNavbarVisible, setNavbarVisible] = useState(true);
   const [cursorX, setCursorX] = useState(window.innerWidth / 2);
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const ref = useRef(null);
+
+  const options = {
+    smooth: true,
+    multiplier: 0.5
+  };
 
   const handleMenuClick = () => {
     setContentVisible(!isContentVisible);
@@ -38,36 +47,51 @@ function Home() {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);  
-
+  }, []);
+  
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
+      const currentPosition = window.scrollY;
+      setScrollPosition(currentPosition);
+
+      if (currentPosition > scrollPosition) {
+        setNavbarVisible(false);
+      } else {
+        setNavbarVisible(true);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  },[])
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]);
 
   return (
-    <>
-      {!isOpeningAnimationComplete && (
-        <OpeningPage onAnimationComplete={handleOpeningAnimationComplete} />
+    <LocomotiveScrollProvider options={options} containerRef={ref} watch={[scrollPosition]}>
+      <div data-scroll-container ref={ref}>
+      {!isOpeningAnimationComplete && <OpeningPage onAnimationComplete={handleOpeningAnimationComplete} />}
+      {isOpeningAnimationComplete && (
+          <div data-scroll-section>
+            <Navbar handleMenuClick={handleMenuClick} />
+            <div data-scroll data-scroll-speed="5">
+              {isHeaderVisible && <Header isContentVisible={isContentVisible} />}
+            </div>
+
+            <Background cursorX={cursorX} movementSpeed={1} data-scroll data-scroll-speed="1" />
+            
+            <InfoSection />
+        
+            <InfoSection2 />
+            <FeaturedWork />
+            <Footer />
+          </div>
       )}
 
-      {isOpeningAnimationComplete && (
-        <>
-          <Navbar handleMenuClick={handleMenuClick} />
-          {isHeaderVisible && <Header isContentVisible={isContentVisible} />}
-          <Background cursorX={cursorX} movementSpeed={1} />
-          <InfoSection />
-          <InfoSection2 />
-          <FeaturedWork />
-          <Footer />
-        </>
-      )}
-    </>
+</div>   
+    </LocomotiveScrollProvider>
   );
 }
 
 export default Home;
+

@@ -1,66 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
 
+@font-face {
+    font-family: 'LeonardoFascia';
+    src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
+}
 
-
-.infoContainer {
-    display: flex;
+.infoSectionContainer{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: screen;
+    width: 100%; 
+    padding: 1%;
+
+}
+
+#line {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    align-items: center;
+
+}
+
+.lineContainer {
+    width: 90%;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+  
+
+.infoSectionTitle {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-    padding: 5%;
-}
+    padding-left: 5%;
+  }
+  
+  .InfoTitle {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: none;
+  }   
+  
+  .scrollInTitle {
+    animation: reveal-up 0.5s ease forwards;
+    animation-delay: 0.2s;
 
-
-
-.infoContainer img {
-	width: 40em;
-    height: 40em;
-    filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
-
-    
- 
-}
-
-
-.paragraphContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-
-    
+  }
+  
+  @keyframes reveal-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
 
+
+.sentence1 {
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: none;
 }
 
-.paragraphContainer h1{
-    font-size: 50px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color:  black;
-    padding: 2%;
+.fadeInSentence1 { 
+    animation: reveal-up 0.5s ease forwards;
+    animation-delay: 2.5s;
 }
 
-.infoContainer p{
-    width: 80%;
-    padding: 2%;
+.sentence2 {
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: none;
+}
+
+.fadeInSentence2 { 
+    animation: reveal-up 0.5s ease forwards;
+    animation-delay: 3.0s;
+}
+
+
+.sentence3 {
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: none;
+}
+
+.fadeInSentence3 { 
+    animation: reveal-up 0.5s ease forwards;
+    animation-delay: 3.5s;
+}
+
+
+.infoSectionTitle h1{
+    font-size: 75px;
+    font-family: 'LeonardoFascia';
+    font-weight: 100;
+    color:  #28282B;
+    padding: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.infoSectionDesc p{
+    width: 100%;
     font-family: 'Noto sans', sans-serif;
     font-weight: 200;
-    text-align: left;
-    font-size: 20px;
+    text-align: center;
+    font-size: 60px;
     color:  black;
 }
 
-section#aboutNasa{
-    height: 100%;
-    width: 100%;   
-
-}
 
 /* mobile styles */
 
