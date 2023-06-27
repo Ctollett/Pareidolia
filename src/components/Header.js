@@ -3,6 +3,8 @@ import ReactCurvedText from 'react-curved-text';
 import './globalstyles.css';
 import arrow2 from "./arrow2.svg";
 import { Parallax } from 'react-scroll-parallax';
+import collagePhoto from './collageArt.jpg';
+
 
 
 const Header = ({ isContentVisible }) => {

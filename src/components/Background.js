@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import { useRef } from 'react';
 import './globalstyles.css';
+import '../components/Locomotive.css';
 const Background = ({ cursorX, movementSpeed }) => {
     const [prevCursorX, setPrevCursorX] = useState(cursorX);
+    const ref = useRef(null);
+    const { scroll } = useLocomotiveScroll();
   
     useEffect(() => {
       const updateBackgroundPosition = () => {
@@ -26,6 +31,8 @@ const Background = ({ cursorX, movementSpeed }) => {
         cancelAnimationFrame(animationFrame);
       };
     }, [cursorX, movementSpeed]);
+    
+
   
     return <div className="background"></div>;
   };

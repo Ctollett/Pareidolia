@@ -9,24 +9,19 @@
 .infoSection2Container {
     display: flex;
     position: relative;
-    height: 10000px;
+    height:5000px;
+    margin-top: 15%;
+    width: screen;
     flex-direction: column;
     align-items: center;  
-    overflow-x: scroll;
     row-gap: 5%;
-    background-color: black;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); /* Add a slight box shadow */
+  
 }     
 
 .infoSection2Title {
-   height: 150px;
-   background-color: black;
-   z-index: 2;
-   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.7);
-
+  height: 100px;
+   width: screen;
 }
-
-
   
 .InfoSection2Menu {
 height: 100vh;
@@ -37,7 +32,7 @@ height: 100vh;
 .InfoSection2Menu li{   
    display: flex;
    flex-direction: column;
-   row-gap: 50px;
+   row-gap: 500px;
    
   }
 
@@ -81,15 +76,16 @@ height: 100vh;
 
 
 .infoSection2Title h1 {
-    font-size: 120px;  
+    font-size: 170px; 
     font-family: 'LeonardoFascia';
     font-weight: 700;
-    margin-left: 250px;
-    color: #28282B;
+    width: 100%;
+    color: #3b3b3B;
     white-space: nowrap; 
     overflow: hidden;
     animation: scrollText 10s linear infinite;
   }
+
 
   .menu-item {
     position: relative; /* Ensure menu items can be stacked above the images */
@@ -99,14 +95,47 @@ height: 100vh;
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
+
   .menu-item-image {
     position: absolute; /* Position the images absolutely within the container */
-
+    opacity: 20%;
+    filter: blur(25px);
     left: 0;
     width: 50%;
     height: 50%;
-    object-fit: cover; /* Adjust image sizing as needed */
+    object-fit: contain; /* Adjust image sizing as needed */
     z-index: 1; /* Set a lower z-index to position the images behind the menu items */
+    transform: translateY(50%);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    transition: filter 1s ease-in;
+  }
+
+
+  .InfoSection2Menu .image-overlay:nth-of-type(2n) .menu-item-image {
+    left: 50%;
+  }
+  
+
+
+
+
+
+  .menu-item-image-right {
+    position: absolute; /* Position the images absolutely within the container */
+    opacity: 20%;
+    filter: blur(25px);
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    object-fit: contain; /* Adjust image sizing as needed */
+    z-index: 1; /* Set a lower z-index to position the images behind the menu items */
+    transform: translateY(50%);
+    transition: filter 1s ease-in;
+  }
+
+  .showPhoto {
+    filter: blur(0px);
+    opacity: 40%;
   }
 
 

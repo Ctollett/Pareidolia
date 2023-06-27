@@ -19,6 +19,7 @@ const FullBlogPost = () => {
         const response = await fetch(`http://localhost:1337/api/blogs/${id}?populate=coverimage`);
         const responseData = await response.json();
         const blog = responseData.data;
+        console.log(response);
 
         setBlog(blog);
         setLoading(false);
