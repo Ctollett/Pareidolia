@@ -8,235 +8,118 @@
 
 .infoSection2Container {
     display: flex;
-    position: relative;
-    height:5000px;
-    margin-top: 15%;
-    width: screen;
-    flex-direction: column;
-    align-items: center;  
-    row-gap: 5%;
-  
-}     
-
-.infoSection2Title {
-  height: 100px;
-   width: screen;
-}
-  
-.InfoSection2Menu {
-height: 100vh;
-  width: 50%;
-
-}
-
-.InfoSection2Menu li{   
-   display: flex;
-   flex-direction: column;
-   row-gap: 500px;
-   
-  }
-
-.InfoSection2Menu a{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-   font-family: 'Noto sans', sans-serif;  
-    font-weight: 100;
-    text-align: center;
-    font-size: 100px;
-    color:  white;
-    cursor: pointer;
-    margin-top: 20%;
-    transform: translateY(100%);
-    animation: none;
+    width: 100vw;
+    height: 200vh;
+    padding-bottom: 200px;
+
+
+
 }
 
-.InfoSection2Menu h3{
-   font-family: 'Noto sans', sans-serif;  
-    font-size: 30px;
-    font-weight: 100;
-    color: #28282B;
-    cursor: pointer;
-    transform: translateY(100%);
-    animation: none;
+.infoSection2Wrapper {
+  display: flex;   
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+   
 }
 
-.InfoSection2Menu h3:hover{
-    font-family: 'Noto sans', sans-serif;  
-     font-size: 30px;
-     font-weight: 100;
-     color: white;
-     cursor: pointer;
-     transform: translateY(10%);
-     animation: none;
- }
+.circle {
+  top: 45%;
+  right: 50%;
+  width: 1000px;
+  height: 1000px;
+  background-color: black;
+  position: absolute;
+  z-index: -100;
+}
 
+.artImage { 
+  right: -60px;
+  top: -160px;
+  position: absolute;
+  width: 1500px;
+  height: 1500px;
+  z-index: 5;
 
+}
 
-.infoSection2Title h1 {
-    font-size: 170px; 
-    font-family: 'LeonardoFascia';
-    font-weight: 700;
-    width: 100%;
-    color: #3b3b3B;
-    white-space: nowrap; 
-    overflow: hidden;
-    animation: scrollText 10s linear infinite;
-  }
+.artImage2 {   
+  right: 200px;
+  top: -400px;
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  z-index: 1;
 
-
-  .menu-item {
-    position: relative; /* Ensure menu items can be stacked above the images */
-    z-index: 2; 
-    opacity: 0;
-    transform: translateY(50%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-
-  .menu-item-image {
-    position: absolute; /* Position the images absolutely within the container */
-    opacity: 20%;
-    filter: blur(25px);
-    left: 0;
-    width: 50%;
-    height: 50%;
-    object-fit: contain; /* Adjust image sizing as needed */
-    z-index: 1; /* Set a lower z-index to position the images behind the menu items */
-    transform: translateY(50%);
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-    transition: filter 1s ease-in;
-  }
-
-
-  .InfoSection2Menu .image-overlay:nth-of-type(2n) .menu-item-image {
-    left: 50%;
-  }
-  
-
-
-
-
-
-  .menu-item-image-right {
-    position: absolute; /* Position the images absolutely within the container */
-    opacity: 20%;
-    filter: blur(25px);
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    object-fit: contain; /* Adjust image sizing as needed */
-    z-index: 1; /* Set a lower z-index to position the images behind the menu items */
-    transform: translateY(50%);
-    transition: filter 1s ease-in;
-  }
-
-  .showPhoto {
-    filter: blur(0px);
-    opacity: 40%;
-  }
-
-
-  
-  
-  .fadeIn {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-
-  
+}
      
-
-  
-  
-
-  
-@media only screen and (max-width: 480px) {
-
-    .infoContainer2 {
-        flex-direction: column;
-        justify-content: center;
-        padding: 5%;
-        align-items: center;
-        padding-bottom: 10%;
-    
-    }
-
-    .infoContainer2 img {
-      width: 150px;
-      height: 150px;
-    }
-
-    .infoContainer2 h1 {
-        font-size: 30px;
-        text-align: center;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .infoContainer2 p{
-        font-size: 10px;
-        width: 100%;
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .paragraphContainer2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 80%;
-    
-    }
+.artImage3 { 
+  right: 50%;   
+  position: absolute;
+  width: 1100px;
+  height: 1100px;
+  z-index: 5;
 
 }
 
-    /* tablet portrait and landscape styles */
-    @media only screen and (min-width: 481px) and (max-width:1080px) {
-        .infoContainer2 {
-            flex-direction: column;
-            justify-content: center;
-            padding: 5%;
-            align-items: center;
-            padding-bottom: 10%;
-        
-        }
-    
-        .infoContainer2 img {
-          width: 150px;
-          height: 150px;
-        }
-    
-        .infoContainer2 h1 {
-            font-size: 30px;
-            text-align: center;
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-    
-        .infoContainer2 p{
-            font-size: 10px;
-            width: 100%;
-            text-align: center;
-            margin-left: 0;
-        }
-    
-        .paragraphContainer2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 80%;
-        
-        }
-
+.artImage4 { 
+  right: 500;   
+  position: absolute;
+  width: 1100px;
+  height: 1100px;
+  z-index: 5;
 
 }
+
+
+.infoSection2Title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  z-index: 50; 
+
+  text-align: center;
+}
+
+
+.infoSection2Title p{
+  font-family: 'Noto sans', sans-serif;
+  font-weight: 100;
+}
+
+
+.infoSection2Title h2{
+  font-family: 'Noto sans', sans-serif;
+  font-weight: 400;
+  font-size: 150px;  
+  color: white;
+  opacity: 0; 
+}
+
+.is-reveal {
+    opacity: 1;
+  }
+
+
+
+.infoSection2Artwork {
+  position: absolute;
+  margin-bottom: 50%;
+  z-index: -100;
+
+}
+
+
+
+
 
 

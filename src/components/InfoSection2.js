@@ -1,126 +1,130 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
+
+import { Power4, gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import './globalstyles.css';
 import './InfoSection2.css';
 import '../components/Locomotive.css';
-import image from './technology-image.jpg';
-import image2 from './art.jpg';
-import image3 from './culture.jpg';
-import image4 from './history.jpg';
+import portrait from "./portrait1.jpg";
+import fishWoman from "./RachelsArt/fishwoman-woman.png"
+import fish1 from "./RachelsArt/fishwoman-fish.png"
+import eel from "./RachelsArt/fishwoman-eel.png"
+import fishwoman2 from "./RachelsArt/fishwoman-woman2.png"
+import SplitText from "../components/SplitText3.min.js";
+import useOnScreen from "../hooks/useOnScreen.js";
+import cn from "classnames";
+
+
+
 
 function InfoSection2() {
   const ref = useRef(null);
-  const { scroll } = useLocomotiveScroll();
+  const [reveal, setReveal] = useState(false);
 
-
-  useEffect(() => {
-    scroll.update(); // Update Locomotive Scroll when the component mounts
-
-    scroll.on('scroll', () => {
-      const menuItems = ref.current.querySelectorAll('.menu-item');
-      const menuPhotos = ref.current.querySelectorAll('.menu-item-image');
-      const menuContainer = document.querySelector('.infoSection2Container')
+  const onScreen = useOnScreen(ref);
 
 
   
 
 
-      menuPhotos.forEach((menuPhoto) => {
-        const menuPhotoTop = menuPhoto.getBoundingClientRect().top;
+    useEffect(() => {
+      // This does not seem to work without a settimeout
+      setTimeout(() => {
 
-        if(menuPhotoTop < window.innerHeight * 0.5) {
-          menuPhoto.classList.add('showPhoto');
-        } else {
-          menuPhoto.classList.remove('showPhoto');
-        }
-      })
+  
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            start: "top top",
+            trigger: ".infoSection2Container",
+            scroller: "#main-container",
+            scrub: 8, 
+            end: "bottom bottom",  
+            toggleActions: "play reverse play reverse",
+              
+          },
+        })
 
-      menuItems.forEach((menuItem) => {
-        const menuItemTop = menuItem.getBoundingClientRect().top;
+        let tl2 = gsap.timeline({
+          scrollTrigger: {
+            start: "top top",
+            trigger: ".infoSection2Title",
+            scroller: "#main-container",
+            scrub: 1, 
+            end: "bottom bottom",  
+            toggleActions: "play reverse play reverse",
+              
+          },
+        })
 
-        if (menuItemTop < window.innerHeight * 0.5) {
-          menuItem.classList.add('fadeIn');
-        } else {
-          menuItem.classList.remove('fadeIn');
-        }
+        let tl3 = gsap.timeline({
+          scrollTrigger: {
+            start: "top top",
+            trigger: ".infoSection2Artwork",
+            scroller: "#main-container",
+            scrub: 1, 
+            end: "bottom bottom",  
+            toggleActions: "play reverse play reverse",
+              
+          },
+        })
+
+        
+  
+        tl.fromTo(".circle", {  
+          scale: 1,    
+          borderRadius: '50%',
+        },
+        {
+  
+          ease: Power4.easeIn,
+          scale: 30,
+          borderRadius: '0%',
+          duration: 8,
+          immediateRender: true,
+        })  
+
+        tl3.fromTo(".artImages", {  
+          opacity: 1,  
+          ease: Power4.easeIn,  
+       
+        },
+        {
+  
+          ease: Power4.easeIn,
+         opacity: 0,
+         duration: 1,
+        })     
+
+
+    
+     
       });
+    }, []);      
 
-        const menuContainerTop = menuContainer.getBoundingClientRect().top;
-        const menuContainerBottom = menuContainer.getBoundingClientRect().bottom;
-        const body = document.body;
-
-        if(menuContainerTop < window.innerHeight * 0.5) {
-          body.style.backgroundColor = 'black';
-        }
-
-        if(menuContainerTop > window.innerHeight * 0.5) {
-          body.style.backgroundColor = '#FFFFF0';
-        }
-
-        if(menuContainerBottom < window.innerHeight * 1.0) {
-          body.style.backgroundColor = '#FFFFF0';
-        } 
-
-    });
-  }, [scroll]);
   
-
-   
 
 
   return (
-    <div className="infoSection2Container" data-scroll-container ref={ref} data-scroll-speed="1">
-      <div
-        className="infoSection2Title"
-        data-scroll
-        data-scroll-speed="1"
-        data-scroll-repeat="true"
-
-      >
-        <h1    
-          data-scroll   
-          data-scroll-direction="horizontal"   
-          
-          data-scroll-speed="10"   
-        >
-          AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -           AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -  AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -           AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -  AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -           AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -  AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH -           AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - AREAS OF RESEARCH - 
-        </h1>
-        </div>
-        <div className='InfoSection2Menu' data-scroll data-scroll-speed="1">
-          <ul>
-            <li>
-                 <div className="image-overlay">
-                  <img src={image} alt="Image 1" className="menu-item-image" data-scroll data-scroll-speed="5" />
-                  <a data-scroll data-scroll-speed="2" className='menu-item'>TECHNOLOGY
-                  <h3 data-scroll data-scroll-speed="1">VIEW STORIES</h3></a>
-                  </div>   
-                  
-                  <div className="image-overlay">
-                  <img src={image2} alt="Image 2" className="menu-item-image" data-scroll data-scroll-speed="5"/>
-                  <a data-scroll data-scroll-speed="1" className='menu-item'>ART
-                  <h3 data-scroll data-scroll-speed="1">VIEW STORIES</h3></a>
-                  </div> 
-
-                  <div className="image-overlay">
-                  <img src={image3} alt="Image 1" className="menu-item-image" data-scroll data-scroll-speed="5" />
-                  <a data-scroll data-scroll-speed="2" className='menu-item'>CULTURE
-                  <h3 data-scroll data-scroll-speed="1">VIEW STORIES</h3></a>
-                  </div>   
-                  
-                  <div className="image-overlay">
-                  <img src={image4} alt="Image 2" className="menu-item-image" data-scroll data-scroll-speed="5"/>
-                  <a data-scroll data-scroll-speed="1" className='menu-item'>HISTORY
-                  <h3 data-scroll data-scroll-speed="1">VIEW STORIES</h3></a>
-                  </div> 
+    <section className="infoSection2Container" data-scroll-section ref={ref} data-scroll-speed="6">
+     <div className='infoSection2Wrapper'>
+        <div className='infoSection2Title' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Wrapper">  
+          <h2 ref={ref} className={cn("infoSection2Title h2", { "is-reveal": reveal })}>This is a Section Title</h2>      
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div className='infoSection2Artwork' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Container">
+            <div className='artImages'>
+          <img className='artImage' src={fishWoman}/>
+          <img className='artImage2' data-scroll data-scroll-speed="0.2" data-scroll-direction="horizontal" src={fish1}/>
+          <img className='artImage3' data-scroll data-scroll-speed="0.9" data-scroll-direction="horizontal" src={eel}/>
+          </div>
+          <div className='circle'></div>
+        </div>      
+          </div>  
+         </section>       
+    
+  );  
+}            
    
-             
-              </li>
-          </ul>
-         </div>
-      </div>
-  );
-}
-
 export default InfoSection2;
-
+  
     

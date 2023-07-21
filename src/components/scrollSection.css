@@ -1,0 +1,91 @@
+.scroll-wrap {
+  background-color: #ff5248;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding: 5%;
+}
+
+
+
+.scroll {
+  height: 80vh;
+  padding: 20vh 0;
+  width: 400%;
+  display: flex;  
+  flex-wrap: nowrap;
+
+
+}
+
+.scroll .scroll-item {  
+  width: 100%;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+}
+
+.scroll .scroll-item-info {
+  z-index: 1;
+  transform: translateX(-20%);
+  color: black;
+}
+
+.scroll .scroll-item-info .scroll-info-title {
+  line-height: 6vw;
+  font-family: "Bai Jamjuree";
+  font-weight: 600;
+  font-size: 6vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scroll .scroll-item-info .scroll-info-subtitle {
+  position: relative;
+  line-height: 6vw;
+  color: transparent;
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  font-size: 6vw;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 2px #dbd8d6;
+}
+
+.scroll .scroll-item-info .scroll-info-category {
+  width: 170px;
+  outline: none;
+  border: 2px solid #ff5248;
+  background-color: transparent;
+  height: 40px;
+  border-radius: 250px;
+  font-size: 16px;
+  transition: background-color 1s ease;
+}
+
+.scroll .scroll-item-wrapper {
+  aspect-ratio: 16/9;
+  height: 100vh;
+    
+  display: grid;
+  grid-template-columns: 20vw 2fr 200px;
+  width: 100vw;
+}
+
+.scroll .scroll-item-wrapper.is-reveal .scroll-item-image {
+  transform: scale(1);
+  filter: none;
+}
+
+.scroll .scroll-item-image {
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  will-change: transform;
+  transform: scale(0.7);
+  transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  filter: grayscale(100%) sepia(20%) brightness(80%);
+  cursor: pointer;
+
+}
+

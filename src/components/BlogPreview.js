@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./BlogPreview.css";
 
 
-function BlogPreview ({title, description, id, category, coverimage, onClick}){
+function BlogPreview ({title, description, id, category, coverimage, date, onClick}){
 
 
 
@@ -10,9 +10,13 @@ function BlogPreview ({title, description, id, category, coverimage, onClick}){
     return (
       <div>
           <div key={id}>
-          <img id="blogPreviewImage" src={coverimage}/>
+        <div className="blogPreviewWrapper">
+          <div className="imageWrapper">
+          <img src={coverimage}/>
+          </div>
             <div className="postInfo">
               <div className="titleInfo">
+                <p>{date}</p>
                 <h1>{title}</h1>
                 <p>{description}</p>
               </div>
@@ -22,6 +26,7 @@ function BlogPreview ({title, description, id, category, coverimage, onClick}){
               </div>
             </div>
          </div>
+      </div>
       </div>
     );   
     }

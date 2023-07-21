@@ -3,44 +3,53 @@
 
 
 
+
 .featuredContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 40px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eaeaea
  
   }
   
   .featuredWork {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
-    width: 1500px;
-
+    grid-gap: 50px;
+    width: 60%
   
   }
+
   
-  .largeDiv {
+  .largeDiv { 
     grid-column: span 3;
     grid-row: span 1;
-    background-color: white;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
+
+    border-radius: 60px;
   
   }
   
   .mediumDiv {
     grid-column: span 2;
-    grid-row: span 1;
-    background-color: white;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    grid-row: span 1;  
+
+
+
+    border-radius: 600px;
   }
   
   .smallDiv {
     grid-column: span 1;
     grid-row: span 1;
-    background-color: white;
+
+  
+     border-radius: 60px;
+
+    
   }
     
   
@@ -62,6 +71,7 @@
       border-radius: 105px;
       padding: 15px;
       font-size: 20px;
+      text-decoration: none;
     
   }
   
@@ -70,6 +80,7 @@
       background-color: white;
       border-radius: 105px;
       padding: 15px;
+      
     
   }
   
@@ -80,16 +91,55 @@
       border-radius: 20px;  
       padding: 20px;
       font-size: 20px;
+     
     
   }
   
   input:focus {
       outline: none;
-  }
+  }  
   
   #searchIcon {
       width: 20px;
       height: 20px;
   }    
   
+
+  .featuredWork a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 100;
+    padding: 5%;
+  }
+
+  .bottomSection button {
+    width: 350px;
+    outline: none;
+    border: 2px solid #ff5248;
+    background-color: transparent;
+    color: black;
+    height: 50px;
+    border-radius: 250px;
+    font-size: 15px;
+    transition: background-color 1s ease;
+  }
+
+  .bottomSection button:hover {
+    background-color:#ff5248;
+     color: white;
+      
+    }
+
+    .categorySection h4 {
+      color: black;
+      text-align: right;
+    }
   
+    .categorySection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: right;
+    
+    }

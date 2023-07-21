@@ -7,167 +7,163 @@
 }
 
 .infoSectionContainer{
-    position: relative;
     display: flex;
-    flex-direction: column;
-    width: 100%; 
-    padding: 1%;
-    height: 100%;
+    justify-content: center;
+    margin-top: 5%; 
+    width: 100vw;
+    padding: 5%;
+    height: 100vh;
+}
+
+.infoSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.imagesContainer{
+  width: 100%;
+  height: 100%;
 
 }
 
+.imagesContainer img {
+  margin-left: 15%;
+  height: 100%;
+}
 
 
 #line {
     width: 90%;
     height: 1px;
+    margin-top: 1.2%;
+    margin-left: 50px;
     background-color: black;
     align-items: center;
 
 }
 
-.lineContainer {
-    width: 90%;
-    padding-top: 5%;
-    padding-right: 5%;
-    padding-left: 5%;
-}
-  
 
-.infoSectionTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5%;
-    height: 5%;
-  }
-  
-  .InfoTitle {
-    opacity: 0;
-    transform: translateY(100%);
-    animation: none;
-  }   
-  
-  .scrollInTitle {
-    animation: reveal-up 0.5s ease forwards;
-    animation-delay: 0.2s;
-
-  }
-
-  
-  @keyframes reveal-up {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-
-.infoSectionTitle h1{
-    font-size: 75px;
-    font-family: 'LeonardoFascia';
+  .infoSectionTitle h2 {
+    font-family: 'Noto sans', sans-serif;
     font-weight: 100;
-    color:  #28282B;
-    padding: 5%;
-    white-space: nowrap;
-}
+    
+  }
 
-.paragraph{
-    width: 100%;
-    padding: 5%;
-    opacity: 0;
+
+
+  .sectionInfoTitle h2 {
     font-family: 'Noto sans', sans-serif;
     font-weight: 200;
-    text-align: left;
-    font-size: 100px;
-    color:  black;
-    transform: translateY(50%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.showParagraph {
-    opacity: 1;
-  }
-
-  .stickyParagraph {
-    position: sticky;
-  }
-
-
-
-
-  .infoSectionDesc {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    text-align: right;
+    font-size: 170px;
   }
   
-  .infoSectionParagraph {
+  .sectionInfo {
+    width: 65%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
-/* mobile styles */
 
-@media only screen and (max-width: 480px) {
 
-    .infoContainer {
-        flex-direction: column;
-        justify-content: center;
-    }
+  .imageBackground {
+    position: absolute;
+    top: 5%;
+    margin-left: 50%;
+    width: 34%;
+    height: 50%;
+    background-color: #ff5248;
+    opacity: 70%;
+    overflow: hidden;
+    border-radius: 450px;
+  }
 
-    .infoContainer img {
-        width: 150px;
-        height: 150px;
-        filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
-    }
+.imageBackground img{
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  margin-left: -35%;
 
-    .infoContainer h1 {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .infoContainer p{
-        font-size: 10px;
-        width: 100%;
-        text-align: center;
-    }
-
+  
 }
 
-       /* tablet portrait and landscape styles */
-       @media only screen and (min-width: 481px) and (max-width:1080px) {
-        .infoContainer {
-            flex-direction: column;
-            justify-content: center;
-        }
-    
-        .infoContainer img {
-            width: 150px;
-            height: 150px;
-            filter: drop-shadow(0 0.2rem 0.25rem rgba(0,0,0,0.2));
-        }
-    
-        .infoContainer h1 {
-            font-size: 30px;
-            text-align: center;
-        }
-    
-        .infoContainer p{
-            font-size: 10px;
-            width: 100%;
-            text-align: center;
-        }
+
+.contactButton {
+ display: flex;
+ flex-direction: row;
+ justify-content: left;
+ align-items: center;
+ column-gap: 20px;
 
 
 }
 
+.contactButton h3{
+  font-family: 'Noto sans', sans-serif;
+  font-weight: 200;
+  font-size: 25px;
  
+ 
+ }
+
+.contactBtn {
+  width: 170px;
+  outline: none;
+  border: 2px solid #ff5248;
+  background-color: transparent;
+  height: 40px;
+  border-radius: 250px;
+  font-size: 16px;
+  transition: background-color 1s ease;
+}
 
 
+
+.contactBtn:hover {
+background-color:#ff5248;
+ color: white;
+  
+}
+
+
+  
+
+  
+
+.infoSectionHeadline{  
+    padding: 15px;
+    padding-top: 15%;
+    width: 70%;
+    opacity: 1;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    font-size: 200px;
+    color: #E0DACF;
+
+}
+
+.secondaryText p {
+  font-family: 'Noto sans', sans-serif;
+  font-weight: 100;
+  font-size: 25px;
+}
+
+.secondaryText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 70%;
+
+}
+  
+
+  
+
+
+
+/* mobile styles */
 

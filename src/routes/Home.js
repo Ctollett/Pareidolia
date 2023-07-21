@@ -5,10 +5,20 @@ import Header from '../components/Header';
 import InfoSection from '../components/InfoSection';
 import InfoSection2 from '../components/InfoSection2';
 import FeaturedWork from '../components/FeaturedWork';
+import InfoSection5 from '../components/InfoSection5'
 import Background from '../components/Background';
+import InfoSection4 from '../components/InfoSection4'
 import Footer from '../components/Footer';
-import { LocomotiveScrollProvider, useLocomotiveScroll } from 'react-locomotive-scroll';
+import ScrollComponent from '../components/scrollComponent';
+import useLocoScroll from "../hooks/useLocoScroll";
 import { useRef } from 'react';
+import "../components/globalstyles.css"
+import ScrollSection from '../components/scrollComponent';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
+
+
+
 
 function Home() {
   const [isContentVisible, setContentVisible] = useState(true);
@@ -18,23 +28,14 @@ function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const ref = useRef(null);
-  const { scroll } = useLocomotiveScroll();
-
-  const options = {
-    smooth: true,
-    multiplier: 0.5
-  };
+  useLocoScroll(true);
+  
 
 
-
-  const handleMenuClick = () => {
+  const handleMenuClick = () => {   
     setContentVisible(!isContentVisible);
   };
 
-  const handleOpeningAnimationComplete = () => {
-    setOpeningAnimationComplete(true);
-    setHeaderVisible(true);
-  };
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -46,32 +47,33 @@ function Home() {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, []);   
+  
+   
 
-
+  
   return (
-    <LocomotiveScrollProvider options={options} containerRef={ref}>
-      <div data-scroll-container ref={ref}>
-        {!isOpeningAnimationComplete && <OpeningPage onAnimationComplete={handleOpeningAnimationComplete} />}
-        {isOpeningAnimationComplete && (
-          <div data-scroll-section>
-            <Navbar handleMenuClick={handleMenuClick} />
-            <div data-scroll data-scroll-speed="5">
-              {isHeaderVisible && <Header isContentVisible={isContentVisible} />}
-            </div>
+    <>
+  
+      <div data-scroll-container ref={ref} id='main-container'>
 
+       
+             <Navbar handleMenuClick={handleMenuClick} />
+            <Header isContentVisible={isContentVisible} />
             <Background cursorX={cursorX} movementSpeed={1} data-scroll data-scroll-speed="1" />
-
-            <InfoSection/>
-
+            <InfoSection/>   
             <InfoSection2 />
+            <InfoSection5/>
+            <InfoSection4 />
+            <ScrollSection/>
             <FeaturedWork />
-            <Footer />
-          </div>
-        )}
-      </div>
-    </LocomotiveScrollProvider>
+    
+          </div> 
+
+         
+      </>
   );
-}
+}  
 
 export default Home;
+  
