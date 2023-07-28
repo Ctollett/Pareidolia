@@ -45,7 +45,6 @@ const spansRef = useRef([]);
         },
       })
       
-
       tl.fromTo(spansRef.current, {
         color: "#E0DACF",
       },
@@ -66,20 +65,21 @@ const spansRef = useRef([]);
   return (
     <section className="infoSectionContainer" data-scroll-section ref={ref}>
         <div className='infoSectionTitle' data-scroll >
-      <h2>ABOUT</h2>
          </div>
          <div className='infoSectionWrapper' data-scroll>
          <div className="infoSectionHeadline" data-scroll data-scroll-speed="1" data-scroll-repeat="true">                
-            <span>A</span>
-            <span> brief</span>  
+            <span>What</span>
             <div className='imageBackground'>
             <img data-scroll data-scroll-speed="1" data-scroll-repeat="true"src={displayArt2}></img>
-            </div> <span>description</span>  <span>of</span> <span>what</span>  <span>we</span>  <span>do</span>      
+            </div> <span>We</span>  <span>Do</span>     
           </div>
           <div className='secondaryText'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>      
+          <p>Pareidolia is an interdisciplinary research and arts collective interrogating the role of digital
+technology and aesthetics in contemporary American culture. Consisting of researchers in the
+humanities and social sciences as well as artists and computer programmers, this group aims to
+expand our general understanding of technology in our current networked landscape.</p>      
             <div className='contactSection'>
-              <button className='contactBtn'>
+              <button href="/about" className='contactBtn' >
                 Contact
               </button>
               </div>     

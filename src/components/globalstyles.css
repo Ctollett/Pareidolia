@@ -13,6 +13,11 @@
     src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
 }
 
+@font-face {
+  font-family: 'Satori';
+  src: url('./fonts/Satoshi-Light.woff') format('woff')
+}
+
 html {
 	overflow-y: scroll;
 	height: 100%;
@@ -115,6 +120,7 @@ body {
 .navContainer {
     position: fixed;
     top: 0;
+    height: 100vh;
     left: 0;
     width: 98%;
     padding: 2%;
@@ -175,6 +181,7 @@ body {
   #navLogo{
     font-family: 'LeonardoFascia';
     font-size: 55px;
+    color: black;
 
   }
   
@@ -336,9 +343,9 @@ body {
   
 
 .titleSection p{
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
-    font-family: 'Noto sans', sans-serif;
+    font-family: 'Satori';
     color: black;
     font-weight: 100;
     width: 100%;
@@ -348,33 +355,27 @@ body {
     
 }
 
-.titleSection h1{
+.titleContainer h1{
     font-size: 320px;
-    padding-top: 20%;
-    padding-right: 10%;
+    position: absolute;
      color: black;
-    opacity: 0; /* Initially hide the text elements */
-    transform: translateY(100%);
-    animation: slide-up-warp-title 1.5s forwards;
+     top: 50px;
+     right: 300px;
+
 }
 
 .titleContainer {
-
-  overflow: hidden;
+margin-top: 10%;
+  height: 400px;
+  overflow: hidden;   
+position: relative;
+  width: 1850px;
+  
 }
 
 
-@keyframes slide-up-warp-title {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 @keyframes slide-in {
   0% {
@@ -391,14 +392,16 @@ body {
 
 .scrollText-container {
   margin-top: 20%;
+  margin-right: 100px;
+  opacity: 0;
   display: flex;
   justify-content: center;
-  opacity: 0;
   align-items: center;
   animation: rotateAnimation 40s infinite linear;
   position: relative;
   transform: scale(0);
   transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
 
 
 }

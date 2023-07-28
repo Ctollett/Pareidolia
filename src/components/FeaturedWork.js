@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./globalstyles.css";
 import "./FeaturedWork.css";
 import BlogPreview from "./BlogPreview";
-import ReactCurvedText from 'react-curved-text';
+
 
 
 const LatestWork = () => {
@@ -11,6 +11,8 @@ const LatestWork = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const ref = useRef(null);
+
+ 
   
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const LatestWork = () => {
     fetchBlogs();
   }, []);
 
-  if (loading) {
+  if (loading) {   
     return <div>Loading...</div>;
   }
    
@@ -40,11 +42,10 @@ const LatestWork = () => {
 
   return (
     <div className="featuredContainer" data-scroll-section ref={ref}>
-            
       <div className="featuredWork">
         {blogs.slice(0, 5).map((blog, index) => {
           const urlFriendlyTitle = blog.attributes.title.toLowerCase().replace(/\s+/g, "-");
-          const blogLink = `/work/${blog.id}/${encodeURIComponent(urlFriendlyTitle)}`;
+          const blogLink = `/work/${blog.id}/${encodeURIComponent(urlFriendlyTitle)}`; // Updated link
 
           const imageURL = blog.attributes.coverimage.data.attributes.url;
           const createdAtDate = new Date(blog.attributes.createdAt);
@@ -55,7 +56,7 @@ const LatestWork = () => {
             day: 'numeric',
           });
 
-          let gridArea = ""; // Grid area for the div
+          let gridArea = ""; // Grid area for the div  
 
           // Set the gridArea based on the desired repeating pattern
           const patternIndex = index % 6; // Index within the repeating pattern
@@ -80,13 +81,19 @@ const LatestWork = () => {
                 />
               </Link>
             </div>
-          );      
+  
+          );          
         })}
+      
+  
       </div>  
       <div className="bottomSection">
-        <button>VIEW ALL ARTICLES</button>
-      </div>
-    </div>   
+     <button>VIEW ALL ARTICLES</button>
+    </div>  
+   
+    </div> 
+   
+  
   );
 };  
 

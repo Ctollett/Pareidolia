@@ -6,13 +6,13 @@ import './globalstyles.css';
 import './InfoSection2.css';
 import '../components/Locomotive.css';
 import portrait from "./portrait1.jpg";
-import fishWoman from "./RachelsArt/fishwoman-woman.png"
+import fishWoman from "./RachelsArt/fishwoman-2.png"
 import fish1 from "./RachelsArt/fishwoman-fish.png"
 import eel from "./RachelsArt/fishwoman-eel.png"
 import fishwoman2 from "./RachelsArt/fishwoman-woman2.png"
 import SplitText from "../components/SplitText3.min.js";
 import useOnScreen from "../hooks/useOnScreen.js";
-import cn from "classnames";
+
 
 
 
@@ -37,7 +37,7 @@ function InfoSection2() {
             start: "top top",
             trigger: ".infoSection2Container",
             scroller: "#main-container",
-            scrub: 8, 
+            scrub: 4, 
             end: "bottom bottom",  
             toggleActions: "play reverse play reverse",
               
@@ -47,14 +47,44 @@ function InfoSection2() {
         let tl2 = gsap.timeline({
           scrollTrigger: {
             start: "top top",
-            trigger: ".infoSection2Title",
+            trigger: ".infoSection2Container",
             scroller: "#main-container",
-            scrub: 1, 
+            scrub: 8, 
             end: "bottom bottom",  
-            toggleActions: "play reverse play reverse",
+            toggleActions: "reverse play reverse play",
               
           },
         })
+
+
+
+
+        let tl4 = gsap.timeline({
+          scrollTrigger: {
+            start: "top top",
+            trigger: ".infoSection2Container",
+            scroller: "#main-container",
+            scrub: 8, 
+            end: "bottom bottom",  
+            toggleActions: "reverse play reverse play",
+              
+          },
+        })
+
+
+
+        tl2.from(".infoSection2Title h2", 1.8, {
+          top: 500,
+          ease: "power4.out",
+          delay: 2,
+          duration: 0.3,
+          skewY: 9,
+          stagger: {  
+            amount: 0.9
+          }     
+        })   
+
+ 
 
         let tl3 = gsap.timeline({
           scrollTrigger: {
@@ -79,27 +109,16 @@ function InfoSection2() {
           ease: Power4.easeIn,
           scale: 30,
           borderRadius: '0%',
-          duration: 8,
+          duration: 4,
           immediateRender: true,
-        })  
 
-        tl3.fromTo(".artImages", {  
-          opacity: 1,  
-          ease: Power4.easeIn,  
-       
-        },
-        {
-  
-          ease: Power4.easeIn,
-         opacity: 0,
-         duration: 1,
-        })     
+        })  
 
 
     
      
       });
-    }, []);      
+    }, []);        
 
   
 
@@ -108,23 +127,20 @@ function InfoSection2() {
     <section className="infoSection2Container" data-scroll-section ref={ref} data-scroll-speed="6">
      <div className='infoSection2Wrapper'>
         <div className='infoSection2Title' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Wrapper">  
-          <h2 ref={ref} className={cn("infoSection2Title h2", { "is-reveal": reveal })}>This is a Section Title</h2>      
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2 className="infoSection2Title h2" data-scroll-data-scroll-speed="0.9">Who We Are</h2>  
+          </div>    
+          <div className='infoSection2Artwork'>
+            <div className='artImages' data-scroll data-scroll-speed="0.1">
+          <img className='artImage'  src={fishWoman}/>
           </div>
-          <div className='infoSection2Artwork' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Container">
-            <div className='artImages'>
-          <img className='artImage' src={fishWoman}/>
-          <img className='artImage2' data-scroll data-scroll-speed="0.2" data-scroll-direction="horizontal" src={fish1}/>
-          <img className='artImage3' data-scroll data-scroll-speed="0.9" data-scroll-direction="horizontal" src={eel}/>
-          </div>
-          <div className='circle'></div>
+          <div data-scroll className='circle'></div>
         </div>      
-          </div>  
+          </div>    
          </section>       
     
   );  
 }            
-   
+       
 export default InfoSection2;
   
     

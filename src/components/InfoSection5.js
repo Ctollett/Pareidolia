@@ -26,40 +26,6 @@ const spansRef = useRef([]);
   const slides = [displayArt, displayArt2];
 
 
-
-
-  useEffect(() => {
-    // This does not seem to work without a settimeout
-    setTimeout(() => {
-      const spans = ref.current.querySelectorAll(".infoSection h2");
-      spansRef.current = Array.from(spans)
-
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top top",
-          trigger: ".infoSectionWrapper4 h2",
-          scroller: "#main-container",
-          scrub: 7, 
-          end: "bottom bottom",  
-          toggleActions: "play reverse play reverse",
-            
-        },
-      })
-        
-
-      tl.fromTo(spansRef.current, {
-        xPercent: 0,
-      },
-      {
-        xPercent: 10,
-        duration: 7,
-        immediateRender: true,
-      })  
-      
- 
-    });
-  }, []);  
-
    
   
 

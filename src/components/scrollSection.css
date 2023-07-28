@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'LeonardoFascia';
+  src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
+}
+
+
+
+
 .scroll-wrap {
   background-color: #ff5248;
   margin-left: -5vw;
@@ -32,9 +40,10 @@
 
 .scroll .scroll-item-info .scroll-info-title {
   line-height: 6vw;
-  font-family: "Bai Jamjuree";
-  font-weight: 600;
-  font-size: 6vw;
+  font-family: 'LeonardoFascia';
+    font-weight: 200;
+  font-size: 160px;
+
   -webkit-font-smoothing: antialiased;
 }
 

@@ -19,7 +19,7 @@ import fish from "./RachelsArt/fish3.png"
 
 
 
-function InfoSection() {  
+function InfoSection4() {  
   const ref = useRef(null);
 const spansRef = useRef([]);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,4 +79,4 @@ const spansRef = useRef([]);
   );   
 }
          
-export default InfoSection;     
+export default InfoSection4;     

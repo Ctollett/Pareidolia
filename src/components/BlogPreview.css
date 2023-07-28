@@ -5,6 +5,25 @@
   
 }
 
+.blogSection a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Noto sans', sans-serif;
+  font-weight: 100;
+  padding: 5%;
+}
+
+.blogSection h1{
+  text-decoration: none;
+  color: black;
+  font-family: 'LeonardoFascia';
+  font-weight: 700;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+    
 .postInfo {
     display: flex;
     justify-content: space-between;
@@ -21,7 +40,7 @@
 
 
 .categorySection h4 {
-  font-family: 'Noto sans', sans-serif;
+  font-family: 'Satori';
   font-weight: 100;
   color: #ff5248;
   text-align: right;
@@ -55,10 +74,10 @@
     }
 
     .imageWrapper {
-      height: 80%;
+      height: 60%;
       width: 100%;
       overflow: hidden;
-      border-radius: 80px;
+      border-radius: 30px;
     }
     
     .imageWrapper img{

@@ -8,6 +8,7 @@ import FeaturedWork from '../components/FeaturedWork';
 import InfoSection5 from '../components/InfoSection5'
 import Background from '../components/Background';
 import InfoSection4 from '../components/InfoSection4'
+import InfoSection6 from '../components/InfoSection6';
 import Footer from '../components/Footer';
 import ScrollComponent from '../components/scrollComponent';
 import useLocoScroll from "../hooks/useLocoScroll";
@@ -29,12 +30,34 @@ function Home() {
 
   const ref = useRef(null);
   useLocoScroll(true);
+
+  
+
+
   
 
 
   const handleMenuClick = () => {   
     setContentVisible(!isContentVisible);
   };
+
+  useEffect(() => {
+    // Listen for changes in the URL
+    const handleLocationChange = () => {
+      if (window.location.pathname === '/') {
+        // If the URL is the home page, reload the page
+        window.location.reload();
+      }
+    };
+
+    // Add the event listener to detect URL changes
+    window.addEventListener('popstate', handleLocationChange);
+
+    return () => {
+      // Clean up the event listener when the component unmounts
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+  }, []);
 
 
   useEffect(() => {
@@ -65,7 +88,8 @@ function Home() {
             <InfoSection2 />
             <InfoSection5/>
             <InfoSection4 />
-            <ScrollSection/>
+            <ScrollSection/>  
+            <InfoSection6/>
             <FeaturedWork />
     
           </div> 

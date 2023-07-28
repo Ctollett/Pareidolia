@@ -25,6 +25,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+
       try {
         const response = await fetch("http://localhost:1337/api/blogs?populate=coverimage");
         const responseData = await response.json();
@@ -35,18 +36,26 @@ const BlogSection = () => {
       } catch (error) {
         setError(error);
         setLoading(false);
+       
       }
     };
 
+    ;
+
     fetchBlogs();
   }, []);
+
+    
 
   const filteredBlogs = blog.filter((blog) => {
     const blogTitle = blog.attributes.title ? blog.attributes.title.toLowerCase() : ""; // Check if title exists
     const matchesSearch = blogTitle.includes(searchQuery.toLowerCase());
     const matchesFilter = selectedFilter === "all" ? true : blog.attributes.category === selectedFilter;
     return matchesSearch && matchesFilter;
+ 
   });
+
+ 
   
   return (
     <>
@@ -61,10 +70,10 @@ const BlogSection = () => {
         </div>
         <select value={selectedFilter} onChange={handleFilter}>
           <option value="all">All</option>
-          <option value="category1">Category 1</option>
-          <option value="category2">Category 2</option>
-          <option value="category3">Category 3</option>
-          <option value="category4">Category 4</option>
+          <option value="Criticism">Criticism</option>  
+          <option value="Art and Public Work">Art and Public Work</option>
+          <option value="Pedagogy">Pedagogy</option>
+          <option value="Research">Research</option>
         </select>
       </div>
     
@@ -74,6 +83,14 @@ const BlogSection = () => {
           const blogLink = `/work/${blog.id}/${encodeURIComponent(urlFriendlyTitle)}`;
 
           const imageURL = blog.attributes.coverimage.data.attributes.url
+
+          const createdAtDate = new Date(blog.attributes.createdAt);
+
+          const formattedDate = createdAtDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
   
           let gridArea = ""; // Grid area for the div
   
@@ -93,6 +110,7 @@ const BlogSection = () => {
               <Link to={blogLink}>
                 <div className="blogPreview">
                   <BlogPreview
+                    date ={formattedDate}
                     title={blog.attributes.title}
                     description={blog.attributes.description}
                     category={blog.attributes.category}

@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './globalstyles.css';
 import arrow from './arrow.svg';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Navbar = ({ handleMenuClick, isContentVisible }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowNavbar(true);
-    }, 1000); // Delay for the opening animation
 
-    return () => clearTimeout(timeout);
-  }, []);
 
   const handleButtonClick = () => {
     setMenuOpen(!isMenuOpen);
@@ -20,6 +16,65 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
 
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
+
+  useEffect(() => {
+    // This does not seem to work without a settimeout
+    setTimeout(() => {
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          start: "top top",
+          trigger: ".navContainer",
+          scroller: "#main-container",
+          scrub: 1,  
+          toggleActions: "play reverse play reverse",
+            
+        },
+      })
+
+         
+      tl.fromTo('#navLine', {
+        opacity: 1,   
+      },
+      {
+        
+        opacity: 0,
+        duration: 1,
+        immediateRender: true,
+      })  
+
+
+      const sections = [
+        { trigger: '.navContainer', startColor: 'black', endColor: 'black' },
+        { trigger: '.infoSection2Wrapper', startColor: 'white', endColor: 'white' },
+        { trigger: '.infoSectionContainer4', startColor: 'white', endColor: 'black' },
+     
+      ];
+    
+      sections.forEach(section => {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            start: 'top top',
+            end: 'bottom top',     
+            trigger: section.trigger,
+            scroller: '#main-container',
+            scrub: true,
+            toggleActions: 'restart none reverse none',
+          }
+        });
+    
+        tl.fromTo(['.mobile-icon span'], {  
+          backgroundColor: section.startColor,
+        }, 
+        {  
+          backgroundColor: section.endColor,  
+          immediateRender: true,
+        });  
+        
+      });
+    })  
+
+  }, [] );  
 
   return (
     <div className={`navContainer ${showNavbar ? 'show' : ''}`}>

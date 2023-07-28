@@ -31,51 +31,38 @@
 
 .circle {
   top: 45%;
-  right: 50%;
+  right: 340px;
   width: 1000px;
   height: 1000px;
   background-color: black;
   position: absolute;
   z-index: -100;
+
 }
 
 .artImage { 
   right: -60px;
   top: -160px;
+  opacity: 50%;
   position: absolute;
-  width: 1500px;
-  height: 1500px;
+  width: 1700px;
+  height: 1700px;
   z-index: 5;
 
 }
-
+  
 .artImage2 {   
-  right: 200px;
+  left: 150px;
+  opacity: 20%;
   top: -400px;
   position: absolute;
-  width: 1200px;
-  height: 1200px;
+  width: 1700px;
+  height: 1700px;
   z-index: 1;
 
 }
      
-.artImage3 { 
-  right: 50%;   
-  position: absolute;
-  width: 1100px;
-  height: 1100px;
-  z-index: 5;
 
-}
-
-.artImage4 { 
-  right: 500;   
-  position: absolute;
-  width: 1100px;
-  height: 1100px;
-  z-index: 5;
-
-}
 
 
 .infoSection2Title {
@@ -84,31 +71,33 @@
   align-items: center;
   justify-content: center;
   color: white;
+  white-space: nowrap;
   width: 100%;
+  height: 300px;
   z-index: 50; 
-
-  text-align: center;
+  overflow: hidden;
+  text-align: right;
+  position: relative;
 }
 
 
 .infoSection2Title p{
   font-family: 'Noto sans', sans-serif;
   font-weight: 100;
+  position: absolute;
 }
 
 
 .infoSection2Title h2{
-  font-family: 'Noto sans', sans-serif;
+  font-family: 'LeonardoFascia';
+  font-weight: 200;
+  position: absolute;
   font-weight: 400;
-  font-size: 150px;  
+  font-size: 300px;  
   color: white;
-  opacity: 0; 
+  position: absolute;
+
 }
-
-.is-reveal {
-    opacity: 1;
-  }
-
 
 
 .infoSection2Artwork {
@@ -116,6 +105,13 @@
   margin-bottom: 50%;
   z-index: -100;
 
+
+}
+
+.peopleTitle {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
 }
 
 

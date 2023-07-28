@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
 
-
+@font-face {
+  font-family: 'Satori';
+  src: url('./fonts/Satoshi-Light.woff') format('woff')
+}
 
 
 .featuredContainer {
@@ -9,18 +12,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 40px;
     width: 100vw;
     height: 100vh;
-    background-color: #eaeaea
+    background-color: #eaeaea;
  
   }
   
   .featuredWork {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-    width: 60%
+    grid-gap: 90px;
+    width: 70%;
   
   }
 
@@ -28,26 +30,21 @@
   .largeDiv { 
     grid-column: span 3;
     grid-row: span 1;
-
-    border-radius: 60px;
+    border-radius: 20px;
+    height: 500px;
   
   }
   
   .mediumDiv {
     grid-column: span 2;
     grid-row: span 1;  
-
-
-
     border-radius: 600px;
   }
   
   .smallDiv {
     grid-column: span 1;
     grid-row: span 1;
-
-  
-     border-radius: 60px;
+    border-radius: 40px;
 
     
   }
@@ -78,8 +75,10 @@
   .buttonSection button {
       border: none;
       background-color: white;
+      color: black;
       border-radius: 105px;
       padding: 15px;
+  
       
     
   }
@@ -108,15 +107,18 @@
   .featuredWork a{
     text-decoration: none;
     color: black;
-    font-family: 'Noto sans', sans-serif;
+    font-family: 'Satori';
     font-weight: 100;
     padding: 5%;
   }
 
+
+
+
   .bottomSection button {
     width: 350px;
     outline: none;
-    border: 2px solid #ff5248;
+    border: 2px solid #ff5248;  
     background-color: transparent;
     color: black;
     height: 50px;
@@ -127,19 +129,8 @@
 
   .bottomSection button:hover {
     background-color:#ff5248;
-     color: white;
+     color: black;
       
     }
 
-    .categorySection h4 {
-      color: black;
-      text-align: right;
-    }
   
-    .categorySection {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: right;
-    
-    }

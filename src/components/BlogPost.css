@@ -1,9 +1,17 @@
+@font-face {
+    font-family: 'Satori';
+    src: url('./fonts/Satoshi-Light.woff') format('woff')
+  }
+
+
+
 .blogPost {
     display: flex;
     flex-direction: column;
     padding: 10%;
     width: screen;
     height: screen;
+    font-family: 'Satori';
 
 }
 
@@ -54,6 +62,8 @@
 
 .blogTitleSection h1{
     font-size: 100px;
+    font-family: 'LeonardoFascia';
+    font-weight: 700;
 }
 
 .blogTitleSection h4{
@@ -66,7 +76,7 @@
 
 .blogAuthorSection{
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
   column-gap: 20px;
 }
 

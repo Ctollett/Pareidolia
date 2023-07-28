@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./BlogPreview.css";
+import "./FeaturedWork.css";
 
 
 function BlogPreview ({title, description, id, category, coverimage, date, onClick}){

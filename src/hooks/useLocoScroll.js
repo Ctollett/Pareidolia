@@ -35,7 +35,7 @@ export default function useLocoScroll(start) {
       },
       scrollLeft(value) {
         if (locoScroll) {
-          return arguments.length
+          return arguments.length   
             ? locoScroll.scrollTo(value, 0, 0)
             : locoScroll.scroll.instance.scroll.x;
         }

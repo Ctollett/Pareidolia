@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
 
+@font-face {
+    font-family: 'LeonardoFascia';
+    src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
+}
+
+
 .infoSectionContainer4 {
     height: 100vh;
     background-color: #ff5248;
@@ -16,16 +22,17 @@
     justify-content: center;
     align-items: center;
     row-gap: 50px;
-    margin: 0 auto;
+    
+    margin-top: 30%;
     white-space: nowrap;
     
 
 }
 
 .infoSectionWrapper4 h2 {
-    font-size: 120px;
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 600;
+    font-size: 160px;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
   
 }
 

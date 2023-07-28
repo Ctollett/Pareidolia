@@ -6,6 +6,12 @@
     src: url('./fonts/LeonardoFascia_Web-M-Trial.woff') format('woff')
 }
 
+@font-face {
+  font-family: 'Satori';
+  src: url('./fonts/Satoshi-Light.woff') format('woff')
+}
+
+
 .infoSectionContainer{
     display: flex;
     justify-content: center;
@@ -46,20 +52,7 @@
 }
 
 
-  .infoSectionTitle h2 {
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 100;
-    
-  }
 
-
-
-  .sectionInfoTitle h2 {
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 200;
-    text-align: right;
-    font-size: 170px;
-  }
   
   .sectionInfo {
     width: 65%;
@@ -71,12 +64,11 @@
 
   .imageBackground {
     position: absolute;
-    top: 5%;
-    margin-left: 50%;
+    top: 40%;
+    margin-left: 85%;
     width: 34%;
-    height: 50%;
+    height: 30%;
     background-color: #ff5248;
-    opacity: 70%;
     overflow: hidden;
     border-radius: 450px;
   }
@@ -102,8 +94,9 @@
 }
 
 .contactButton h3{
-  font-family: 'Noto sans', sans-serif;
-  font-weight: 200;
+  font-family: '';
+  font-weight: 300;
+
   font-size: 25px;
  
  
@@ -136,19 +129,19 @@ background-color:#ff5248;
 .infoSectionHeadline{  
     padding: 15px;
     padding-top: 15%;
-    width: 70%;
+    width: 45%;
+    margin-right: 20%;
     opacity: 1;
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 400;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
     text-align: left;
-    font-size: 200px;
+    font-size: 300px;
     color: #E0DACF;
 
 }
 
 .secondaryText p {
-  font-family: 'Noto sans', sans-serif;
-  font-weight: 100;
+  font-family: 'Satori';
   font-size: 25px;
 }
 
