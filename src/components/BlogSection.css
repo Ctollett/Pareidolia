@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 10%;
+  height: 100vh;
   row-gap: 40px;
 }
 
@@ -78,4 +79,57 @@ input:focus {
     width: 20px;
     height: 20px;
 }    
+
+/* Media query for max-width 599px */
+@media (max-width: 599px) {
+  .blogContainer {
+    padding: 20px;
+    height: 100%;
+  }
+
+  .blogSection {
+    display: grid;
+    grid-template-columns: 1fr; /* Only one column on small screens */
+    grid-gap: 40px; /* Reduced gap */
+    width: 100%; /* Full width on small screens */
+  }
+
+  .largeDiv,  
+  .mediumDiv,
+  .smallDiv {
+    grid-column: span 1; /* All divs span one column on small screens */
+    grid-row: span 1; 
+  }
+
+  .searchBar,
+  .buttonSection {
+    flex-direction: column; /* Stack the input and button vertically */
+    row-gap: 20px; /* Space between input and button */
+  }
+
+  .searchBar {
+    position: relative; /* Position relative so the icon is relative to this container */
+  }
+
+  #searchIcon {
+    position: absolute; /* Position absolute to allow placement in relation to the parent container */
+    width: 15px; /* Smaller icon */
+    height: 15px;
+    right: 10px; /* Position the icon from the right */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Further centering the icon vertically */
+  }
+
+  .buttonSection {
+    column-gap: 0; /* No column gap on small screens */
+  }
+
+  .buttonSection input,
+  .buttonSection button,
+  .buttonSection select {
+    font-size: 18px; /* Smaller text on small screens */
+    padding: 10px; /* Reduced padding */
+  }
+}
+
 

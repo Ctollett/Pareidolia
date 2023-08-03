@@ -29,11 +29,13 @@ html, body {
 	margin: 0;
 }
 
-.testContainer {
-  height: 100vh;
-  width: 100vw;
-  background-color: aqua;
+body, html {
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
+
+
 
 
 *{   
@@ -51,54 +53,25 @@ body {
 }
 
 
-.headerPhotoContainer{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  mix-blend-mode: screen;
-  width: 50%;
-  height: 80%;
-  margin-right: 100%;
-  opacity: 0; /* Initially hide the text elements */
-  animation: slideIn 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
 
-}
  
 .headerPhoto {
   transition: transform 0.2s ease; /* Adjust the transition duration as needed */
 }
 
 
-.header {
-    position: fixed;
+header {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
+    padding: 1%;
+    display: flex;
+
 
   }
 
-  @keyframes swirlingGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 25%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  
-  @keyframes fadeBackground {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+
   
   @keyframes fadeIn {
     0% {
@@ -120,16 +93,14 @@ body {
 .navContainer {
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: 10px;
     left: 0;
     width: 98%;
     padding: 2%;
-    color: black;
-    z-index: 1;
+    z-index: 1;  
     opacity: 0;
     transform: translateY(-20px);
     animation: popIn 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-
 
   }
 
@@ -145,7 +116,7 @@ body {
   }
 
   @keyframes slideIn {
-    0% {
+    0% {  
       opacity: 0;
       transform: translateX(-20px);
     }
@@ -182,6 +153,8 @@ body {
     font-family: 'LeonardoFascia';
     font-size: 55px;
     color: black;
+    display: block;
+
 
   }
   
@@ -189,6 +162,7 @@ body {
     width: 100%;
     height: 1px;
     background-color: black;
+    
   }
 
   .mobile-icon {
@@ -212,7 +186,7 @@ body {
     height: 2px;
     background-color: black;
     margin-bottom: 4px;
-    transition: transform 0.3s ease;
+
   }
   
 
@@ -229,22 +203,27 @@ body {
   }
 
   .mobile-menu {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20%;
+
     transform: translateY(-100%);
     transition: transform 0.8s ease;
   }
   
   .mobile-menu.open {
     transform: translateY(0);
+    width: 100%;
   }
 
   .fade-out {
     opacity: 0;
     transition: opacity 0.8s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
   }
   
   
@@ -285,7 +264,7 @@ body {
   .mobile-menu ul li {
     opacity: 0;
     transform: translateY(-100%);  
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 1s ease;
   }
   
   .mobile-menu.open ul li {
@@ -316,8 +295,6 @@ body {
 .titleSection {
     display: flex;
     flex-direction: column;
-    width: screen;
-    height: 100vh;
     margin: 0 auto;
     padding-top: 20em;
     color: black;
@@ -336,9 +313,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
-
 
   
 
@@ -368,7 +342,7 @@ body {
 margin-top: 10%;
   height: 400px;
   overflow: hidden;   
-position: relative;
+position: relative;  
   width: 1850px;
   
 }
@@ -403,16 +377,12 @@ position: relative;
   transition: opacity 0.5s ease-in-out;
   transition-delay: 2s;
 
-
 }
 
 .fadeIn {
   opacity: 1;
 }
 
-.fade-out {
-  opacity: 0;
-}
 
 .scrollText-container img {
   width: 50px;
@@ -434,66 +404,8 @@ position: relative;
   }
 }
 
-  
-#exploreButton {
-    padding: 1%;
-    border-radius: 25px;
-    border: 2px solid white;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    text-decoration: none;  
-    font-weight: 300;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-    width: 200px;
-    margin-top: 2em;
-   
-   
-}
-
-.socialsSection a{
-    padding: 1%;
-    border-radius: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    text-decoration: none;  
-    font-weight: 300;
-    font-size: 25px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    width: 50px;
-    height: 50px;
-    margin-top: 5em;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-   
-}
 
 
-.socialsSection {
-  display: flex;
-  flex-direction: row;
-  column-gap: 2em;
-    
-}
-
-.socialsSection img {
-   width: 25px;
-   height: 35px;
-   
-}
-
-
-.titleSection a:hover{
-   scale: 110%;
-  
-  
-}
 
 
 .titleSection button h3{
@@ -543,118 +455,239 @@ button{
     cursor: pointer;
 }
 
-/* mobile styles */
+/* mobile styles */  
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 599px) {
 
-    .titleSection p {
-        font-size: 80%;
+ 
+
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 5em;  
+    row-gap: 10px;
+    color: black;
+    padding-bottom: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
+}
+
+  .titleContainer h1{  
+    font-size: 370%;
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0%;
+
+}
+
+.titleContainer {  
+    height: 62px;
+    margin-top: 30%;
+    margin-bottom: 40%;
+    position: relative;   
+    width: 300px;
+ 
+
+
+
+  }
+
+  .titleInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
     
-    }
 
-    .titleSection h1 {
-        font-size: 45px;
-    }
-
-    #exploreButton {
-        width: 150px;
-        font-size: 20px;
-       
-    }
-
-    .mobile-icon {
-        display: flex;
-    }
-
-    .main-menu{
-        display: none;
-    }
-
-    .mobile-menu{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;  
-        padding-top: 8rem;  
-        background-color: white;
-        color: white;
-        transition: 0.3s;
-    }
+  }
 
 
+.titleSection p{
+  font-size: 5vw;
+  text-align: left;
+  font-family: 'Satori';
+  color: black;
+  font-weight: 100;
+  width: 90%;
+  margin-top: 20%;  
+  height: 10px;  
+}
 
-    #logo{
-        width: 20%;
-    }
 
-    footer {
-        width: 100%;
-        font-size: 10px;
-    }
-    
-    .socialicons {
-       display: flex;
-       flex-direction: row;
-       padding: 5%;
-    }
-    
-    .socialicons a{
-       margin: 25%;
-       
-     }
+.mobile-icon span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 4px;
 
-     .socialsSection a{
-        width: 35px;
-        height: 35px;
-       
-    }
-    
-    .socialsSection img{
-        width: 20px;
-        height: 20px;
-    }
+}
+
+.mobile-icon {
+  row-gap: 2px;
+}
+
+#navLogo{
+  font-size: 40px;
+}
+ 
+.scrollText-container {
+  margin-top: 0%;
+  margin-right: 0px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
 
 
 }
 
-    /* tablet portrait and landscape styles */
 
-    @media only screen and (min-width: 481px) and (max-width:1080px) {
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
 
-        .titleSection p {
-            font-size: 100%;
-        
-        }
+
+#navLine {
+  height: 1px;
+
+}
+
+.mobile-menu ul li a{  
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+
+ 
+
+}
+
+.mobile-menu ul{  
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  row-gap: 1px;
+  list-style-type: none;
+  font-family: 'LeonardoFascia';
+  font-weight: 100;
+  margin-top: 50%;
+ 
+
+ 
+}
+
+.mobile-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, -1.5px);
+}
+
+.mobile-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(13px, -1.5px);
+}
+
+
+.mobile-menu ul li{  
+  height: 50px;
+
+
+ 
+}
+
+
+.mobile-menu ul li a img{  
+  width: 30px;
+  padding-right: 6px;
+  transition: transform 0.3s;
+
+
+}
+
+  
+  }
+
+  /* tablet styles */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  
+  .titleSection {
+    padding-top: 10em;  
+  }
+
+  .titleContainer h1 {
     
-        .titleSection h1 {
-            font-size: 55px;
-        }
-    
-        .titleSection a{
-            width: 35%;
-            font-size: 25px;
-            border-radius: 10px;
-        }
+    font-size: 400%;
+    margin-right: 25%;
+  
+  }
 
-        .main-menu{
-           display: none;
-       }
-   
-       .mobile-icon {
-           display: flex;
-       }
+  .titleContainer {
 
-       .socialsSection a{
-        width: 45px;
-        height: 45px;
-        border-radius: 25px;
-       
-    }
-    
-    .socialsSection img{
-        width: 20px;
-        height: 20px;
-    }
-   
-   }
+  height: 60px;
+
+  
+}
+
+
+
+  .titleSection p {
+    font-size: 60%;
+  }
+
+  .mobile-icon span {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 3px;
+  }
+
+  #navLogo{
+    font-size: 30px;
+  }
+
+  .scrollText-container {
+    margin-top: 30%;
+    left: 50%;
+  }
+
+  .scrollText-container img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-menu ul li a{  
+    font-size: 20px;
+  }
+
+  .mobile-menu ul{  
+    margin-top: 30%;
+  }
+
+  .mobile-menu ul li{  
+    height: 40px;
+  }
+
+  .mobile-menu ul li a img{  
+    width: 20px;
+  }
+}
+
+ 

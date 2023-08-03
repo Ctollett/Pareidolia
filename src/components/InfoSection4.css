@@ -8,7 +8,7 @@
 
 
 .infoSectionContainer4 {
-    height: 100vh;
+    height: 100svh;
     background-color: #ff5248;
     display: flex;
     align-items: center;
@@ -22,7 +22,6 @@
     justify-content: center;
     align-items: center;
     row-gap: 50px;
-    
     margin-top: 30%;
     white-space: nowrap;
     
@@ -53,4 +52,38 @@
     z-index: -10;
 }
    
+@media (max-width: 599px) {
 
+
+
+  
+.infoSectionWrapper4 h2 {
+    font-size: 50px;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
+  
+}
+
+
+.infoSectionContainer4 {
+
+    background-color: #ff5248;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+
+.infoSectionWrapper4 img {
+    position: absolute;
+    left: -175px;
+    z-index: -5;
+    width: 700px;
+    height: 700px;
+}
+  
+    
+    }
+   

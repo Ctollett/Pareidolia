@@ -20,23 +20,51 @@ import fishwoman from "./RachelsArt/fishwoman-woman.png"
 
 
 function InfoSection6() {  
-  const ref = useRef(null);
+const ref = useRef(null);
 const spansRef = useRef([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [displayArt, displayArt2];
+const [currentSlide, setCurrentSlide] = useState(0);
+const slides = [displayArt, displayArt2];
 
+
+
+
+useEffect(() => {
+  // This does not seem to work without a settimeout
+  setTimeout(() => {
 
    
+let tl2 = gsap.timeline({
+  scrollTrigger: {
+    start: "top top",
+    trigger: ".infoSectionContainer6",
+    scroller: "#main-container",
+    scrub: 0.2, 
+    end: "bottom bottom",  
+    toggleActions: "reverse play reverse play",
+    once: true
+       
+  },
+})
 
-     
+tl2.from(".infoSectionTitle6 span", 1.8, {
+  top: 500,   
+  ease: "power4.out",
+  duration: 2,
+  skewY: 9,
+  stagger: {  
+    amount: 0.9
+  }     
+})   
 
-     
+});
+}, []);        
+
   
 
   return (
     <section className="infoSectionContainer6" data-scroll-section  data-scroll-speed="1" ref={ref}>
       <div className='infoSectionWrapper6'>
-        <div className='infoSectionTitle6' data-scroll>
+        <div className='infoSectionTitle6'>
           <span>Our Latest Stories</span>
         </div>
        <div className='imageSection6' data-scroll data-scroll-speed="1">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 import searchIcon from '../components/search.svg';
 import "./BlogSection.css";
@@ -14,6 +14,8 @@ const BlogSection = () => {
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("all");
+
+  const ref = useRef(null);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);  
@@ -60,7 +62,7 @@ const BlogSection = () => {
   return (
     <>
     <BlogHeader/>
-    <div className="blogContainer">
+    <div className="blogContainer" data-scroll-section ref={ref}>
       <div className="buttonSection">
         <div className="searchBar">
           <input type="search" placeholder="Search" name="search" value={searchQuery} onChange={handleSearch} />

@@ -85,7 +85,7 @@ expand our general understanding of technology in our current networked landscap
               </div>     
           </div>
           </div>
-        </section>
+        </section>  
            
        
   );   

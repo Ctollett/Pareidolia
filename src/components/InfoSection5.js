@@ -13,85 +13,167 @@ import fbIcon from './facebook.svg';
 import useOnScreen from '../hooks/useOnScreen';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import useLocoScroll from '../hooks/useLocoScroll';
+import SplitText from "../components/SplitText3.min";
 
  
 
 
 
 
-function InfoSection() {  
-  const ref = useRef(null);
-const spansRef = useRef([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [displayArt, displayArt2];
+function InfoSection5() {  
+const ref = useRef(null);
+
+const onScreen = useOnScreen(ref);
+const [revealed, setRevealed] = useState(false);
+
+useEffect(() => {
+    if(onScreen) setRevealed(true);
+}, [onScreen])
+
+useEffect(() => {
+    if(revealed) {
+        gsap.to(".infoSection5Title h2", {
+            duration: 0.8,
+            top: 20,
+            opacity: 1,
+            ease: "power1.out",
+            toggleActions: "reverse play reverse play",
+        
+        })
+    }
+}, [revealed])
 
 
-   
+
+
+
   
 
   return (
     <section className="infoSectionContainer5" data-scroll-section  data-scroll-speed="1" ref={ref}>
       <div className='infoSectionWrapper5'>
+      <div className='infoSection5Title' data-scroll> 
+          <h2 data-scroll >Who We Are</h2>  
+          </div>  
+          <div id='infoLine'></div>
         <div className='infoSection5Content'>
-         <div className='peopleImage' data-scroll data-scroll-speed="1">
+         <div className='peopleImage'>
+            <img src={portrait} ></img>
+            </div>
+            <div className='peopleImageMobile'>
             <img src={portrait} ></img>
             </div>
         <div className='peopleTitle'>
-            <h2>Name</h2>
+            <h2>First Name</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
             </div>
         </div>
+        <div id='infoLine'></div>
         <div className='infoSection5Content'>
-        <div className='peopleTitle'>
-            <h2>Name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
-            </div>
-            <div className='peopleImage' data-scroll data-scroll-speed="1">
+        <div className='peopleImageMobile'>
             <img src={portrait} ></img>
             </div>
-        </div>
-        <div className='infoSection5Content'>
-         <div className='peopleImage' data-scroll data-scroll-speed="1">
-            <img src={portrait} ></img>
-            </div>
-        <div className='peopleTitle'>
-            <h2>Name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
-            </div>
-        </div>
-        <div className='infoSection5Content'>
-        <div className='peopleTitle'>
-            <h2>Name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
-            </div>
-            <div className='peopleImage' data-scroll data-scroll-speed="1">
-            <img src={portrait} ></img>
-            </div>
-        </div>
-        <div className='infoSection5Content'>
-         <div className='peopleImage' data-scroll data-scroll-speed="1">
+            <div className='peopleImage2'>
             <img src={portrait} ></img>
             </div>
         <div className='peopleTitle'>
-            <h2>Name</h2>
+            <h2>First Name</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
             </div>
-        </div>
-        <div className='infoSection5Content'>
-        <div className='peopleTitle'>
-            <h2>Name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Contact</button>
             </div>
-            <div className='peopleImage' data-scroll data-scroll-speed="1">
+            <div className='peopleImage'>
             <img src={portrait} ></img>
             </div>
         </div>
+        <div id='infoLine'></div>
+        <div className='infoSection5Content'>
+        <div className='peopleImageMobile'>
+            <img src={portrait} ></img>
+            </div>
+         <div className='peopleImage'>
+            <img src={portrait} ></img>
+            </div>
+        <div className='peopleTitle'>
+            <h2>First Name</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
+            </div>
+        </div>
+        <div id='infoLine'></div>
+        <div className='infoSection5Content'>
+        <div className='peopleImageMobile'>
+            <img src={portrait} ></img>
+            </div>
+            <div className='peopleImage2'>
+            <img src={portrait} ></img>
+            </div>
+        <div className='peopleTitle'>
+            <h2>First Name</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
+            </div>
+            <div className='peopleImage'>
+            <img src={portrait} ></img>
+            </div>
+        </div>
+        <div id='infoLine'></div>
+        <div className='infoSection5Content'>
+        <div className='peopleImageMobile'>
+            <img src={portrait} ></img>
+            </div>
+         <div className='peopleImage'>
+            <img src={portrait} ></img>
+            </div>
+        <div className='peopleTitle'>
+            <h2>First Name</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
+            </div>
+        </div>
+        <div id='infoLine'></div>
+        <div className='infoSection5Content'>
+        <div className='peopleImageMobile'>
+            <img src={portrait} ></img>
+            </div>
+            <div className='peopleImage2'>
+            <img src={portrait} ></img>   
+            </div>
+        <div className='peopleTitle'>
+            <h2>First Name</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className='peopleTitleSocialSection'>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
+            </div>
+            <div className='peopleImage'>
+            <img src={portrait} ></img>
+            </div>
+        </div>
+     
         </div>
    
         </section>
@@ -100,4 +182,4 @@ const spansRef = useRef([]);
   );   
 }
          
-export default InfoSection;   
+export default InfoSection5;   

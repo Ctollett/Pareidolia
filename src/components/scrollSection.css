@@ -7,21 +7,18 @@
 
 
 .scroll-wrap {
-  background-color: #ff5248;
-  margin-left: -5vw;
-  margin-right: -5vw;
-  padding: 5%;
+  background-color: black;
+
 }
 
 
 
 .scroll {
-  height: 80vh;
+  height: 80svh;
   padding: 20vh 0;
   width: 400%;
   display: flex;  
   flex-wrap: nowrap;
-
 
 }
 
@@ -35,7 +32,7 @@
 .scroll .scroll-item-info {
   z-index: 1;
   transform: translateX(-20%);
-  color: black;
+  color: white;
 }
 
 .scroll .scroll-item-info .scroll-info-title {
@@ -91,10 +88,140 @@
   height: 50%;
   border-radius: 50%;
   will-change: transform;
-  transform: scale(0.7);
+  transform: scale(0.9);
   transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-  filter: grayscale(100%) sepia(20%) brightness(80%);
   cursor: pointer;
 
 }
 
+@media (max-width: 599px) {
+
+  .scroll .scroll-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+ 
+  }
+
+  .scroll .scroll-item {
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60%;
+
+    
+  }
+  
+
+  .scroll .scroll-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    transform: translateX(0); 
+    width: 100%; 
+  }
+
+  .scroll .scroll-item-image {
+    width: 60%;    
+    height: 40%; 
+    margin: 0 auto 20px auto; 
+  }
+
+  .scroll .scroll-item-info .scroll-info-title {
+    line-height: 6vw;
+    padding: 5%;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
+    font-size: 50px; 
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .scroll {
+    padding: 20vh 0;
+    width: 400%;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: nowrap;
+    display: flex;
+    height: 100vh;
+  }
+
+
+.titleScrollItem h2{
+ font-size: 50px;
+ width: 70%;
+ font-family: 'LeonardoFascia';
+ font-weight: 200;
+ 
+}
+
+.titleScrollItem {
+ padding: 2%;
+  
+ }
+
+ .galleryitem
+
+
+
+.scroll-item-wrapper {
+  width: 50px;
+
+}
+
+.titleWrapper {
+  width: 100%;
+}
+
+.scroll-item h2 {
+  color: white;
+}
+
+.scroll-line {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+}
+
+.sectionNumber h3 {
+  color: white;
+  font-size: 35px;
+  font-family: 'LeonardoFascia';
+  font-weight: 200;
+}
+
+.sectionNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #dbd8d6;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.scrollWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+
+}
+
+.h2 {
+  color: white;
+}
+
+
+  
+}

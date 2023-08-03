@@ -31,7 +31,7 @@
     grid-column: span 3;
     grid-row: span 1;
     border-radius: 20px;
-    height: 500px;
+   
   
   }
   
@@ -44,7 +44,7 @@
   .smallDiv {
     grid-column: span 1;
     grid-row: span 1;
-    border-radius: 40px;
+    border-radius: 40px;  
 
     
   }
@@ -132,5 +132,55 @@
      color: black;
       
     }
+
+
+    @media (max-width: 599px) {
+      .featuredContainer {
+        width: 100%;
+        height: auto; 
+        padding: 20px; 
+      }
+    
+      .featuredWork {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        grid-gap: 20px; 
+      }
+    
+      .largeDiv, .mediumDiv, .smallDiv {
+        grid-column: span 1;
+        width: 100%; 
+      }
+    
+      .buttonSection {
+        flex-direction: column; 
+        align-items: stretch; 
+        justify-content: center;
+        align-items: center;
+        column-gap: 0;
+        row-gap: 20px; 
+      }
+    
+      .buttonSection input, 
+      .buttonSection button, 
+      .buttonSection select {
+        width: 100%; 
+        margin-bottom: 10px; 
+      }
+    
+      .bottomSection button {
+        width: 200px;   
+        font-size: 12px;
+      }
+    
+      .featuredWork a {
+        padding: 2%; 
+      }
+    }
+
+
+    
 
   

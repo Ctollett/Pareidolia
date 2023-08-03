@@ -16,8 +16,12 @@ export default function useLocoScroll(start) {
     locoScroll = new LocomotiveScroll({
       el: scrollEl,
       smooth: true,
+      smartphone: {
+        smooth: true,
+      },
       multiplier: 0.85,
       class: "is-reveal",
+      
     });  
 
     locoScroll.on("scroll", () => {

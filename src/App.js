@@ -4,15 +4,12 @@ import { LocomotiveScrollProvider, Scroll, useLocomotiveScroll } from 'react-loc
 import Home from "./routes/Home";
 import Work from "./routes/Work";
 import About from "./routes/About";
+import Contact from "./routes/Contact";
 import BlogPost from "./components/BlogPost"
 
 
 
 export default function App() {
-    const options = {
-      smooth: true,
-      multiplier: 0.5
-    };
 
     
   return (
@@ -28,6 +25,9 @@ export default function App() {
                 </Route>
                 <Route path="/about">  
                   <About />   
+                </Route>
+                <Route path="/contact">  
+                  <Contact />   
                 </Route>
                 <Route path="/work/:id" component={Work}/>
                 <Route path="/blog/:id" component={BlogPost} /> {/* New route for BlogPost */}

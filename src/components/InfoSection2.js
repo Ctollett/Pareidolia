@@ -23,6 +23,7 @@ function InfoSection2() {
 
   const onScreen = useOnScreen(ref);
 
+  gsap.registerPlugin(ScrollTrigger);
 
   
 
@@ -73,17 +74,6 @@ function InfoSection2() {
 
 
 
-        tl2.from(".infoSection2Title h2", 1.8, {
-          top: 500,
-          ease: "power4.out",
-          delay: 2,
-          duration: 0.3,
-          skewY: 9,
-          stagger: {  
-            amount: 0.9
-          }     
-        })   
-
  
 
         let tl3 = gsap.timeline({
@@ -100,42 +90,53 @@ function InfoSection2() {
 
         
   
-        tl.fromTo(".circle", {  
-          scale: 1,    
-          borderRadius: '50%',
-        },
-        {
-  
-          ease: Power4.easeIn,
-          scale: 30,
-          borderRadius: '0%',
-          duration: 4,
-          immediateRender: true,
-
-        })  
 
 
     
      
       });
-    }, []);        
+    }, []);    
+    
+    
 
-  
+const [revealed, setRevealed] = useState(false);
+
+useEffect(() => {
+    if(onScreen) setRevealed(true);
+}, [onScreen])
+
+useEffect(() => {
+  if(onScreen) {
+      gsap.to(".circle", {
+          scrollTrigger: {
+              trigger: ".infoSection2Container",
+              scroller: "#main-container",
+              start: "top top",
+              end: "bottom bottom",
+           
+              toggleActions: "play none reverse reverse",
+          },
+          scale: 30,
+          ease: Power4.easeIn,     
+          duration: 1, 
+      });
+  }      
+}, [onScreen])     
+   
+   
+    
 
 
   return (
     <section className="infoSection2Container" data-scroll-section ref={ref} data-scroll-speed="6">
-     <div className='infoSection2Wrapper'>
-        <div className='infoSection2Title' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Wrapper">  
-          <h2 className="infoSection2Title h2" data-scroll-data-scroll-speed="0.9">Who We Are</h2>  
-          </div>    
-          <div className='infoSection2Artwork'>
+     <div className='infoSection2Wrapper'>  
+          <div className='infoSection2Artwork' data-scroll data-scroll-sticky data-scroll-target=".infoSection2Container">
             <div className='artImages' data-scroll data-scroll-speed="0.1">
           <img className='artImage'  src={fishWoman}/>
           </div>
           <div data-scroll className='circle'></div>
         </div>      
-          </div>    
+          </div>      
          </section>       
     
   );  

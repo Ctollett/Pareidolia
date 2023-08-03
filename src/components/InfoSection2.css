@@ -10,8 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 200vh;
+    width: 100svw;
+    height: 200svh;
     padding-bottom: 200px;
 
 
@@ -30,13 +30,14 @@
 }
 
 .circle {
-  top: 45%;
+  top: 150px;
   right: 340px;
   width: 1000px;
   height: 1000px;
   background-color: black;
-  position: absolute;
   z-index: -100;
+  position: absolute;
+  border-radius: 100%;
 
 }
 
@@ -45,8 +46,8 @@
   top: -160px;
   opacity: 50%;
   position: absolute;
-  width: 1700px;
-  height: 1700px;
+  width: 1800px;
+  height: 1800px;
   z-index: 5;
 
 }
@@ -73,6 +74,7 @@
   color: white;
   white-space: nowrap;
   width: 100%;
+  margin-top: 10%;
   height: 300px;
   z-index: 50; 
   overflow: hidden;
@@ -101,19 +103,65 @@
 
 
 .infoSection2Artwork {
-  position: absolute;
+  position: relative;
   margin-bottom: 50%;
   z-index: -100;
+  background-color: black;
 
 
 }
 
-.peopleTitle {
-  height: 500px;
-  position: relative;
+
+
+
+/* mobile styles */
+
+@media (max-width: 599px) {
+
+  .infoSection2Container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+ 
+
+ 
+
+
+
+
+}
+
+.circle {
+  top: -50px;
+  margin-bottom: 50%;
+  right: -120px;
+  width: 250px;
+  height: 250px;
+  background-color: black;
+
   overflow: hidden;
+  z-index: -100;
+
 }
 
+
+
+
+
+.artImage { 
+  right: -210px;
+  top: -90px;
+  opacity: 50%;
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  z-index: 5;
+
+}
+  
+   
+}
 
 
 

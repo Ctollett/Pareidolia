@@ -25,17 +25,18 @@
   }  
   
   .contactContainer h2{
-    font-family: 'Playfair Display', serif;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
     
   }
 
   .contactContainer h5{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Satori'; 
     
   }
 
   .contactContainer p{
-    font-family: 'Noto sans', sans-serif;
+    font-family: 'Satori';
     font-size: 15px;
     width: 90%;
     

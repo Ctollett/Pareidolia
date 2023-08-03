@@ -49,7 +49,7 @@ const FullBlogPost = () => {
   }
   
 
-  const { title, description, coverimage, content } = blog.attributes;
+  const { title, description, coverimage, content, category } = blog.attributes;
   
   const changedContent = blog.attributes.blog
   .replace(/\/uploads\//g, `http://localhost:1337/uploads/`)
@@ -70,7 +70,7 @@ const FullBlogPost = () => {
           </div>
           <div className="blogInfoSection">
             <div className="blogTitleSection">
-              <h4>category</h4>
+              <h4>{category}</h4>
               <h1>{title}</h1>
               <p>{description}</p>
             </div>

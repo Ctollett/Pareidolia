@@ -3,81 +3,16 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import "./scrollSection.css";
 import useOnScreen from "../hooks/useOnScreen";
-import useLocoScroll from "../hooks/useLocoScroll";
-import { update } from "react-spring";
 import cn from "classnames";
 import categoryArt from "./collageArt.jpg";
 
 
 
 
-const images = [
-  {
-    src:
-      categoryArt,
-    title: "Criticism",
-
-  },
-  {
-    src:
-    categoryArt,
-    title: "Art and Public Work",
-
-  },
-  { 
-    src:
-    categoryArt,
-    title: "Pedagogy",
-   
-  },  
-  {
-    src:
-     categoryArt,
-    title: "Research",
-
-  },
-];
-
-function GalleryItem({
-  src,
-  category,
-  title,
-  updateActiveImage,
-  index,
-}) {
-  const ref = useRef(null);
-  const onScreen = useOnScreen(ref, 0.5);
-
-  useEffect(() => {
-    if (onScreen) {
-      updateActiveImage(index);
-    }
-  }, [onScreen, index]);
-
-  return (
-    <div
-      className={cn("scroll-item-wrapper", { "is-reveal": onScreen })}
-      ref={ref}
-    >
-      <div></div>
-      <div className={"scroll-item"}>
-        <div
-          className="scroll-item-image"
-          style={{ backgroundImage: `url(${src})` }}
-        ></div>
-        <div className="scroll-item-info">
-          <h1 className="scroll-info-title">{title}</h1>
-          <button className="scroll-info-category">{category}</button>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  );
-}
-
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(1);
   const ref = useRef(null);
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -91,33 +26,54 @@ export default function Gallery() {
           trigger: ".scroll",
           scroller: "#main-container",
           pin: true,
-          scrub: 0.5,  
+          scrub: 0.5,
           snap: 1 / (sections.length - 1),
+
           end: () => `+=${document.querySelector(".scroll").offsetWidth}`,
         },
       });
 
       ScrollTrigger.refresh();
-    }, 0); // Use 0 instead of setTimeout if you are sure the elements are already in the DOM
+    }, 0); 
   }, []);
 
 
-  const handleUpdateActiveImage = (index) => {
-    setActiveImage(index + 1);
-  };
-
   return (
     <section data-scroll-section className="section-wrapper scroll-wrap">
+
       <div className="scroll" ref={ref}>
-        {images.map((image, index) => (
-          <GalleryItem
-            key={index} // Use the index as the key prop
-            index={index}
-            {...image}
-            updateActiveImage={handleUpdateActiveImage}
-          />
-        ))}
+        <div className="titleScrollItem scroll-item-wrapper">
+          <div className="scroll-item">
+            <div className="titleWrapper">
+            <h2>Topics of Study</h2>
+          </div>
+          </div>
+        </div>
+        <div className="galleryitem2 scroll-item-wrapper">
+          <div className="scroll-item">
+            <div className="scrollWrapper">
+            <div className="sectionNumber">
+              <h3>1</h3>
+            </div>
+            <div className="scrollSectionTitle">
+            <h2>This is a gallery item</h2>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div className="galleryitem3 scroll-item-wrapper">
+          <div className="scroll-item">
+            <h2>This is a gallery item</h2>
+          </div>
+        </div>
+        <div className="galleryitem4 scroll-item-wrapper">
+          <div className="scroll-item">
+            <h2>This is a gallery item</h2>
+          </div>
+        </div>
       </div>
+
     </section>
   );
+  
 }

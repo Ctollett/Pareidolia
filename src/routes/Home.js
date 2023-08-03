@@ -17,6 +17,7 @@ import "../components/globalstyles.css"
 import ScrollSection from '../components/scrollComponent';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
+import MobileButtonContext from '../components/MobileButtonContext';
 
 
 
@@ -33,13 +34,6 @@ function Home() {
 
   
 
-
-  
-
-
-  const handleMenuClick = () => {   
-    setContentVisible(!isContentVisible);
-  };
 
   useEffect(() => {
     // Listen for changes in the URL
@@ -70,19 +64,21 @@ function Home() {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);   
+  }, []);     
   
-   
+  const handleMenuClick = () => {
+    setContentVisible(prevState => !prevState);
+  };
+  
 
   
-  return (
+  return (   
     <>
-  
+  <MobileButtonContext.Provider value={isContentVisible}>
       <div data-scroll-container ref={ref} id='main-container'>
-
-       
-             <Navbar handleMenuClick={handleMenuClick} />
-            <Header isContentVisible={isContentVisible} />
+           <Navbar handleMenuClick={handleMenuClick} />
+           <div className={isContentVisible ? 'fade-in' : 'fade-out'}>
+            <Header/>
             <Background cursorX={cursorX} movementSpeed={1} data-scroll data-scroll-speed="1" />
             <InfoSection/>   
             <InfoSection2 />
@@ -91,9 +87,10 @@ function Home() {
             <ScrollSection/>  
             <InfoSection6/>
             <FeaturedWork />
-    
+         
           </div> 
-
+          </div>
+          </MobileButtonContext.Provider>
          
       </>
   );

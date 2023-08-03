@@ -52,7 +52,7 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
       ];
     
       sections.forEach(section => {
-        let tl = gsap.timeline({
+        let tl2 = gsap.timeline({
           scrollTrigger: {
             start: 'top top',
             end: 'bottom top',     
@@ -62,16 +62,44 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
             toggleActions: 'restart none reverse none',
           }
         });
-    
-        tl.fromTo(['.mobile-icon span'], {  
-          backgroundColor: section.startColor,
-        }, 
-        {  
-          backgroundColor: section.endColor,  
-          immediateRender: true,
-        });  
+
+        sections.forEach(section => {
+          let tl2 = gsap.timeline({
+            scrollTrigger: {
+              start: 'top top',
+              end: 'bottom top',     
+              trigger: section.trigger,
+              scroller: '#main-container',
+              scrub: true,
+              toggleActions: 'restart none reverse none',
+            }
+          });
         
-      });
+          sections.forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    start: 'top top',
+                    end: 'bottom top',     
+                    trigger: section.trigger,
+                    scroller: '#main-container',
+                    scrub: true,
+                    toggleActions: 'restart none reverse none',
+                }
+            });
+        
+            tl.fromTo('.mobile-icon span', 
+                { backgroundColor: section.startColor },
+                { backgroundColor: section.endColor, immediateRender: true }
+            )
+            .fromTo('.navbar h1', 
+                { color: section.startColor },
+                { color: section.endColor, immediateRender: true },
+                "<"
+            );    
+        });
+    });
+
+  });
     })  
 
   }, [] );  
@@ -89,9 +117,15 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
           <span></span>
         </button>
       </nav>
+      <div id="navLine"></div>
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li>
+            <a href="/">
+            <img src={arrow} alt="Arrow" />HOME
+            </a>
+          </li>
+          <li>  
             <a href="/work">
               <img src={arrow} alt="Arrow" />WORK
             </a>
@@ -100,15 +134,16 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
             <a href="/about">
               <img src={arrow} alt="Arrow" />PEOPLE
             </a>
-          </li>
-          <li>
+            </li>
+            <li>
             <a href="/contact">
               <img src={arrow} alt="Arrow" />CONTACT
             </a>
-          </li>
+            </li>
+    
         </ul>
+      
       </div>
-      <div id="navLine"></div>
     </div>
   );
 };

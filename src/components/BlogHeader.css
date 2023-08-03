@@ -37,12 +37,13 @@
     width: 60%;
     margin-top: 2%;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-family: 'Satori';
+    font-weight: 100;
 }
 
 .blogHeader h1{
     color: #483C32;
+    font-family: 'LeonardoFascia';
     font-size: 80px;
     text-align: left;
 }
@@ -50,8 +51,30 @@
 .blogHeader button h3{
     color: white;
     font-size: 35px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'LeonardoFascia';
     font-weight: 300;
+}
+
+/* Media query for max-width 599px */
+@media (max-width: 599px) {
+    .blogWrapper {
+        height: 500px;
+        padding: 20px;
+    }
+
+    .blogHeader {
+        padding: 20px;
+        height: auto;
+    }
+
+    .blogHeader h1 {
+        font-size: 40px; /* Adjust as needed */
+    }
+
+    .blogHeader p {
+        font-size: 18px; /* Adjust as needed */
+        width: 100%; /* Full width on small screens */
+    }
 }
 
 

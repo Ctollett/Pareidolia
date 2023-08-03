@@ -6,11 +6,13 @@ import BlogPreview from "./BlogPreview";
 
 
 
+
 const LatestWork = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const ref = useRef(null);
+
 
  
   
@@ -69,7 +71,7 @@ const LatestWork = () => {
             gridArea = "smallDiv"; // Remaining divs within the pattern span one column
           }
 
-          return (  
+          return (    
             <div key={blog.id} className={gridArea}>
               <Link to={blogLink}>
                 <BlogPreview

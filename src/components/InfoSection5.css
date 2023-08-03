@@ -8,9 +8,9 @@
 
 .infoSectionContainer5 {
     display: flex;
-    width: 100vw;
-    height: 300vh;
-    background-color: black;
+    width: 100svw;
+    height: 300svh;
+    background-color: #eaeaea;
 }
 
 .infoSectionWrapper5 {
@@ -18,8 +18,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 140px;
     width: 100%;
-    color: white;
+    color: black;
 }
 
 .infoSection5Content {
@@ -32,6 +33,42 @@
     color: white;
 }
  
+.peopleImageMobile {
+    display: none;
+}
+   
+.peopleImageMobile img{
+    display: none;
+}
+
+.peopleImage2 {
+    display: none;
+}
+
+.infoSection5Title h2 {
+    font-family: 'LeonardoFascia';
+    font-size: 300px;  
+    position: absolute;
+    top: 500px;
+    opacity: 0; /* initially hidden */
+    color: black;
+}
+  
+.infoSection5Title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 50; 
+}
+
+
 
 
 .infoSectionWrapper5 img {
@@ -50,6 +87,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    color: black;
   
 }
 
@@ -64,7 +102,6 @@
     font-size: 25px;
     width: 90%;
     font-family: 'Satori';
-  
     
 }
 
@@ -77,12 +114,163 @@
     border-radius: 250px;
     font-size: 15px;
     font-family: 'Satori';
-    color: white;
+    color: black;
     transition: background-color 1s ease;
 
 }
 
 .peopleTitle button:hover {
- background-color: #ff5248;
+ background-color: #ff5248;  
+  
+}
+
+
+@media (max-width: 599px) {
+    .infoSectionContainer5 {
+        display: flex;
+        background-color: #eaeaea;
+        justify-content: center;  /* added this */
+        align-items: center;  /* and this */
+        text-align: center;
+        height: 100%;
+        padding-bottom: 15%;
+   
+    
+    }
+
+    .infoSection5Title h2{
+        font-family: 'LeonardoFascia';
+        font-weight: 200;
+        position: absolute;
+        font-weight: 400;
+        font-size: 60px;  
+        color: black; 
+      
+      }
+
+      .infoSectionWrapper5 {
+        row-gap: 40px;
+    
+       
+    }
+      
+      
+      .infoSection5Title {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        color: white;
+        white-space: nowrap;
+        width: 100%;
+        height: 100px;
+        z-index: 50; 
+        overflow: hidden;
+        text-align: right;
+        position: relative;
+      }
+
+    .infoSectionWrapper5 img {
+        display: none;
+    
+    }
+
+    .peopleTitleContainer {
+        height: 50px;
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+  
+      
+    }
+
+
+    .peopleTitle p {
+        font-size: 14px;
+        width: 90%;
+        font-family: 'Satori';
+        text-align: left;
+        color: black;
+    }
+
+   
+
+    .peopleImage {
+        display: none;
+   
+    }
+
+    .peopleImageMobile {
+        display: flex;
+        align-items: left;
+        width: 100%;
+        justify-content: center;
+        padding: 20px;
+    
+    }
+
+    .peopleImageMobile img{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        margin-right: 70%;
+
+
+    }
+
+    .peopleTitle button {
+        width: 40px;
+        outline: none;
+        border: 2px solid #ff5248;
+        background-color: transparent;
+        height: 40px;
+        border-radius: 50px;
+        font-size: 15px;
+        font-family: 'Satori';
+        color: black;
+        transition: background-color 1s ease;
+    }
+
+    .infoSection5Content {
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .peopleTitle {
+        align-items: left;
+        width: 90%;
+        text-align: left;
+        row-gap: 10px;
+        color: black;
+    }
+
+    .peopleTitleSocialSection {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2px;
+        height: 50%;
+ 
+    }
+
+
+    .infoSectionWrapper5 {
+        justify-content: center; /* added this */
+        align-items: left; /* and this */
+    }
+
+    #infoLine {
+        width: 90%;
+        height: 1px;
+        background-color: black;
+    }
 
 }
+
+
+    
+    
