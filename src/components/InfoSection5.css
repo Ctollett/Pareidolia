@@ -9,7 +9,7 @@
 .infoSectionContainer5 {
     display: flex;
     width: 100svw;
-    height: 300svh;
+    height: auto;
     background-color: #eaeaea;
 }
 
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 140px;
+    row-gap: 4svh;
     width: 100%;
     color: black;
 }
@@ -33,7 +33,7 @@
     color: white;
 }
  
-.peopleImageMobile {
+.peopleImageMobile{
     display: none;
 }
    
@@ -47,9 +47,9 @@
 
 .infoSection5Title h2 {
     font-family: 'LeonardoFascia';
-    font-size: 300px;  
+    font-size: 11svw;  
     position: absolute;
-    top: 500px;
+    top: 10svh;
     opacity: 0; /* initially hidden */
     color: black;
 }
@@ -64,7 +64,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 165svh;
     z-index: 50; 
 }
 
@@ -73,7 +73,7 @@
 
 .infoSectionWrapper5 img {
     width: 80%;
-    height: 450px;
+    height: 80%;
     object-fit: cover;
     border-radius: 100%;
 }
@@ -84,7 +84,10 @@
 
 .peopleTitle {
     width: 35%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: left;
     flex-direction: column;
     row-gap: 15px;
     color: black;
@@ -92,25 +95,33 @@
 }
 
 .peopleTitle h2{
-   font-size: 55px;
+   font-size: 4svw;
    font-family: 'LeonardoFascia';
    font-weight: 200;
 }
 
 .peopleTitle p {
-    width: 90%;
-    font-size: 25px;
+    width: 100%;
+    font-size: 1svw;
     width: 90%;
     font-family: 'Satori';
     
 }
 
-.peopleTitle button {
-    width: 120px;
+.peopleTitleSocialSection {
+    display: flex;
+    align-items: center;
+    height: 20%;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.peopleTitleSocialSection button {
+    width: 10%;
     outline: none;
     border: 2px solid #ff5248;
     background-color: transparent;
-    height: 40px;
+    height: 53%;
     border-radius: 250px;
     font-size: 15px;
     font-family: 'Satori';
@@ -270,6 +281,136 @@
     }
 
 }
+
+/* Existing CSS stays as is... */
+
+/* Tablet responsiveness */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    .infoSectionContainer5 {
+        display: flex;
+        background-color: #eaeaea;
+        justify-content: center;  
+        align-items: center;  
+        text-align: center;
+        height: 100%;
+        padding-bottom: 10%;
+    }
+
+    .infoSection5Title h2 {
+        font-family: 'LeonardoFascia';
+        font-weight: 300;
+        position: absolute;
+        font-size: 90px;  
+        color: black; 
+    }
+
+    .infoSectionWrapper5 {
+        row-gap: 25px;
+    }
+      
+    .infoSection5Title {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        color: white;
+        white-space: nowrap;
+        width: 100%;
+        height: 150px;
+        z-index: 50; 
+        overflow: hidden;
+        text-align: right;
+        position: relative;
+    }
+
+    .infoSectionWrapper5 img {
+        display: none;
+    }
+
+    .peopleTitle p {
+        font-size: 18px;
+        width: 90%;
+        font-family: 'Satori';
+        text-align: left;
+        color: black;
+    }
+
+    .peopleImage {
+        display: none;
+    }
+
+    .peopleImageMobile {
+        display: flex;
+        align-items: left;
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .peopleImageMobile img {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        margin-right: 70%;
+    }
+
+    .peopleTitle button {
+        width: 45px;
+        outline: none;
+        border: 2px solid #ff5248;
+        background-color: transparent;
+        height: 45px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-family: 'Satori';
+        color: black;
+        transition: background-color 1s ease;
+    }
+
+    .infoSection5Content {
+        height: 420px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .peopleTitle {
+        align-items: left;
+        width: 90%;
+        text-align: left;
+        row-gap: 12px;  
+        color: black;
+    }
+
+    .peopleTitleSocialSection {
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px;
+        height: 55%;
+    }
+
+    .infoSectionWrapper5 {
+        justify-content: center; 
+        align-items: left;
+    }
+
+    #infoLine {
+        width: 90%;
+        height: 1px;
+        background-color: black;
+    }
+}
+
+/* Base styles (which you already have) */
+
+/* ... your existing CSS ... */
+
+/* Responsive styling for mobile landscape orientation */
+
+
+
+
+
 
 
     

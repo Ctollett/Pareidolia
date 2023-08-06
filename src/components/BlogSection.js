@@ -63,6 +63,7 @@ const BlogSection = () => {
     <>
     <BlogHeader/>
     <div className="blogContainer" data-scroll-section ref={ref}>
+       <div className="blogSectionWrapper">
       <div className="buttonSection">
         <div className="searchBar">
           <input type="search" placeholder="Search" name="search" value={searchQuery} onChange={handleSearch} />
@@ -78,7 +79,6 @@ const BlogSection = () => {
           <option value="Research">Research</option>
         </select>
       </div>
-    
       <div className="blogSection">
         {filteredBlogs.map((blog, index) => {
           const urlFriendlyTitle = blog.attributes.title.toLowerCase().replace(/\s+/g, "-");
@@ -125,6 +125,7 @@ const BlogSection = () => {
           );
         })}
       </div>
+    </div>
     </div>
     </>
   );

@@ -14,8 +14,11 @@ const Header = () => {
 
   const isMobile = () => window.innerWidth <= 768;
   const isTablet = () => window.innerWidth > 768 && window.innerWidth <= 1024;
+  const isSmlDesktop = () => window.innerWidth > 1025 && window.innerWidth <= 1366;
+  const islrgDesktop = () => window.innerWidth > 1366
+
   
-  const deviceType = isMobile() ? 'mobile' : isTablet() ? 'tablet' : 'desktop';
+  const deviceType = islrgDesktop() ? 'lrgDesktop' : isSmlDesktop() ? 'smallDesktop' : isMobile() ? 'mobile' : isTablet() ? 'tablet' : 'desktop';
   
   const curvedTextProps = {
     mobile: {
@@ -31,11 +34,11 @@ const Header = () => {
     tablet: {
       width: 250,
       height: 250,
-      cx: 125,
+      cx: 125,  
       cy: 125,
-      rx: 30,
-      ry: 30,
-      textProps: { style: { fontSize: 10 } },
+      rx: 36,
+      ry: 36,
+      textProps: { style: { fontSize: 12 } },
       tspanProps: { dy: '25' }
     },
     desktop: {
@@ -43,8 +46,30 @@ const Header = () => {
       height: 300,
       cx: 150,  
       cy: 150,
-      rx: 46,
-      ry: 46,
+      rx: 40,
+      ry: 40,
+      textProps: { style: { fontSize: 13 } },
+      tspanProps: { dy: '30' }
+    },
+
+    smallDesktop: {
+      width: 300,
+      height: 300,
+      cx: 150,  
+      cy: 150,
+      rx: 36,
+      ry: 36,
+      textProps: { style: { fontSize: 12 } },
+      tspanProps: { dy: '30' }
+    },
+
+    lrgDesktop: {
+      width: 300,
+      height: 300,
+      cx: 150,  
+      cy: 150,
+      rx: 45,
+      ry: 45,
       textProps: { style: { fontSize: 15 } },
       tspanProps: { dy: '30' }
     }
@@ -79,7 +104,7 @@ const Header = () => {
     } else if (deviceType === "tablet") {
       // Tablet device animation
       tl.from(".titleContainer h1", 1.8, {
-        top: 40,
+        top: 400,
         ease: "power4.out",
         delay: 1,
         duration: 0.3,
@@ -97,7 +122,7 @@ const Header = () => {
     } else {
       // Non-mobile, non-tablet device animation
       tl.from(".titleContainer h1", 1.8, {
-        top: 500,
+        top: 700,
         ease: "power4.out",
         delay: 1,
         duration: 0.3,
@@ -130,7 +155,6 @@ const Header = () => {
           <div className='titleContainer'>
             <h1>Pareidolia.</h1>
           </div>
-             </div>
           <div className={`scrollText-container`}>
             <img src={arrow2} alt="Circular Text" />
             <ReactCurvedText
@@ -142,6 +166,7 @@ const Header = () => {
               ellipseProps={null}
               svgProps={null}
             />
+          </div>
           </div>
       </div>
     </header>

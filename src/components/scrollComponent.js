@@ -52,25 +52,31 @@ export default function Gallery() {
         <div className="galleryitem2 scroll-item-wrapper">
           <div className="scroll-item">
             <div className="scrollWrapper">
-            <div className="sectionNumber">
-              <h3>1</h3>
-            </div>
             <div className="scrollSectionTitle">
-            <h2>This is a gallery item</h2>
+            <h2>Criticism</h2>
             </div>
+          
             </div>
           </div>
         </div>
         <div className="galleryitem3 scroll-item-wrapper">
-          <div className="scroll-item">
-            <h2>This is a gallery item</h2>
+        <div className="scroll-item">
+            <div className="scrollWrapper">
+            <div className="scrollSectionTitle">
+            <h2>Art and Public Work</h2>
+            </div>
+            </div>  
           </div>
-        </div>
+          </div>
         <div className="galleryitem4 scroll-item-wrapper">
-          <div className="scroll-item">
-            <h2>This is a gallery item</h2>
+        <div className="scroll-item">
+            <div className="scrollWrapper">
+            <div className="scrollSectionTitle">
+            <h2>Pedagogy</h2>
+            </div>
+            </div>
           </div>
-        </div>
+          </div>
       </div>
 
     </section>

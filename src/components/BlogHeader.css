@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 95%;
+    width: 100%;
     border-radius: 55px;
     height: 50%;
     margin: 0 auto;
@@ -33,7 +33,7 @@
 
 .blogHeader p{
     color: #483C32;
-    font-size: 25px;
+    font-size: 1.5svw;
     width: 60%;
     margin-top: 2%;
     text-align: center;
@@ -44,7 +44,7 @@
 .blogHeader h1{
     color: #483C32;
     font-family: 'LeonardoFascia';
-    font-size: 80px;
+    font-size: 7svw;
     text-align: left;
 }
 

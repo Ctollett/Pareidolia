@@ -34,7 +34,8 @@ useEffect(() => {
 useEffect(() => {
     if(revealed) {
         gsap.to(".infoSection5Title h2", {
-            duration: 0.8,
+            duration: 0.5,
+            delay: 0.5,
             top: 20,
             opacity: 1,
             ease: "power1.out",
@@ -53,8 +54,8 @@ useEffect(() => {
   return (
     <section className="infoSectionContainer5" data-scroll-section  data-scroll-speed="1" ref={ref}>
       <div className='infoSectionWrapper5'>
-      <div className='infoSection5Title' data-scroll> 
-          <h2 data-scroll >Who We Are</h2>  
+      <div className='infoSection5Title'> 
+          <h2>Who We Are</h2>  
           </div>  
           <div id='infoLine'></div>
         <div className='infoSection5Content'>

@@ -66,9 +66,9 @@
   .imageBackground {
     position: absolute;
     top: 40%;
-    margin-left: 85%;
-    width: 34%;
-    height: 30%;
+    left: 40svw;
+    width: 50%;
+    height: 50%;
     background-color: #ff5248;
     overflow: hidden;
     border-radius: 450px;
@@ -130,20 +130,20 @@ background-color:#ff5248;
 .infoSectionHeadline{  
     padding: 15px;
     padding-top: 15%;
-    width: 45%;
+    width: 50%;
     margin-right: 20%;
     opacity: 1;
     font-family: 'LeonardoFascia';
     font-weight: 200;
     text-align: left;
-    font-size: 300px;
+    font-size: 12svw;
     color: #E0DACF;
 
 }
 
 .secondaryText p {
   font-family: 'Satori';
-  font-size: 25px;
+  font-size: 1.5svw;
 }
 
 .secondaryText {
@@ -199,9 +199,8 @@ background-color:#ff5248;
 
     .imageBackground {
         top: -145%;
-        right: 28%;
-        width: 45%;
-        height: 150%;
+        left: 11.5svh;
+        height: 160%;
         align-self: center;
     
     }
@@ -218,7 +217,7 @@ background-color:#ff5248;
     }
 
     .secondaryText p {
-        font-size: 18px;
+        font-size: 1.8svh;
     }
 
     .contactBtn {
@@ -227,49 +226,130 @@ background-color:#ff5248;
         font-size: 14px;
     }
 }
-
 /* tablet styles */
 @media (min-width: 600px) and (max-width: 1024px) {
-
- 
-  .infoSectionWrapper {
-      width: 80%;
+  .infoSectionContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 1%;
+    margin-top: 20%;
   }
 
-  .infoSectionHeadline{  
-      font-size: 120px;
-      width: 70%;
-      margin-right: 15%;
-      padding-top: 5%;
+  .infoSectionWrapper {
+    width: 90%;
+    text-align: center;
+  }
+
+  .infoSectionHeadline {  
+    font-size: 70px; /* Adjusted for larger screen */
+    text-align: center;
+    width: 120%;
+    margin-right: 0;
+    padding-top: 10%;
+    color: black;
+  }
+
+  .infoSectionHeadline span {  
+    font-size: 80px; /* Adjusted for larger screen */
+  }
+
+  .infoSectionHeadline h2 {  
+    font-size: 70px; /* Adjusted for larger screen */
   }
 
   .imageBackground {
-      top: 50%;
-      margin-left: 60%;
-      width: 25%;
-      height: 25%;
+    top: -145%;
+    left: 25svh;
+    width: 35%;
+    height: 160%;
+    align-self: center;
   }
 
-  .imageBackground img{
-      width: 150%;
-      height: 150%;
-      margin-left: -15%;
+  .imageBackground img {
+    width: 170%;
+    height: 170%;  
+    left: 10%;
   }
 
   .secondaryText {
-      width: 80%;
+    width: 100%;
   }
 
   .secondaryText p {
-      font-size: 22px;
+    font-size: 2svh; /* Adjusted for larger screen */
+  
   }
 
   .contactBtn {
-      width: 120px;
-      height: 35px;
-      font-size: 16px;
+    width: 120px; /* Adjusted for larger screen */
+    height: 35px;
+    font-size: 16px;
   }
+  
+  .contactBtn {
+    width: 170px;
+    outline: none;
+    border: 2px solid #ff5248;
+    background-color: transparent;
+    height: 40px;
+    border-radius: 250px;
+    font-size: 20px;
+    transition: background-color 1s ease;
+  }
+  
 }
+
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 1000px) {
+
+
+
+    .infoSectionContainer {
+        margin-top: 20%;
+        padding: 2%;
+        height: auto;
+    }
+
+    .infoSectionWrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .infoSectionHeadline {
+        padding: 10px;
+        padding-top: 10%;
+        width: 100%;
+    }
+
+    .infoSectionHeadline span{
+      font-size: 6vw;
+  }
+
+    .imageBackground {
+      top: -65%;
+        height: 100%;
+        width: 23%;
+        left: 33vw;
+
+    }
+
+    .imageBackground img {
+        width: 150%;
+        height: 150%;
+        margin-left: -25%;
+    }
+
+    .secondaryText {
+        width: 85%;
+    }
+
+    .secondaryText p {
+        font-size: 1.5vw;
+    }
+}
+
+
+
 
 
 

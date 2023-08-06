@@ -13,23 +13,23 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
-    background-color: #eaeaea;
+    height: 100svh;
  
   }
   
   .featuredWork {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 90px;
-    width: 70%;
+    grid-gap: 60px;
+    width: 90%;
   
   }
-
+   
   
   .largeDiv { 
     grid-column: span 3;
     grid-row: span 1;
+    height: 70svh;
     border-radius: 20px;
    
   
@@ -179,6 +179,56 @@
         padding: 2%; 
       }
     }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      .featuredContainer {
+        width: 100%;
+        height: auto; 
+        padding: 20px; 
+      }
+    
+      .featuredWork {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        grid-gap: 0px; 
+      }
+    
+      .largeDiv, .mediumDiv, .smallDiv {
+        grid-column: span 1;
+        width: 100%; 
+      }
+    
+      .buttonSection {
+        flex-direction: column; 
+        align-items: stretch; 
+        justify-content: center;
+        align-items: center;
+        column-gap: 0;
+        row-gap: 20px; 
+      }
+    
+      .buttonSection input, 
+      .buttonSection button, 
+      .buttonSection select {
+        width: 100%; 
+        margin-bottom: 10px; 
+      }
+    
+      .bottomSection button {
+        width: 200px;   
+        font-size: 12px;
+      }
+    
+      .featuredWork a {
+        padding: 2%; 
+      }
+    }
+    
+
+  
+    
 
 
     

@@ -64,8 +64,6 @@ const spansRef = useRef([]);
 
   return (
     <section className="infoSectionContainer" data-scroll-section ref={ref}>
-        <div className='infoSectionTitle' data-scroll >
-         </div>
          <div className='infoSectionWrapper' data-scroll>
          <div className="infoSectionHeadline" data-scroll data-scroll-speed="1" data-scroll-repeat="true">                
             <span>What</span>

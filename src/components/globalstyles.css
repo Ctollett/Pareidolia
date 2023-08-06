@@ -36,8 +36,6 @@ body, html {
 }
 
 
-
-
 *{   
     padding: 0;   
     margin: 0;
@@ -295,6 +293,7 @@ header {
 .titleSection {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin: 0 auto;
     padding-top: 20em;
     color: black;
@@ -306,44 +305,46 @@ header {
    
 }
 
-  
 .titleInformation {
   display: flex;
-  flex-direction: row; 
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100svw;
 }
 
-  
 
+  
+  
 .titleSection p{
-    font-size: 35px;
+    font-size: 1.5svw;
     text-align: center;
     font-family: 'Satori';
     color: black;
     font-weight: 100;
-    width: 100%;
-    margin-top: 100px;   
+    margin-bottom: 5%;
+    width: 100%;   
     height: 100%;
   
     
 }
 
 .titleContainer h1{
-    font-size: 320px;
+    font-size: 13svw;
     position: absolute;
      color: black;
-     top: 50px;
-     right: 300px;
+     top: 3svh;
+    
 
 }
 
 .titleContainer {
-margin-top: 10%;
-  height: 400px;
+  height: 32svh;
+  padding-bottom: 5%;
   overflow: hidden;   
-position: relative;  
-  width: 1850px;
+ position: relative;  
+  width: 100%;
+
+
   
 }
 
@@ -362,13 +363,13 @@ position: relative;
     transform: translateX(0);
   }
 }
-
+  
 
 .scrollText-container {
-  margin-top: 20%;
-  margin-right: 100px;
   opacity: 0;
   display: flex;
+  margin-top: 5%;
+  margin-right: 8%;
   justify-content: center;
   align-items: center;
   animation: rotateAnimation 40s infinite linear;
@@ -385,15 +386,15 @@ position: relative;
 
 
 .scrollText-container img {
-  width: 50px;
-  height: 50px;
+  width: 50%;
+  height: 15%;
   position: absolute;
   transform: translate(-50%, -50%);
   animation: rotateAnimation 40s reverse infinite linear;
 }
 
 
-
+  
   
 @keyframes rotateAnimation {
   from {
@@ -503,7 +504,6 @@ button{
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-
     
 
   }
@@ -627,67 +627,303 @@ button{
 
   /* tablet styles */
 
-@media (min-width: 600px) and (max-width: 1024px) {
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait){
+  /* Tablet styles */
   
   .titleSection {
-    padding-top: 10em;  
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 5em;  
+    row-gap: 0px;
+    color: black;
+    padding-bottom: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
+}
+
+  .titleContainer h1{  
+    font-size: 570%;
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0%;
+
+}
+
+.titleContainer {  
+    height: 102px;
+    margin-top: 30%;
+    margin-bottom: 40%;
+    position: relative;   
+    width: 440px;
+
+ 
+
+
+
   }
 
-  .titleContainer h1 {
+  .titleInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
     
-    font-size: 400%;
-    margin-right: 25%;
-  
+
   }
 
-  .titleContainer {
 
-  height: 60px;
+.titleSection p{
+  font-size: 130%;
+  text-align: left;
+  font-family: 'Satori';
+  color: black;
+  font-weight: 100;
+  width: 100%;
+  margin-top: 20%;  
+  height: 10px;  
+}
 
+
+.mobile-icon span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 4px;
+
+}
+
+.mobile-icon {
+  row-gap: 2px;
+}
+
+#navLogo{
+  font-size: 40px;
+}
+ 
+.scrollText-container {
+  margin-top: 0%;
+  margin-right: 0px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+
+
+}
+
+
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+#navLine {
+  height: 1px;
+
+}
+
+.mobile-menu ul li a{  
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+
+ 
+
+}
+
+.mobile-menu ul{  
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  row-gap: 1px;
+  list-style-type: none;
+  font-family: 'LeonardoFascia';
+  font-weight: 100;
+  margin-top: 50%;
+ 
+
+ 
+}  
+
+.mobile-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, -1.5px);
+}
+
+.mobile-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(13px, -1.5px);
+}
+
+
+.mobile-menu ul li{  
+  height: 50px;
+
+
+ 
+}
+
+
+.mobile-menu ul li a img{  
+  width: 30px;
+  padding-right: 6px;
+  transition: transform 0.3s;
+
+
+}
+
+
+
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Add your styles for small laptop screens here. */
+
+  .titleSection {
+    padding-top: 15em;
+  }
+  .titleContainer h1 {
+    font-size: 220px;  
+    top: 30px;
+    right: 200px;
+  }
+  .scrollText-container {
+    margin-top: 15%;
+    margin-right: 50px;
+  }
+
+
+.titleContainer h1{
+    font-size: 620%;
+    position: absolute;
+    color: black;
+    top: 50px;
+    left: 0;
+
+}
+
+.titleContainer {
+   margin-top: 10%;
+   height: 180px;  
+   position: relative;  
+   width: 750px;
+
+    
+}
+
+.titleSection p{
+  font-size: 25px;
+   margin-top: 20%;
+   height: 50%;  
   
 }
+
+.scrollText-container {
+  margin-top: 0%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+
+
+}
+
+
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
+
+  header {
+    flex-direction: column; /* Change the direction to row for landscape */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 2% 5%; /* Adjusted padding for better spacing in landscape */
+  }
+
+  .titleSection {
+    padding-top: 10em;
+
+  }
+
+
+
+  .titleInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ 
+
+  }
+  
 
 
 
   .titleSection p {
-    font-size: 60%;
+    font-size: 1.8vw; /* Adjust font size */
+    margin-right: 5%; /* Add some right margin for spacing */  
+    text-align: center; /* Align text to left */
+    margin-bottom: 2em;
+    margin-top: 0;
   }
 
-  .mobile-icon span {
-    width: 20px;
-    height: 2px;
-    margin-bottom: 3px;
+  .titleContainer h1 {
+    font-size: 9vw; /* Adjust font size */
+    position: relative; /* Reset positioning */
+    top: 0; /* Reset top positioning */
   }
 
-  #navLogo{
-    font-size: 30px;
+  .titleContainer {
+    padding-left: 2%;
   }
 
   .scrollText-container {
-    margin-top: 30%;
-    left: 50%;
+    margin-top: 0; /* Remove the top margin */
+    margin-left: 15%; /* Add some left margin for spacing */
+    transform: scale(1); /* Reset the scale */
   }
 
-  .scrollText-container img {
-    width: 20px;
-    height: 20px;
-  }
 
-  .mobile-menu ul li a{  
-    font-size: 20px;
-  }
 
-  .mobile-menu ul{  
-    margin-top: 30%;
-  }
+  /* You may need to further adjust the size and positioning of other elements, 
+  but this should give you a good starting point. */
 
-  .mobile-menu ul li{  
-    height: 40px;
-  }
-
-  .mobile-menu ul li a img{  
-    width: 20px;
-  }
 }
-
- 
