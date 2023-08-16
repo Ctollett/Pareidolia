@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './globalstyles.css';
-import arrow from './arrow.svg';
+import '../assets/globalstyles.css';
+import arrow from '../assets/arrow.svg';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

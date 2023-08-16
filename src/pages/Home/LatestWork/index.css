@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+.featuredContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100svw;
+  background-color: white;
+  padding: 5%;
+  padding-top: 5em;
+
+}
+
+.featuredWork {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 30px;  
+  width: 60%; 
+
+}
+
+
+.largeBlog {
+  grid-column: 1 / -1;  /* this will make it stretch across all columns */
+
+
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 5%;
+}
+
+.bottomSection button {
+  width: 20%;
+  padding: 1%;
+  font-size: 2dsvh;
+  background-color: transparent;
+  border: 1px solid #D0263D;
+  border-radius: 15em;
+}
+
+.featuredWork a {
+  text-decoration: none;
+}
+
+.featured-work-title {
+  height: 5em;
+  width: 100%;
+  font-family: 'LeonardoFascia';
+  font-weight: 700;
+  font-size: 5svh; 
+}
+
+
+
+
+
+
+  
+     
+
+
+    
+
+  

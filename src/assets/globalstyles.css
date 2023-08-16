@@ -1,0 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&family=Noto+Serif+JP:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Noto+Serif+JP:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
+
+
+
+@font-face {
+    font-family: 'LeonardoFascia';
+    src: url('./fonts/LeonardoFascia_Web-L-Trial.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Satori';
+  src: url('./fonts/Satoshi-Light.woff') format('woff')
+}
+
+.initial-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Apply a transition effect */
+}
+
+
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+
+
+html, body {
+	overflow-x: hidden;
+	margin: 0;
+}
+
+body, html {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+  
+*{   
+    padding: 0;     
+    margin: 0;
+    box-sizing: border-box;  
+} 
+
+body {
+  transition: background-color 0.3s ease;
+  background-color: #D4CFC4;
+  overflow-y: visible;
+	position: relative;
+  height: unset;
+}
+
+
+
+
+
+ 
+.headerPhoto {
+  transition: transform 0.2s ease; /* Adjust the transition duration as needed */
+}
+
+
+header {
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    padding: 1%;
+    display: flex;
+
+
+  }
+
+
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  
+  
+    
+/* mobile and desktop navigation styles */
+
+
+
+.navContainer {
+    position: fixed;
+    top: 0;
+    height: 10px;
+    left: 0;
+    width: 98%;
+    padding: 2%;
+    z-index: 1;  
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: popIn 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+
+  }
+
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    0% {  
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+    
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 100;
+    background-color: transparent;
+
+  }
+
+  .sticky-navbar {
+    /* Add your sticky navbar styles */
+    transition: transform 0.3s ease;
+  }
+  
+  .sticky-navbar.show {
+    transform: translateY(0);
+  }
+  
+  .sticky-navbar.hide {
+    transform: translateY(-10%);
+  }
+
+ 
+  #navLogo{
+    font-family: 'LeonardoFascia';
+    font-size: 55px;
+    color: black;
+    display: block;
+
+
+  }
+  
+  #navLine {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    
+  }
+
+  .mobile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    z-index: 1;
+  }
+  
+  .mobile-icon span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+
+  }
+  
+
+  .mobile-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 3px);
+  }
+  
+  .mobile-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -3px);
+  }
+
+  .mobile-menu {
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 2s ease;
+  }
+  
+  .mobile-menu.open {
+    transform: translateY(0);
+    width: 100%;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  
+
+  .mobile-menu ul{  
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'LeonardoFascia';
+    font-weight: 100;
+    font-size: 60px;
+   
+  }
+
+  .mobile-menu ul li a{  
+    text-decoration: none;
+    color: black;
+   
+
+  }
+
+  .mobile-menu ul li a img{  
+    width: 100px;
+    padding-right: 20px;
+    transition: transform 0.3s;
+
+
+  }
+
+  .mobile-menu ul li a:hover img{  
+    transform: rotate(45deg);
+
+  }
+
+  
+  .mobile-menu ul li {
+    opacity: 0;
+    transform: translateY(-100%);  
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  
+  .mobile-menu.open ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .mobile-menu ul li:nth-child(1) {
+    transition-delay: 0.5s;
+  }
+  
+  .mobile-menu ul li:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  
+  .mobile-menu ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+
+
+    
+  
+  
+/* General page text styles */
+
+
+.titleSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20em;
+    color: #1A1918;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
+}
+
+.titleInformation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100svw;
+}
+
+
+  
+  
+.titleSection p{
+    font-size: 1.5svw;
+    text-align: center;
+    font-family: 'Satori';
+    color: #1A1918;
+    font-weight: 100;
+    margin-bottom: 5%;
+    width: 100%;   
+    height: 100%;
+  
+    
+}
+
+.titleContainer h1{
+    font-size: 13svw;
+    position: absolute;
+     color: #1A1918;
+     top: 3svh;
+    
+
+}
+
+.titleContainer {
+  height: 32svh;
+  padding-bottom: 5%;
+  overflow: hidden;   
+ position: relative;  
+  width: 100%;
+
+
+  
+}
+
+
+
+
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  
+
+.scrollText-container {
+  opacity: 0;
+  display: flex;
+  margin-top: 5%;
+  margin-right: 8%;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+
+.scrollText-container img {
+  width: 50%;
+  height: 15%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+  
+  
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+.titleSection button h3{
+    color: white;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+/* footer styles with social links */
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding-left: 5%;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+
+.socialicons {
+   display: flex;
+   flex-direction: row;
+   padding: 5%;
+}
+
+.socialicons a{
+   margin: 25%;
+   
+ }
+
+
+
+
+/* general elements styles */
+
+#icon {
+    width: 80px;
+    height: 80px;
+}
+
+#logo {
+    width: 10%;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* mobile styles */  
+
+@media (max-width: 599px) {
+
+ 
+
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 5em;  
+    row-gap: 10px;
+    color: black;
+    padding-bottom: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
+}
+
+  .titleContainer h1{  
+    font-size: 370%;
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0%;
+
+}
+
+.titleContainer {  
+    height: 62px;
+    margin-top: 30%;
+    margin-bottom: 40%;
+    position: relative;   
+    width: 300px;
+ 
+
+
+
+  }
+
+  .titleInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    
+
+  }
+
+
+.titleSection p{
+  font-size: 5vw;
+  text-align: left;
+  font-family: 'Satori';
+  color: black;
+  font-weight: 100;
+  width: 90%;
+  margin-top: 20%;  
+  height: 10px;  
+}
+
+
+.mobile-icon span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 4px;
+
+}
+
+.mobile-icon {
+  row-gap: 2px;
+}
+
+#navLogo{
+  font-size: 40px;
+}
+ 
+.scrollText-container {
+  margin-top: 0%;
+  margin-right: 0px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+
+
+}
+
+
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+#navLine {
+  height: 1px;
+
+}
+
+.mobile-menu ul li a{  
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+
+ 
+
+}
+
+.mobile-menu ul{  
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  row-gap: 1px;
+  list-style-type: none;
+  font-family: 'LeonardoFascia';
+  font-weight: 100;
+  margin-top: 50%;
+ 
+
+ 
+}
+
+.mobile-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, -1.5px);
+}
+
+.mobile-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(13px, -1.5px);
+}
+
+
+.mobile-menu ul li{  
+  height: 50px;
+
+
+ 
+}
+
+
+.mobile-menu ul li a img{  
+  width: 30px;
+  padding-right: 6px;
+  transition: transform 0.3s;
+
+
+}
+
+  
+  }
+
+  /* tablet styles */
+
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait){
+  /* Tablet styles */
+  
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 5em;  
+    row-gap: 0px;
+    color: black;
+    padding-bottom: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
+}
+
+  .titleContainer h1{  
+    font-size: 570%;
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0%;
+
+}
+
+.titleContainer {  
+    height: 102px;
+    margin-top: 30%;
+    margin-bottom: 40%;
+    position: relative;   
+    width: 440px;
+
+ 
+
+
+
+  }
+
+  .titleInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    
+
+  }
+
+
+.titleSection p{
+  font-size: 130%;
+  text-align: left;
+  font-family: 'Satori';
+  color: black;
+  font-weight: 100;
+  width: 100%;
+  margin-top: 20%;  
+  height: 10px;  
+}
+
+
+.mobile-icon span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 4px;
+
+}
+
+.mobile-icon {
+  row-gap: 2px;
+}
+
+#navLogo{
+  font-size: 40px;
+}
+ 
+.scrollText-container {
+  margin-top: 0%;
+  margin-right: 0px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+
+
+}
+
+
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+#navLine {
+  height: 1px;
+
+}
+
+.mobile-menu ul li a{  
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+
+ 
+
+}
+
+.mobile-menu ul{  
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  row-gap: 1px;
+  list-style-type: none;
+  font-family: 'LeonardoFascia';
+  font-weight: 100;
+  margin-top: 50%;
+ 
+
+ 
+}  
+
+.mobile-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, -1.5px);
+}
+
+.mobile-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(13px, -1.5px);
+}
+
+
+.mobile-menu ul li{  
+  height: 50px;
+
+
+ 
+}
+
+
+.mobile-menu ul li a img{  
+  width: 30px;
+  padding-right: 6px;
+  transition: transform 0.3s;
+
+
+}
+
+
+
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Add your styles for small laptop screens here. */
+
+  .titleSection {
+    padding-top: 15em;
+  }
+  .titleContainer h1 {
+    font-size: 220px;  
+    top: 30px;
+    right: 200px;
+  }
+  .scrollText-container {
+    margin-top: 15%;
+    margin-right: 50px;
+  }
+
+
+.titleContainer h1{
+    font-size: 620%;
+    position: absolute;
+    color: black;
+    top: 50px;
+    left: 0;
+
+}
+
+.titleContainer {
+   margin-top: 10%;
+   height: 180px;  
+   position: relative;  
+   width: 750px;
+
+    
+}
+
+.titleSection p{
+  font-size: 25px;
+   margin-top: 20%;
+   height: 50%;  
+  
+}
+
+.scrollText-container {
+  margin-top: 0%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+
+
+}
+
+
+.scrollText-container img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
+
+  header {
+    flex-direction: column; /* Change the direction to row for landscape */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 2% 5%; /* Adjusted padding for better spacing in landscape */
+  }
+
+  .titleSection {
+    padding-top: 10em;
+
+  }
+
+
+
+  .titleInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ 
+  
+  }
+  
+
+
+
+  .titleSection p {
+    font-size: 1.8vw; /* Adjust font size */
+    margin-right: 5%; /* Add some right margin for spacing */  
+    text-align: center; /* Align text to left */
+    margin-bottom: 2em;
+    margin-top: 0;
+  }
+
+  .titleContainer h1 {
+    font-size: 9vw; /* Adjust font size */
+    position: relative; /* Reset positioning */
+    top: 0; /* Reset top positioning */
+  }
+
+  .titleContainer {
+    padding-left: 2%;
+  }
+
+  .scrollText-container {
+    margin-top: 0; /* Remove the top margin */
+    margin-left: 15%; /* Add some left margin for spacing */
+    transform: scale(1); /* Reset the scale */
+  }
+
+
+
+  /* You may need to further adjust the size and positioning of other elements, 
+  but this should give you a good starting point. */
+
+}
+
+    

@@ -1,0 +1,66 @@
+.infoSectionContainer6 {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: white;
+
+}
+
+.infoSectionWrapper6 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+ 
+    
+}
+
+.infoSectionTitle6 {
+    display: flex;
+    justify-content: center;
+    font-size: 5svh;
+    flex-direction: row;
+    font-family: 'LeonardoFascia';
+    font-weight: 700;
+    height: 100%;
+
+}
+
+.imageSection6Background {
+    position: relative;
+    height: 50svh;
+    width: 28svw;
+    background-color: #D0263D;
+    border-radius: 250px;
+    overflow: hidden;
+
+}
+
+
+.imageSection6Background img{
+    position: absolute;
+    height: 120svh;
+    right: -78%;
+    width: 120svh;
+    z-index: 1;
+
+}
+
+.imageSection6 {
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+  
+        
+        

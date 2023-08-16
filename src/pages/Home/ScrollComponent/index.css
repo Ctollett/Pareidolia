@@ -1,0 +1,218 @@
+
+
+.scroll {
+  height: 500svh;
+  width: 400svw;
+  display: flex;  
+  flex-wrap: nowrap;
+  position: absolute;
+  padding-left: 10%;
+  top: 0;
+}
+
+.scroll-section-container {
+  height: 150vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+.scroll-title-wrapper {
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  align-items: center;
+  width: 100svw;
+  padding-right: 5%;
+  padding-top: 7%;
+  column-gap: 0.6%;
+  padding-left: 10%;
+  z-index: 1;
+  position: absolute;
+}
+
+
+
+.scroll-wrap { 
+  overflow-x: scroll;
+}
+
+
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes rotateArrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+.scroll .scroll-item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100svh;
+  opacity: 1;
+  width: 40svw;
+  padding-top: 5%;
+  position: relative;
+
+
+}
+
+.scroll .scroll-item-wrapper:not(:first-child) {
+  margin-left: -25em; /* Adjust the value for desired overlap, '5em' is an example */
+  z-index: 2;        /* Ensure newer items stack on top */
+}
+
+
+
+.scroll-title-wrapper span{  
+  font-size: 10svh; 
+  font-family: 'LeonardoFascia';
+  font-weight: 700;
+  margin: 0.5%;
+
+}
+
+.scrollSectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+}
+
+.scrollSectionTitle p {
+  font-size: 1.6svh;
+  text-align: center;
+  width: 80%;
+
+}
+
+.scroll-line {
+  width: 0svw;
+  height: 2px;
+  background-color: black;
+}
+
+.scroll-title-image {
+  width: 40%;
+  height: 20%;
+}
+
+
+.scroll-item {
+  display: flex;
+  flex-direction: row;
+  height: 30em;
+  width: 30em;
+  column-gap: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A1918;
+  color: #D4CFC4;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+.scrollSectionTitle {
+  font-family: 'LeonardoFascia';
+  font-weight: 200;
+  font-size: 3svh;
+}
+
+
+.sectionNumber h3 {
+  font-family: 'LeonardoFascia';
+  font-weight: 200;
+  font-size: 65px;
+  color: black;
+}
+
+.sectionNumber {
+  margin-top: 5%;
+  display: flex;
+  justify-content: right;
+  
+}
+
+
+.scrollSectionDesc p {
+  font-family: 'Satori';
+  font-size: 1.5svh;
+}
+
+/* Existing styles... */
+
+/* Media queries for mobile */
+
+@media (max-width: 599px) {
+
+    .scroll-wrap {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } 
+
+    .scroll-item-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scroll-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scrollSectionTitle h2 {
+        font-size: 3rem; /* Adjust as needed */
+    }
+
+    .scrollSectionDesc p {
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+
+    .sectionNumber h3 {
+        font-size: 1rem; /* Adjust as needed */
+    }
+
+    .star, .scrollArrowSection img {
+        width: 50%; /* You can adjust this as needed */
+    }
+
+    .scrollSectionDesc p {
+    font-family: 'Satori';
+    text-align: center;
+    font-size: 1.5svh;
+}
+
+}
+
+
+
+
+

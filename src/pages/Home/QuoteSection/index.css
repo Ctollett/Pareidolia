@@ -1,0 +1,152 @@
+
+
+
+
+.infoSection2Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100svw;
+    height: 200svh;
+    margin-top: 20%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10%;
+}
+  
+
+.infoSection2Title h2{
+  color: white;
+  font-family: 'LeonardoFascia';
+  font-size: 4svw;
+
+}
+
+
+.infoSection2Wrapper {
+  display: flex;   
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+   
+}
+
+.artImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.flower2Background {
+  background-color: #D0263D;
+  position: absolute;
+  width: 2.5%;
+  left: 10%;
+  top: 60%;
+  border-radius: 50%;
+  height: 2%;
+  display: flex;
+  z-index: 1;
+  filter: blur(5px)
+}
+
+.quote-div {
+  color: white;
+  font-family: 'Satori';
+  font-size: 3svh;
+  width: 50%;
+  height: 35%;
+  text-align: center;
+}
+
+.background-circle {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%; 
+  margin-bottom: 55%; 
+  position: absolute;
+  z-index: -4;
+  background-color: #1A1918;
+}
+
+
+
+
+
+.artImage {
+  top: 13%; 
+  width: 50%;  
+  height: 20%;
+  opacity: 1;
+  position: absolute;
+
+}
+
+
+.artImage2 {
+  top: 60%;
+  width: 40%;  
+  left: 0;
+  height: 10%;
+  position: absolute;
+  z-index: 1;
+  filter: blur(4px);
+
+}
+   
+
+
+
+/* Existing Global Styles */
+body, html {
+  font-size: 16px; /* Establish a base font-size for REM calculations */
+}
+
+/* ... existing styles ... */
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 599px) {
+  .infoSection2Container {
+    height: 100svh;
+    display: none;
+}
+
+.artImage { 
+  right: -12svw;
+  top: 100svh;
+  position: absolute;
+  width: 120svw;  
+  height: 70svh;
+  z-index: 50;
+  opacity: 1;
+
+}
+
+.artImageContainer {
+  margin-top: 30%;
+  width: 100svw;
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+
+}
+
+}
+
+
+
+  
+
+
+
+
+
+
+

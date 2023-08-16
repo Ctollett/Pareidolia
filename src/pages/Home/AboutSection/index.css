@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+
+
+.infoSectionContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%; 
+    width: 100svw;
+    padding: 5%;
+    height: 100svh;
+
+
+}
+
+.infoSectionWrapper {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.infoSectionHeadlineWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20%;
+}
+
+
+.imagesContainer{
+  width: 100%;
+  height: 100%;
+
+}
+
+.imagesContainer img {
+  margin-left: 15%;
+  height: 100%;
+}
+
+.secondaryTextContainer {
+  width: 55%;
+
+}
+
+
+#line {
+    width: 90%;
+    height: 1px;
+    margin-top: 1.2%;
+    margin-left: 50px;
+    background-color: black;
+    align-items: center;
+
+}
+  
+  .sectionInfo {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoSectionImageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    width: 100%;
+    height: 120%;
+  }
+
+  .imageBackground {
+    position: relative;
+    width: 20%;
+    background-color: #D0263D;
+    height: 20%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .imageBackground img {
+  position: absolute;
+  left: -35%;
+  opacity: 55%;
+  top: 25%;
+  width: 200%;
+  height: 200%;
+  filter: grayscale(100%)
+  
+
+}
+
+
+.aboutSectionImage{
+  position: absolute;
+  width: 100%;
+  height: 100%;   
+  margin-left: -35%;
+
+  
+}
+
+
+.contactButton {
+ display: flex;
+ flex-direction: row;
+ justify-content: left;
+ align-items: center;
+ column-gap: 20px;
+
+
+}
+
+
+.contactButton h3{
+  font-family: '';
+  font-weight: 300;
+  font-size: 25px;
+ 
+ 
+ }
+
+.contactBtn {
+  width: 170px;
+  outline: none;
+  border: 2px solid #D14836;
+  background-color: transparent;
+  height: 40px;
+  border-radius: 250px;
+  font-size: 16px;
+  transition: background-color 1s ease;
+  opacity: 0;
+}
+
+
+
+.contactBtn:hover {
+background-color:#D14836;
+ color: white;
+  
+}
+
+
+.infoSectionHeadline{  
+  display: flex;
+  flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    font-family: 'LeonardoFascia';
+    font-weight: 200;
+    text-align: left;
+    margin-bottom: 5%;
+    font-size: 10svw;
+    color: #E0DACF;
+
+}
+
+.flowerIcon img {
+  position: absolute;
+  width: 9%;
+  top: 7.1%;
+  left: 38%;
+  opacity: 0;
+}
+
+.infoSectionHeadline span{  
+  display: flex;
+   height: 19svh;
+
+}
+
+
+
+.infoSectionHeadlineRow {
+  display: flex;
+  column-gap: 7%;
+}
+
+.secondaryText span {
+  font-family: 'Satori';
+  font-size: 1.3svw;
+  width: 100%;
+  color: #1A1918;
+  opacity: 0;
+}
+
+.secondaryText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.contactSection {
+  margin-top: 4%;
+}
+  
+
+  
+
+
+
+/* mobile styles */
+
+
+
+
+
+
+
+
+   
+
+
+
+  
+  

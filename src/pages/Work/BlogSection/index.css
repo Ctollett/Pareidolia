@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap');
+
+
+
+.blog-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100svw;
+  background-color: white;
+  padding: 5%;
+  padding-top: 5em;
+
+}
+
+.blog-section-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 30px;  
+  width: 60%; 
+
+}
+
+
+.largeBlog {
+  grid-column: 1 / -1;  /* this will make it stretch across all columns */
+
+
+}
+
+.blog-section-wrapper a {
+  text-decoration: none;
+}
+
+.blog-section-title {
+  height: 5em;
+  width: 100%;
+  font-family: 'LeonardoFascia';
+  font-weight: 700;
+  font-size: 5svh; 
+}
+

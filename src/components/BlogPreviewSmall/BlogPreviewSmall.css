@@ -1,0 +1,117 @@
+
+  .blog-sml-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    margin-top: -1.5em;
+    margin-left: 10%;
+
+  }  
+
+
+  .blog-sml-image-wrapper {
+    width: 80%;  /* This will depend on your design */
+    height: 11em; /* Adjust this based on your desired container size */
+    background-color: #D0263D;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.blog-sml-image-wrapper img {
+    width: 100%;  /* this ensures the image won't exceed the container's width */
+    height: 100%; /* this ensures the image won't exceed the container's height */
+    margin: auto;     /* this will center the image in its container */
+    display: block;   /* this helps with centering using margin auto */
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 1.5s ease;
+}
+
+.blog-sml-image-wrapper img:hover {
+    transform: scale(1.3);
+}
+
+  .blog-sml-title {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    row-gap: 0.4em;
+    width: 80%;
+
+  }
+
+
+     
+  .blog-sml-title h2 {
+    /* Truncate title after 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'LeonardoFascia';
+    font-weight: 700;
+    font-size: 2svh;
+    text-align: left;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* For a line height of 1.5, adjust accordingly */
+  }
+  
+  .blog-sml-title p {
+    /* Truncate description after 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    font-size: 1.8svh;
+    font-family: 'Satori';
+    font-weight: 200;
+    overflow: hidden;
+    text-align: left;
+    color: black;
+    text-overflow: ellipsis;
+
+  }
+
+  .blog-sml-category h4{
+    font-family: 'Satori';
+    font-weight: 100;
+    font-size: 1.2svh;
+    color: #D14836;
+  }
+
+  
+
+  .blog-sml-category {
+    display: flex;
+
+  }
+
+  .blog-sml-info-wrapper {
+    width: 100%;
+
+  
+  }
+
+  .blog-sml-category{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .blog-sml-title button {
+    width: 30%;
+    padding: 1%;
+    font-size: 1.5svh;
+    background-color: transparent;
+    border: 1px solid #D0263D;
+    border-radius: 15em;
+  }
+
+
+
+
+

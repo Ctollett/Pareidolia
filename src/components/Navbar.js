@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './globalstyles.css';
-import arrow from './arrow.svg';
+import '../assets/globalstyles.css';
+import arrow from '../assets/arrow.svg';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -18,89 +18,21 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
   };
 
   useEffect(() => {
-    // This does not seem to work without a settimeout
-    setTimeout(() => {
+    let line = document.querySelector('#navLine')
 
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top top",
-          trigger: ".navContainer",
-          scroller: "#main-container",
-          scrub: 1,  
-          toggleActions: "play reverse play reverse",
-            
-        },
-      })
-
-         
-      tl.fromTo('#navLine', {
-        opacity: 1,   
-      },
-      {
-        
-        opacity: 0,
-        duration: 1,
-        immediateRender: true,
-      })  
+      gsap.to(line, { 
+      opacity: 0,
+      scrollTrigger: {
+        start: "top top",  
+        trigger: ".titleSection p",   
+        scrub: 2,
+        end: "bottom bottom",  
+        toggleActions: "play reverse play reverse",
+      }
+    });  
 
 
-      const sections = [
-        { trigger: '.navContainer', startColor: 'black', endColor: 'black' },
-        { trigger: '.infoSection2Wrapper', startColor: 'white', endColor: 'white' },
-        { trigger: '.infoSectionContainer4', startColor: 'white', endColor: 'black' },
-     
-      ];
-    
-      sections.forEach(section => {
-        let tl2 = gsap.timeline({
-          scrollTrigger: {
-            start: 'top top',
-            end: 'bottom top',     
-            trigger: section.trigger,
-            scroller: '#main-container',
-            scrub: true,
-            toggleActions: 'restart none reverse none',
-          }
-        });
 
-        sections.forEach(section => {
-          let tl2 = gsap.timeline({
-            scrollTrigger: {
-              start: 'top top',
-              end: 'bottom top',     
-              trigger: section.trigger,
-              scroller: '#main-container',
-              scrub: true,
-              toggleActions: 'restart none reverse none',
-            }
-          });
-        
-          sections.forEach(section => {
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                    start: 'top top',
-                    end: 'bottom top',     
-                    trigger: section.trigger,
-                    scroller: '#main-container',
-                    scrub: true,
-                    toggleActions: 'restart none reverse none',
-                }
-            });
-        
-            tl.fromTo('.mobile-icon span', 
-                { backgroundColor: section.startColor },
-                { backgroundColor: section.endColor, immediateRender: true }
-            )
-            .fromTo('.navbar h1', 
-                { color: section.startColor },
-                { color: section.endColor, immediateRender: true },
-                "<"
-            );    
-        });
-    });
-
-  });
-    })  
 
   }, [] );  
 
@@ -115,6 +47,7 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
           <span></span>
           <span></span>
           <span></span>
+          
         </button>
       </nav>
       <div id="navLine"></div>
