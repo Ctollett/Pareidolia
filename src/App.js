@@ -1,14 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Work from './pages/Work/Work';
 import Contact from './pages/Contact/Contact';
 import BlogPost from './pages/Work/BlogPost';
+import Lenis from "@studio-freight/lenis"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
+import "./assets/globalstyles.css"
+
 
 
   
 
 export default function App() {  
+
+  
+   
   return (
     <Router>
         <div className="App">

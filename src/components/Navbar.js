@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../assets/globalstyles.css';
 import arrow from '../assets/arrow.svg';
 import { gsap } from "gsap";
@@ -6,7 +6,32 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Navbar = ({ handleMenuClick, isContentVisible }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScroll = useRef(0);
+  const locomotiveScrollRef = useRef(null);
+  const ref = useRef(null);
+
+
+  // Locomotive scroll setup
+  useEffect(() => {
+    const initializeLocomotiveScroll = async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      console.log("Initializing LocomotiveScroll...");
+      locomotiveScrollRef.current = new LocomotiveScroll();
+       console.log("Initialized LocomotiveScroll.");
+
+      // Scroll to top
+    };
+    initializeLocomotiveScroll();
+
+    return () => {
+      // Cleanup: destroy the locomotive scroll instance when the component unmounts
+      if (locomotiveScrollRef.current) {
+        locomotiveScrollRef.current.destroy();
+      }
+    };
+  }, []);
+  
 
 
 
@@ -16,6 +41,9 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
 
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
+
+
+  
 
   useEffect(() => {
     let line = document.querySelector('#navLine')
@@ -47,37 +75,34 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
           <span></span>
           <span></span>
           <span></span>
-          
+
         </button>
       </nav>
       <div id="navLine"></div>
+      <div className={`mobile-menu-circle ${isMenuOpen ? 'open' : ''}`}></div>
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <a href="/">
-            <img src={arrow} alt="Arrow" />HOME
+             HOME
             </a>
           </li>
           <li>  
             <a href="/work">
-              <img src={arrow} alt="Arrow" />WORK
+              WORK
             </a>
           </li>
-          <li>
-            <a href="/about">
-              <img src={arrow} alt="Arrow" />PEOPLE
-            </a>
-            </li>
             <li>
             <a href="/contact">
-              <img src={arrow} alt="Arrow" />CONTACT
+              CONTACT
             </a>
             </li>
     
         </ul>
       
       </div>
-    </div>
+      </div>
+
   );
 };
 

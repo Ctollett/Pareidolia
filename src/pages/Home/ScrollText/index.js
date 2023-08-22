@@ -3,8 +3,8 @@ import './index.css';
 import { gsap } from "gsap";
 import "../../../assets/globalstyles.css";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import mushroom5 from "../../../assets/mushroom-5.svg";
-import mushroom6 from "../../../assets/mushroom-6.svg";
+import fish from "../../../assets/fishwoman-2.png";
+import fish2 from "../../../assets/fish3.png";
 
  
 
@@ -60,42 +60,7 @@ tl2.to(scrollText2, {
   ease: "linear"
 }); 
 
-gsap.to(mushroom, {
-  scrollTrigger: {
-    start: "35% 20%",  
-    trigger: mushroom,
-    scrub: 10,
-    end: "bottom center",
-    onUpdate: function(self) {
-      if (self.direction === 1) {
-        // Scrolling down
-        gsap.to(mushroom, { rotate: 30 });
-      } else if (self.direction === -1) {
-        // Scrolling up
-        gsap.to(mushroom, { rotate: -30 });
-      }
-    }  
-  }
-});
 
-
-gsap.to(mushroom2, {
-  scrollTrigger: {
-    start: "35% 20%",  
-    trigger: mushroom2,
-    scrub: 10,
-    end: "bottom center",
-    onUpdate: function(self) {
-      if (self.direction === 1) {
-        // Scrolling down
-        gsap.to(mushroom2, { rotate: -30 });
-      } else if (self.direction === -1) {
-        // Scrolling up
-        gsap.to(mushroom2, { rotate: 30 });
-      }
-    }  
-  }
-});
 
 
  
@@ -110,10 +75,11 @@ gsap.to(mushroom2, {
   return (
     <section className="infoSectionContainer4">
       <div className='infoSectionWrapper4'>
-        <img className='mushroom' src={mushroom5} ></img>
-        <img className='mushroom-2' src={mushroom6} ></img>
+      <div className='art-circle'> 
+        <img data-scroll data-scroll-speed="0.07" className='fish-woman' src={fish} ></img>
+        </div>
         <h2 className='scroll-text'> Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy </h2>
-        <h2 className='scroll-text-2'>Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy</h2>
+        <h2 className='scroll-text-2'>Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy - Criticism - Art and Public Work - Pedagogy -  - Criticism</h2>
       
     
   
@@ -124,6 +90,6 @@ gsap.to(mushroom2, {
                
          
   );       
-}
+}  
          
 export default InfoSection4;     

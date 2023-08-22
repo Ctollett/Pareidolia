@@ -3,23 +3,13 @@ import { Link } from "react-router-dom";
 import "../../../assets/globalstyles.css";
 import "./index.css";
 import BlogPreviewLarge from "../../../components/BlogPreviewLarge/BlogPreviewLarge";
-import BlogPreviewSmall from "../../../components/BlogPreviewSmall/BlogPreviewSmall"
-
-
-
+import BlogPreviewSmall from "../../../components/BlogPreviewSmall/BlogPreviewSmall";
 
 const LatestWork = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const ref = useRef(null);
-
-
-  
-
-
- 
-  
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -38,14 +28,13 @@ const LatestWork = () => {
     fetchBlogs();
   }, []);
 
-  if (loading) {   
+  if (loading) {
     return <div>Loading...</div>;
   }
-   
-  if (error) {   
-    return <div>Error: {error.message}</div>;    
-  }
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   const renderBlog = (blog, isLarge = false) => {
     const BlogComponent = isLarge ? BlogPreviewLarge : BlogPreviewSmall;
@@ -59,42 +48,39 @@ const LatestWork = () => {
     });
 
     return (
-      <div key={blog.id}>
-        <Link to={blogLink}>
-          <BlogComponent
-            date={formattedDate}
-            title={blog.attributes.title}
-            description={blog.attributes.description}
-            category={blog.attributes.category}
-            coverimage={`http://localhost:1337${imageURL}`}
-          />
-        </Link>
-      </div>
+      <Link to={blogLink} key={blog.id}>
+        <BlogComponent
+          date={formattedDate}
+          title={blog.attributes.title}
+          description={blog.attributes.description}
+          category={blog.attributes.category}
+          coverimage={`http://localhost:1337${imageURL}`}
+        />
+      </Link>  
     );
   };
 
   return (
     <div className="featuredContainer">
-          <div className="featured-work-title">  
-          <h2>Our Latest Stories</h2>
-        </div>
+      <div className="featured-work-title">
+        <h2>Our Latest Stories</h2>
+      </div>
       <div className="featuredWork">
         {blogs.slice(0, 4).map((blog, index) => {
           if (index === 0) {
-            return <div className="largeBlog">{renderBlog(blog, true)}</div>;
+            return <div key={blog.id} className="largeBlog">{renderBlog(blog, true)}</div>;
           } else {
-            return renderBlog(blog);
+            return <div key={blog.id}>{renderBlog(blog)}</div>;
           }
         })}
       </div>
       <div className="bottomSection">
         <button>VIEW ALL STORIES</button>
       </div>
-      </div>
+    </div>
   );
-
 };
- 
 
 export default LatestWork;
+
     

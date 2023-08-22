@@ -11,7 +11,19 @@
 }
   
 
-@media (max-width: 599px) {
+@media (max-width: 768px) {
+
+    #contactSection{
+        display: flex;
+        flex-direction: column;
+        height: 200%;
+        padding-top: 20%;
+      
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
 
     #contactSection{
         display: flex;

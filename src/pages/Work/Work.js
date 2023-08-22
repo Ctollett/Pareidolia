@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
 import BlogSection from "./BlogSection";
 import BlogPost from "./BlogPost";
+import BlogHeader from "./BlogHeader/index"
 import Navbar2 from '../../components/navBar2';
 import Lenis from '@studio-freight/lenis'
 import { ScrollTrigger } from 'react-gsap';
@@ -16,6 +17,9 @@ function Work() {
   };
 
   const ref = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
 
   
 

@@ -12,12 +12,12 @@
     padding: 5%;
     height: 100svh;
 
-
 }
 
 .infoSectionWrapper {
   padding-top: 10%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -27,11 +27,13 @@
 .infoSectionHeadlineWrapper {
   width: 100%;
   display: flex;
+  column-gap: 10%;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  column-gap: 20%;
+  align-items: center;  
 }
+
+
 
 
 .imagesContainer{
@@ -73,17 +75,20 @@
     align-items: center;
     margin-top: 30%;
     width: 100%;
-    height: 120%;
+    height: 100%;
   }
 
+
+
   .imageBackground {
+    --viewport-size: calc(min(100vh, 100vw)); /* get the smaller of vh and vw */
     position: relative;
-    width: 20%;
+    width: calc(8 * var(--viewport-size) / 100); /* 5% of the smaller dimension */
+    height: calc(8 * var(--viewport-size) / 100); /* 5% of the smaller dimension */
     background-color: #D0263D;
-    height: 20%;
     border-radius: 50%;
     overflow: hidden;
-  }
+}
 
   .imageBackground img {
   position: absolute;
@@ -95,16 +100,6 @@
   filter: grayscale(100%)
   
 
-}
-
-
-.aboutSectionImage{
-  position: absolute;
-  width: 100%;
-  height: 100%;   
-  margin-left: -35%;
-
-  
 }
 
 
@@ -156,36 +151,41 @@ background-color:#D14836;
     font-family: 'LeonardoFascia';
     font-weight: 200;
     text-align: left;
-    margin-bottom: 5%;
-    font-size: 10svw;
+    margin-bottom: 30px;
+    font-size: 140px;
     color: #E0DACF;
 
 }
 
+.flowerIcon {
+ position: relative;
+}
+
 .flowerIcon img {
   position: absolute;
-  width: 9%;
-  top: 7.1%;
-  left: 38%;
+  width: 150px;  
+  top: 50px;
+  left: 340px;
   opacity: 0;
 }
 
 .infoSectionHeadline span{  
   display: flex;
-   height: 19svh;
+   height: 150px;
 
 }
+
 
 
 
 .infoSectionHeadlineRow {
   display: flex;
-  column-gap: 7%;
+  column-gap: 30px;
 }
 
 .secondaryText span {
   font-family: 'Satori';
-  font-size: 1.3svw;
+  font-size: 20px;
   width: 100%;
   color: #1A1918;
   opacity: 0;
@@ -194,7 +194,7 @@ background-color:#D14836;
 .secondaryText {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100%
 
 }
 
@@ -202,12 +202,240 @@ background-color:#D14836;
   margin-top: 4%;
 }
   
+/* mobile styles */
 
+@media (max-width: 768px) {
+
+  .infoSectionHeadlineWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    column-gap: 20%;
+  }
+
+  .infoSectionHeadline {
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    text-align: center;
+    margin-right: 9%;
+    font-size: 60px;  
+    height: 125px;
+    padding-top: 75px;
+  }
   
 
 
+  .infoSectionHeadlineWrapper {
+    order: -2; /* Default order is 0, so this will come after .infoSectionImageSection */
+  }
 
-/* mobile styles */
+  .infoSectionImageSection {
+    order: -1; /* This will move it to the top */
+      margin-top: 0%;
+      margin-bottom: 0%;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 5%;
+    }
+
+    .infoSectionHeadlineRow {
+      display: flex;
+      column-gap: 10%;
+    }
+
+    .infoSectionHeadline span{  
+       margin-bottom: 5%;
+    
+    }
+
+
+    .secondaryText span {
+      font-family: 'Satori';
+      font-size: 14px;
+      width: 100%;
+      color: #1A1918;
+      text-align: center;
+      opacity: 0;
+    }
+    
+    .secondaryText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+    
+    }
+
+    .flowerIcon img {
+      position: absolute;
+      width: 100px;
+      top: 43%;
+      display: none;
+      left: 37%;
+      margin-bottom: 50px;
+      opacity: 0;
+    }
+
+    .infoSectionWrapper {
+      padding-top: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .secondaryTextContainer {
+      width: 90%;
+    
+    }
+
+    .contactBtn {
+      width: 130px;
+      outline: none;
+      border: 2px solid #D14836;
+      background-color: transparent;
+      height: 30px;
+      border-radius: 250px;
+      font-size: 12px;
+      transition: background-color 1s ease;
+      opacity: 0;
+    }
+    
+    
+    
+  
+
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+
+    .infoSectionHeadlineWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;  
+      column-gap: 60px;
+    }
+    
+    .infoSectionHeadline {
+      flex-direction: row;
+      column-gap: 20px;
+      justify-content: center;
+      text-align: center;
+      font-size: 100px;
+    }
+    
+  
+  
+    .infoSectionHeadlineWrapper {
+      order: -2; /* Default order is 0, so this will come after .infoSectionImageSection */
+    }
+  
+    .infoSectionImageSection {
+      order: -1; /* This will move it to the top */
+        margin-top: 0%;
+        margin-bottom: 20%;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .infoSectionHeadlineRow {
+        display: flex;
+        column-gap: 20px;
+      }
+  
+      .infoSectionHeadline span{  
+        display: flex;
+         height: 110px;
+      
+      }
+      
+  
+      .secondaryText span {
+        font-family: 'Satori';
+        font-size: 18px;
+        width: 100%;
+        color: #1A1918;
+        text-align: center;
+        opacity: 0;
+      }
+      
+      .secondaryText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+      
+      }
+  
+      .flowerIcon img {
+        position: absolute;
+        width: 20%;
+        top: 45%;
+        left: 41%;
+        display: none;
+        opacity: 0;
+      }
+  
+      .infoSectionWrapper {
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+  
+      .secondaryTextContainer {
+        width: 90%;
+      
+      }
+  
+      .contactBtn {
+        width: 130px;
+        outline: none;
+        border: 2px solid #D14836;
+        background-color: transparent;
+        height: 30px;
+        border-radius: 250px;
+        font-size: 12px;
+        transition: background-color 1s ease;
+        opacity: 0;
+      }
+      
+      
+      
+    
+  
+    }
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     
+  
+  
+  
+    
+    
+
+
 
 
 

@@ -20,7 +20,7 @@ const Navbar2 = ({ handleMenuClick, isContentVisible }) => {
  
 
   return (
-    <div className={`navContainer ${showNavbar ? 'show' : ''}`}>
+    <div className={`navContainer-2 ${showNavbar ? 'show' : ''}`}>
       <nav className={`navbar ${showNavbar ? 'show' : ''}`}>
         <h1 id="navLogo">P.<span></span></h1>
         <button
@@ -33,25 +33,21 @@ const Navbar2 = ({ handleMenuClick, isContentVisible }) => {
         </button>
       </nav>
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+      <div className={`mobile-menu-circle ${isMenuOpen ? 'open' : ''}`}></div>
         <ul>
           <li>
             <a href="/">
-            <img src={arrow} alt="Arrow" />HOME
+            HOME
             </a>
           </li>
-          <li>  
+          <li>    
             <a href="/work">
-              <img src={arrow} alt="Arrow" />WORK
+            WORK
             </a>
           </li>
-          <li>
-            <a href="/about">
-              <img src={arrow} alt="Arrow" />PEOPLE
-            </a>
-            </li>
             <li>
             <a href="/contact">
-              <img src={arrow} alt="Arrow" />CONTACT
+            CONTACT
             </a>
             </li>
     

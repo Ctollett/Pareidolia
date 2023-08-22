@@ -1,3 +1,326 @@
-.headerPhoto {
-    position: absolute;
+
+
+header {
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    padding: 1%;
+    display: flex;
+
+
+  }
+
+
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .header-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20em;
+    color: #1A1918;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'LeonardoFascia';
+    transition: opacity 0.8s ease-in-out;
+   
 }
+
+.header-title-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100svw;
+}
+
+
+  
+  
+.header-title p{
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Satori';
+    color: #1A1918;
+    font-weight: 100;
+    margin-bottom: 5%;
+    width: 55%;   
+    height: 100%;
+  
+    
+}
+
+.header-title-container h1{
+    font-size: 12svw;
+    position: absolute;
+     color: #1A1918;
+     top: 3svh;
+    
+
+}
+
+.header-title-container {
+  height: 32svh;
+  margin-left: 5%;
+  overflow: hidden;   
+ position: relative;  
+  width: 100%;
+
+
+  
+}
+
+
+
+
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  
+
+.scrollText-container {
+  opacity: 0;
+  display: flex;
+  margin-right: 8%;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAnimation 40s infinite linear;
+  position: relative;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 2s;
+
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+   
+.scrollText-container img {
+  width: 50%;
+  height: 15%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 40s reverse infinite linear;
+}
+
+
+  
+  
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 768px) {
+
+ 
+
+    .header-title {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding-top: 5em;  
+      row-gap: 10px;
+      color: black;
+      padding-bottom: none;
+      display: flex;
+      justify-content: center;
+      font-family: 'LeonardoFascia';
+      transition: opacity 0.8s ease-in-out;
+     
+  }
+  
+    .header-title-container h1{  
+      font-size: 70px;
+      position: absolute;
+      color: black;
+      top: 0;
+      right: 0%;
+  
+  }
+  
+  .header-title-container {  
+      height: 75px;
+      margin-top: 10%;
+      margin-bottom: 40%;
+      position: relative; 
+      overflow: hidden;  
+      width: 310px;
+   
+  
+  
+  
+    }
+  
+    .header-title-information {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      
+  
+    }
+  
+  
+  .header-title p{
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Satori';
+    color: black;
+    font-weight: 100;
+    width: 90%;
+    margin-top: 20%; 
+    margin-bottom: 70px; 
+    height: 10px;  
+  }
+  
+  
+   
+  .scrollText-container {
+    margin-top: 0%;
+    margin-right: 0px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotateAnimation 40s infinite linear;
+    position: relative;
+    transform: scale(0);
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 2s;
+  
+  
+  
+  }
+  
+  
+  .scrollText-container img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 40s reverse infinite linear;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+ 
+
+    .titleSection {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding-top: 0em;  
+      padding-bottom: 5em;
+      row-gap: 10px;
+      color: black;
+      padding-bottom: none;
+      display: flex;
+      justify-content: center;
+      font-family: 'LeonardoFascia';
+      transition: opacity 0.8s ease-in-out;
+     
+  }
+  
+    .titleContainer h1{  
+      font-size: 600%;
+      position: absolute;
+      color: black;
+      top: 0;
+      left: 5%;
+  
+  }
+  
+  .titleContainer {  
+      height: 102px;
+      margin-top: 10%;
+      margin-bottom: 30%;
+      position: relative;   
+      width: 500px;
+
+
+   
+  
+  
+  
+    }
+  
+    .titleInformation {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      
+  
+    }
+  
+  
+  .titleSection p{
+    font-size: 22px;
+    text-align: left;
+    font-family: 'Satori';
+    color: black;
+    font-weight: 100;
+    width: 90%;
+    margin-top: 20%;  
+    height: 10px;  
+  }
+
+  .scrollText-container {
+    margin-top: 0%;
+    margin-right: 0px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotateAnimation 40s infinite linear;
+    position: relative;
+    transform: scale(0);
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 2s;
+  
+  
+  
+  }
+  
+  
+  .scrollText-container img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 40s reverse infinite linear;
+  }
+  
+  
+}
+  

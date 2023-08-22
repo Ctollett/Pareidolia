@@ -21,7 +21,7 @@
     height: 100%;
 }   
 
-.sticky-menu-title {
+.sticky-menu-title {   
     position: relative;
     display: flex;
     flex-direction: column;
@@ -43,9 +43,9 @@
 .sticky-menu-title h2 {
     font-family: 'LeonardoFascia';
     font-weight: 700;
-    font-size: 12svh;
+    font-size: 120px;
     color: #E0DACF;
-    width: 60%;
+    width: 400px;
     padding-top: 25%;
 }
 
@@ -70,21 +70,25 @@
     row-gap: 10svh;
     height: 50%;
     width: 50%;
-
-
 }
 
 .flower4 {
     position: absolute;
-    top: 28%;
-    left: 45%;
-    width: 25%;
+    top: 138px;
+    left: 225px;
+    width: 170px;
+}
+
+.flower-icon-wrapper {
+    position: relative;
+    width: 390px;
+    height: 50px;
+ 
 }
 
 .color-circle {
     width: 46%;
     margin-left: 5%;
-
     height: 100%;
     border-radius: 50%;
 
@@ -137,7 +141,7 @@
 
 .people-divide-line {
     width: 95%;
-    height: 0.7px;
+    height: 1px;
     margin-bottom: 2%;
     background-color: #E0DACF;
 }
@@ -180,7 +184,238 @@
 
 
 
+@media (max-width: 768px) {
+    .infoSectionContainer5 {
+        /* Adjust padding, margin, etc. for the section container */
+        padding: 20px;
+        padding-bottom: 20%;
+  
+      }
+    
+    .sticky-menu-title h2 {
+      font-family: 'LeonardoFascia';
+      font-weight: 700;
+      font-size: 50px;
+      color: #E0DACF;
+      width: 100%;  
+      padding-top: 0%;
+  }
+  
+  .sticky-menu-title {
+      position: relative;
+      display: flex;
+      flex-direction: column;  
+      justify-content: center;
+      align-items: left;
+      width: 100%;
+      height: 100%;
+      padding-left: 5%;
+  
+  }
+  
+  .sticky-menu-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 5%;
+      padding-bottom: 12%;
+      padding: 5%;
+      row-gap: 2svh;
+      height: 50%;
+      width: 100%;  
+  }
+  
+  .flower4 {
+      position: absolute;
+      top: -15px;
+      left: 260px;
+      width: 95px;
+  }
+    
+  
+      .sticky-menu-wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+      }   
+      
+      .divide-line {
+        /* Adjust the width and/or margins of your divide line */
+        width: 20%;
+        margin-bottom: 60%;
+      
+      }
+    
+      .people-section {
+        /* Maybe adjust padding and margin for each person section */
+        padding: 15px 0;
+      }
+    
+      .people-title-section {
+        /* Adjust layout of the title section */
+          display: flex;
+          justify-content: center;
+          align-items: left;
+          flex-direction: column;
+          row-gap: 30px;
+          padding-top: 6%;
+          width: 100%;  
+  
+      }
+    
+      .people-image img {
+        /* Make the image of each person a bit smaller */
+        width: 70%;
+        height: auto;
+      }
+    
+  
+      .people-name h4 {
+          font-family: 'Satori';
+          font-size: 1.7svh;
+          font-weight: 100;
+          color: #7C7975;
+      }
+  
+      .people-num h3 {
+          font-family: 'LeonardoFascia';
+          font-weight: 500;
+          font-size: 2svh;
+          color: #E0DACF;
+      }
+  
+      .people-title h2 {
+          font-size: 5svh;
+          font-family: 'LeonardoFascia';
+          color: #E0DACF;
+      }
+      .sticky-menu-content {
+        /* Adjust any other properties necessary for the content layout */
+      }
+    }
 
+
+
+
+
+    @media only screen and (min-width: 769px) and (max-width: 1365px) {
+        .infoSectionContainer5 {
+            /* Adjust padding, margin, etc. for the section container */
+            padding: 20px;
+            padding-bottom: 20%;
+      
+          }
+        
+        .sticky-menu-title h2 {
+          font-family: 'LeonardoFascia';
+          font-weight: 700;
+          font-size: 70px;
+          color: #E0DACF;
+          width: 100%;  
+          padding-top: 0%;
+      }
+      
+      .sticky-menu-title {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: left;
+          width: 100%;
+          height: 100%;
+          padding-left: 5%;
+      
+      }
+      
+      .sticky-menu-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding-top: 5%;
+          padding-bottom: 12%;
+          padding: 5%;
+          row-gap: 2svh;
+          height: 50%;
+          width: 100%;  
+      }
+      
+      .flower4 {
+          position: absolute;
+          top: -5px;
+          left: 380px;
+          width: 105px;
+      }
+        
+      
+          .sticky-menu-wrapper {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+          }   
+          
+          .divide-line {
+            /* Adjust the width and/or margins of your divide line */
+            width: 20%;
+            margin-bottom: 60%;
+          
+          }
+        
+          .people-section {
+            /* Maybe adjust padding and margin for each person section */
+            padding: 15px 0;
+          }
+        
+          .people-title-section {
+            /* Adjust layout of the title section */
+              display: flex;
+              justify-content: center;
+              align-items: left;
+              flex-direction: column;
+              row-gap: 30px;
+              padding-top: 6%;
+              width: 100%;  
+      
+          }
+        
+          .people-image img {
+            /* Make the image of each person a bit smaller */
+            width: 70%;
+            height: auto;
+          }
+        
+      
+          .people-name h4 {
+              font-family: 'Satori';
+              font-size: 1.7svh;
+              font-weight: 100;
+              color: #7C7975;
+          }
+      
+          .people-num h3 {
+              font-family: 'LeonardoFascia';
+              font-weight: 500;
+              font-size: 2svh;
+              color: #E0DACF;
+          }
+      
+          .people-title h2 {
+              font-size: 5svh;
+              font-family: 'LeonardoFascia';
+              color: #E0DACF;
+          }
+          .sticky-menu-content {
+            /* Adjust any other properties necessary for the content layout */
+          }
+        }
+  
+  
+
+  
+  
 
     
     

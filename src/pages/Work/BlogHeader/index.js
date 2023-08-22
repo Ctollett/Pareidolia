@@ -5,11 +5,10 @@ function BlogHeader() {
   const ref = useRef(null);
 
   return (
-    <div className="blogWrapper">
-      <div className="blogHeader">
-        <div className="workHeaderInfo">
-          <h1 className="hidden3">Our Work</h1>
-          <p className="hidden3">
+      <div className="blog-header-wrapper">
+        <div className="blog-header-info">
+          <h1>Our Work</h1>
+          <p>
             Blending creative arts, social science, and digital media, we
             explore culture and technology through suspicious lenses. Upcoming
             projects include Transformers and memory of war, fursuit pricing
@@ -17,7 +16,6 @@ function BlogHeader() {
           </p>
         </div>
       </div>
-    </div>  
   );
 };
   

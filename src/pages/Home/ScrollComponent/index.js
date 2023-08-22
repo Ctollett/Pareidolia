@@ -15,6 +15,7 @@ export default function Gallery() {
       let scrollTitle = document.querySelector(".scroll-title-wrapper");
       let totalWidth = sections.reduce((acc, section) => acc + section.offsetWidth, 0);
       let scrollLine = document.querySelector('.scroll-line');
+      const isMobile = window.innerWidth <= 768;
     
       
 
@@ -35,42 +36,42 @@ export default function Gallery() {
           width: '100%', // End value
           scrollTrigger: {  
             trigger: ".scroll",
-            start: "top top",
+            start: "top top",   
             endTrigger: ".section-wrapper",
             scrub: 7
           }
       });
  
-      const spacingValue = "1200px";  // Adjust this value for more/less spacing.
+      const spacingValue = isMobile ? "800px" : "1200px"; 
 
-      sections.forEach((section, index) => {
+        sections.forEach((section, index) => {
         gsap.from(section, {
-          marginLeft: 5,  
+          marginLeft: isMobile ? 2 : 5,  // Adjust for mobile/desktop
           ease: "none",
           scrollTrigger: {
-            trigger: section, // trigger is the current section in the loop
-            start: `top+=${index * parseInt(spacingValue)} center`,  // Increment start position based on index
+            trigger: section,
+            start: `top+=${index * parseInt(spacingValue)} center`,
             end: "bottom bottom",
             scrub: 4,
-            snap: 1, // snap ensures it goes fully to the target
+            snap: 1,
             toggleActions: "play reverse play reverse"
-          }
+          }  
         });
 
         gsap.from(section, {
           opacity: 0,
           ease: "none",
           scrollTrigger: {
-            trigger: section, // trigger is the current section in the loop
-            start: `top+=${index * parseInt(spacingValue)} center`,  // Increment start position based on index
+            trigger: section,
+            start: `top+=${index * parseInt(spacingValue)} center`,
             end: "bottom bottom",
             scrub: 0.5,
             once: true,
-            snap: 1, // snap ensures it goes fully to the target
+            snap: 1,
             toggleActions: "play reverse play reverse"
           }
         });
-      });  
+      });
       
       const scrollContentHeight = document.querySelector('.scroll').offsetHeight;
 

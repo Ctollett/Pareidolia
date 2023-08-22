@@ -77,7 +77,7 @@
 }
 
 .scroll .scroll-item-wrapper:not(:first-child) {
-  margin-left: -25em; /* Adjust the value for desired overlap, '5em' is an example */
+  margin-left: -30svw; /* Adjust the value for desired overlap, '5em' is an example */
   z-index: 2;        /* Ensure newer items stack on top */
 }
 
@@ -101,7 +101,7 @@
 }
 
 .scrollSectionTitle p {
-  font-size: 1.6svh;
+  font-size: 14px;
   text-align: center;
   width: 80%;
 
@@ -132,15 +132,18 @@
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
-
-
 }
 
 .scrollSectionTitle {
   font-family: 'LeonardoFascia';
   font-weight: 200;
-  font-size: 3svh;
+  font-size: 20px;
 }
+
+.scrollSectionTitle h2{
+  margin-bottom: 20px;
+}
+
 
 
 .sectionNumber h3 {
@@ -158,61 +161,174 @@
 }
 
 
-.scrollSectionDesc p {
-  font-family: 'Satori';
-  font-size: 1.5svh;
-}
 
 /* Existing styles... */
 
 /* Media queries for mobile */
 
-@media (max-width: 599px) {
+@media (max-width: 768px) {
+  .scroll {
+    width: 100vw;
+ 
+  }
 
-    .scroll-wrap {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    } 
+  .scroll-section-container {
+    height: 100vh;
+  }
 
-    .scroll-item-wrapper {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
 
-    .scroll-item {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .scroll-title-wrapper span {
+    font-size: 5vh;
+  }
 
-    .scrollSectionTitle h2 {
-        font-size: 3rem; /* Adjust as needed */
-    }
+  .scroll-title-wrapper {
+    padding-top: 15%;
+    height: 50%;
 
-    .scrollSectionDesc p {
-        font-size: 0.9rem; /* Adjust as needed */
-    }
+  }
 
-    .sectionNumber h3 {
-        font-size: 1rem; /* Adjust as needed */
-    }
+  .scroll-wrap {
+    overflow-x: auto; 
+  }
 
-    .star, .scrollArrowSection img {
-        width: 50%; /* You can adjust this as needed */
-    }
+  .scroll .scroll-item-wrapper:not(:first-child) {
+    margin-left: -250px; /* Adjust the value for desired overlap, '5em' is an example */
+    z-index: 2;        /* Ensure newer items stack on top */
+  
+  }
 
-    .scrollSectionDesc p {
-    font-family: 'Satori';
+  .scrollSectionTitle p {
+    font-size: 9px;
+
+  }
+
+
+
+  .scrollSectionTitle {
     text-align: center;
-    font-size: 1.5svh;
+    font-size: 20px;
+  }
+
+  .scroll-title-image {
+    width: 30%;  
+    height: 25%;
+  }
+
+  .sectionNumber h3 {
+    font-size: 40px;
+  }
+
+
+  .scroll .scroll-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100svh;
+    padding-top: 50%;
+    opacity: 1;
+    width: 300px;
+    position: relative;  
+  
+  
+  }
+
+  .scroll-item {
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 250px;
+    column-gap: 90px;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1918;
+    color: #D4CFC4;
+    border-radius: 50%;
+    box-shadow: none;
+  
+  }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .scroll {
+
+    width: 100vw;
+  }
+
+  .scroll-section-container {
+    height: 100vh;
+  }
+
+
+  .scroll-title-wrapper span {
+    font-size: 5vh;
+  }
+
+  .scroll-title-wrapper {
+    padding-top: 0%;
+    height: 50%;
+
+  }
+
+  .scroll-wrap {
+    overflow-x: auto; 
+  }
+
+  .scroll .scroll-item-wrapper:not(:first-child) {
+    z-index: 2;        /* Ensure newer items stack on top */
+  
+  }
+
+  .scrollSectionTitle p {
+    font-size: 9px;
+
+  }
+
+
+
+  .scrollSectionTitle {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .scroll-title-image {
+    width: 30%;  
+    height: 25%;
+  }
+
+  .sectionNumber h3 {
+    font-size: 40px;
+  }
+
+
+  .scroll .scroll-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100svh;
+    opacity: 1;
+    width: 300px;
+    padding-top: 30%;
+    position: relative;  
+  
+    
+  }
+
+  .scroll-item {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    column-gap: 90px;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1918;
+    color: #D4CFC4;
+    border-radius: 50%;
+    box-shadow: none;
+  
+  }
+
 }
-
-
-
 
 

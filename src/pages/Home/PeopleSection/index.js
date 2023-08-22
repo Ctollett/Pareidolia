@@ -92,6 +92,7 @@ const peopleData = [
 ]
 const ref = useRef(null);
 const [revealed, setRevealed] = useState(false);
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 1365);
 
  useEffect(() => {
 
@@ -99,6 +100,29 @@ let stickyMenuTitle = document.querySelector(".sticky-menu-title");
 let divideLine = document.querySelector(".divide-line");
 let peopleSection = document.querySelectorAll(".people-section");
 let flower4 = document.querySelector(".flower4");
+
+const mobileSettings = {
+  scrollTrigger: {
+    trigger: ".sticky-menu-title",
+    start: "top top",
+    endTrigger: ".infoSectionContainer5",
+    end: "bottom bottom",
+    pin: false,
+    scrub: 1
+  },
+};
+
+const desktopSettings = {
+  scrollTrigger: {
+    trigger: ".sticky-menu-title",
+    start: "top top",
+    endTrigger: ".infoSectionContainer5",
+    end: "bottom bottom",
+    pin: true,
+    scrub: 1
+  }
+};
+gsap.to(".sticky-menu-title", isMobile ? mobileSettings : desktopSettings);
 
 
 gsap.to(peopleSection, {
@@ -114,17 +138,6 @@ gsap.to(peopleSection, {
     }
   });
 
-
-       gsap.to(stickyMenuTitle, {
-      scrollTrigger: {
-        trigger: ".sticky-menu-title",
-        start: "top top",
-        endTrigger: ".infoSectionContainer5",
-        end: "bottom bottom",
-        pin: true,
-        scrub: 1
-      }
-    });
 
 
     gsap.to(divideLine, {
@@ -162,8 +175,10 @@ return (
         <div className='sticky-menu-wrapper'>
             <div className='sticky-menu-title'>
             <div className='divide-line'></div>
+            <div className='flower-icon-wrapper'>
                 <img className='flower4' src={flower4} ></img>
                 <h2>Who We Are</h2>
+            </div>
             </div>
             <div className='sticky-menu-content'>
             {peopleData.map(person => 

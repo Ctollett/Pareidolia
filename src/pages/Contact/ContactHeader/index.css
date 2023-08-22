@@ -23,34 +23,26 @@
 }
 
 .contactHeader h1{
-    font-size: 140px;
+    font-size: 8svh;
     width: 100%;
     font-family: 'LeonardoFascia';
     
 }
 
-    .contactImageBackground {
-        position: absolute;
-        top: 43%;
-        left: 700px;
-        width: 8%;
-        height: 12%;
-        background-color: #ff5248;
-        overflow: hidden;
-        border-radius: 450px;
-      }
 
       .contactImageBackground img{
         position: absolute;
-        width: 100%;
-        height: 100%;
-        margin-left: -35%;
+        width: 8%;
+        height: 30%;
+        top: 40%;
+        left: 25%;
+
       
    
       }
 
       /* Media query */
-@media (max-width: 599px) {
+@media (max-width: 768px) {
     .contactWrapper {
         height: auto;
         padding: 20px;
@@ -78,5 +70,34 @@
         margin-left: 0;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px){
+ 
+}    .contactWrapper {
+        height: auto;
+        padding: 20px;
+    }
+  
+    .contactHeader {
+        padding: 20px;
+        height: auto;
+    }
+  
+    .contactHeader h1 {
+        font-size: 40px;  /* Adjust this value as needed */
+        text-align: center;
+    }
+
+    .contactImageBackground {
+        top: 11%;  /* Adjust this value as needed */
+        left: 50%;  /* Adjust this value as needed */
+        width: 14%;  /* Adjust this value as needed */
+        height: 6%;  /* Adjust this value as needed */
+        display: none;
+    }
+
+    .contactImageBackground img{
+        margin-left: 0;
+    }
 
 

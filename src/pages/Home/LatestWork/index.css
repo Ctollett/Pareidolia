@@ -9,7 +9,6 @@
   align-items: center;
   height: auto;
   width: 100svw;
-  background-color: white;
   padding: 5%;
   padding-top: 5em;
 
@@ -19,8 +18,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-row-gap: 30px;  
-  width: 60%; 
+  grid-row-gap: 50px;  
+  width: 60svw; 
 
 }
 
@@ -58,6 +57,78 @@
   font-family: 'LeonardoFascia';
   font-weight: 700;
   font-size: 5svh; 
+}
+
+@media (max-width: 768px) {
+  .featuredContainer {
+    padding: 2%;
+    padding-top: 2em;
+    padding-bottom: 10%;
+  }
+
+  .featuredWork {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  /* Makes sure the content spans the full width on mobile screens */
+    gap: 3.5em;     /* Provides spacing between child elements */
+  }
+
+  .largeBlog {
+    grid-column: unset;  /* Resets the grid column stretching to default */
+  }
+
+  .bottomSection {
+    padding-top: 10%;
+  }
+
+  .bottomSection button {
+    width: 40%;  /* Increase the button width for better mobile UX */
+    padding: 1.5%;  /* Slightly increased padding for mobile comfort */
+    font-size: 10px;  /* Slightly increased font size for better readability */
+  }
+
+  .featured-work-title {
+    font-size: 4vh;  /* Adjust title font size for smaller screens */
+    text-align: center;
+    padding: 1em 0;  /* Give some spacing above and below the title */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .featuredContainer {
+    padding: 2%;
+    padding-top: 2em;
+    padding-bottom: 10%;
+  }
+
+  .featuredWork {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  /* Makes sure the content spans the full width on mobile screens */
+    gap: 3.5em;     /* Provides spacing between child elements */
+  }
+
+  .largeBlog {
+    grid-column: unset;  /* Resets the grid column stretching to default */
+  }
+
+  .bottomSection {
+    padding-top: 10%;
+  }
+
+  .bottomSection button {
+    width: 40%;  /* Increase the button width for better mobile UX */
+    padding: 1.5%;  /* Slightly increased padding for mobile comfort */
+    font-size: 10px;  /* Slightly increased font size for better readability */
+  }
+
+  .featured-work-title {
+    font-size: 4vh;  /* Adjust title font size for smaller screens */
+    text-align: center;
+    padding: 1em 0;  /* Give some spacing above and below the title */
+  }
 }
 
 

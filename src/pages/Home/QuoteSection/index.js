@@ -54,6 +54,8 @@ function InfoSection2() {
       }
     });  
 
+        
+
     gsap.to(flower2, { 
       filter: "blur(0px)", 
       scrollTrigger: {
@@ -110,11 +112,12 @@ function InfoSection2() {
               
 
   return (
-    <section className="infoSection2Container">
+    <section className="quote-section-container">
            <img className='artImage2' src={flower3}></img>
-     <div className='infoSection2Wrapper'>
-            <div className='artImageContainer'>
+     <div className='quote-section-wrapper'>
+            <div className='art-image-container'>
           <img className='artImage' src={flower2}/>
+          <div className='background-circle'> </div>
           <div className='quote-div'>
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit </span> 
                   <span>sed do eiusmod tempor incididunt ut </span>
@@ -124,7 +127,6 @@ function InfoSection2() {
               <span>- Name </span>
               </div>
               </div>
-          <div className='background-circle'></div>
           </div>
         </div>        
          </section>           

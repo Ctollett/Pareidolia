@@ -26,7 +26,7 @@ const Header = () => {
       cy: 100,
       rx: 34,  
       ry: 35,
-      textProps: { style: { fontSize: 11.5 } },
+      textProps: { style: { fontSize: 12 } },
       tspanProps: { dy: '20' }
     },
     tablet: {
@@ -36,7 +36,7 @@ const Header = () => {
       cy: 125,
       rx: 36,
       ry: 36,
-      textProps: { style: { fontSize: 12 } },
+      textProps: { style: { fontSize: 13 } },
       tspanProps: { dy: '25' }
     },
     desktop: {
@@ -46,7 +46,7 @@ const Header = () => {
       cy: 150,
       rx: 40,
       ry: 40,
-      textProps: { style: { fontSize: 13 } },
+      textProps: { style: { fontSize: 14 } },
       tspanProps: { dy: '30' }
     },
 
@@ -57,7 +57,7 @@ const Header = () => {
       cy: 150,
       rx: 36,
       ry: 36,
-      textProps: { style: { fontSize: 12 } },
+      textProps: { style: { fontSize: 12.6 } },
       tspanProps: { dy: '30' }
     },
 
@@ -68,7 +68,7 @@ const Header = () => {
       cy: 150,
       rx: 45,
       ry: 45,
-      textProps: { style: { fontSize: 15 } },
+      textProps: { style: { fontSize: 16 } },
       tspanProps: { dy: '30' }
     }
   }[deviceType];
@@ -143,14 +143,12 @@ const Header = () => {
     
   return (
     <header>
-      <div className="titleSection">
-        <div className='headerPhotoContainer'>
-      </div>
-        <p className="hidden3">        
-          Pareidolia: n. misperception of random stimuli as real things or people, <br /> as when faces are vividly seen in the flames of a fire.
+      <div className="header-title">
+        <p>        
+          Pareidolia: n. misperception of random stimuli as real things or people, as when faces are vividly seen in the flames of a fire.
         </p>
-        <div className='titleInformation'>
-          <div className='titleContainer'>
+        <div className='header-title-information'>
+          <div className='header-title-container'>
             <h1>Pareidolia.</h1>
           </div>
           <div className={`scrollText-container`}>

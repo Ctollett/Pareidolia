@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
       let tl = gsap.timeline({
         scrollTrigger: {
-          start: "top center",
+          start: "top top",
           trigger: ".infoSectionContainer",
           scrub: 3,   
           end: "bottom bottom",    
@@ -152,18 +152,18 @@ gsap.registerPlugin(ScrollTrigger);
      
 
   return (
-    <section className="infoSectionContainer" data-scroll-section ref={ref}>
-         <div className='infoSectionWrapper' data-scroll>   
-         <div className='infoSectionHeadlineWrapper'>
-         <div className="infoSectionHeadline" data-scroll data-scroll-speed="1" data-scroll-repeat="true">      
-          <span>What</span>
-          <div className='flowerIcon'>
+    <section className="infoSectionContainer"ref={ref}>
+         <div className='infoSectionWrapper'> 
+         <div className='infoSectionHeadlineWrapper'> 
+         <div className="infoSectionHeadline">      
+         <div className='flowerIcon'>
             <img src={flowerIcon}></img>
           </div>
+          <span>What</span>  
           <div className='infoSectionHeadlineRow'>  
-           <span>We</span>  <span>Do.</span>       
+           <span>We</span> <span>Do.</span>      
           </div>
-          </div>   
+          </div>  
           <div className='infoSectionImageSection'>
             <div className='imageBackground'>
               <img src={displayArt2}></img>
@@ -179,7 +179,7 @@ gsap.registerPlugin(ScrollTrigger);
           </div>  
             <div className='contactSection'>
               <button href="/about" className='contactBtn' >
-                Learn More
+                Contact Us
               </button>
               </div>     
           </div>

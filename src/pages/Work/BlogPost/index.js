@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import profilePic from '../../../assets/portrait1.jpg';
 import "./index.css";  
@@ -7,8 +7,16 @@ import "../../../assets/globalstyles.css";
 import Lenis from "@studio-freight/lenis"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
+import LocomotiveScroll from 'locomotive-scroll';  
 
 
+
+function estimateReadingTime(content) {
+  const wordsPerMinute = 225;
+  const wordCount = content.split(/\s/g).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime;
+}
 
 
 
@@ -19,33 +27,6 @@ const FullBlogPost = () => {
   const [error, setError] = useState(null);
 
 
-
-  useEffect(() => {
-    // Create the Lenis instance and set up event listeners
-    const lenis = new Lenis();
-
-    lenis.on('scroll', ScrollTrigger.update);
-  
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    // Clean up the Lenis instance when the component unmounts
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
-
-  useEffect(() => {
-    // Scroll to the top of the blog post content when the component mounts
-    const blogPostContent = document.getElementById(`blog-post-${id}`);
-    if (blogPostContent) {
-      blogPostContent.scrollIntoView();
-    }
-  }, [id]);
 
 
   useEffect(() => {  
@@ -58,16 +39,18 @@ const FullBlogPost = () => {
 
         setBlog(blog);
         setLoading(false);
-      } catch (error) {
+      } catch (error) {  
         setError(error);
         setLoading(false);
-      }
+      }  
     };
      
     fetchBlog();
   }, [id]);
-   
-   
+
+
+
+     
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -81,49 +64,58 @@ const FullBlogPost = () => {
   }
   
 
-  const { title, description, coverimage, content, category } = blog.attributes;
+  const { title, description, coverimage, content, category, date} = blog.attributes;
+
+  const formattedDate = new Date(blog.attributes.createdAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+
+
   
   const changedContent = blog.attributes.blog
   .replace(/\/uploads\//g, `http://localhost:1337/uploads/`)
 
-  
-  console.log(changedContent);
+  const readingTime = estimateReadingTime(changedContent);
  
 
 
   
 
   return (
-    <div className="blogPost">
-      <div key={blog.id}>
-        <div className="blogHeaderSection">
-          <div className="blogCoverImage">
-            <img src={`http://localhost:1337${blog.attributes.coverimage.data.attributes.url}`} alt="Cover" />
-          </div>
-          <div className="blogInfoSection">
-            <div className="blogTitleSection">
+    <div className="blog-post">
+      <div key={id}>
+      <div className='blog-post-heading'>
+            <div className="blog-title-section">
               <h4>{category}</h4>
               <h1>{title}</h1>
               <p>{description}</p>
-            </div>
-            <div className="blogAuthorSection">
-              <div className="blogProfilePic">
-                <img src={profilePic} alt="Author" />
-              </div>
-              <div className="blogAuthor">
+            <div className="blog-author-section">
+              <div className="blog-author">
+              <img src={profilePic} alt="Author" />
                 <h2>Colton Tollett</h2>
-                <p>May 8, 2023</p>
               </div>
-            </div>
-          </div>  
-        </div>
-        <div className="line"></div>
-
+              <div className='blog-info'>
+                <p>{formattedDate}</p>
+                <p>{readingTime} min. read</p>
+              </div>
+              </div>
+          </div> 
+          <div className="blog-cover-image">
+            <img src={`http://localhost:1337${blog.attributes.coverimage.data.attributes.url}`} alt="Cover" />
+          </div>
+              </div>
+        <div className="blog-post-section">
+          <div className='blog-post-wrapper'>
         <div className="ck-content" dangerouslySetInnerHTML={{__html: changedContent}} >
-
-        </div>
-      </div>  
+      </div> 
+      </div> 
+      </div> 
+      </div>
     </div>
+    
   );
 }
 
