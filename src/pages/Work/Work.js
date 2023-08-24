@@ -5,7 +5,7 @@ import BlogPost from "./BlogPost";
 import BlogHeader from "./BlogHeader/index"
 import Navbar2 from '../../components/navBar2';
 import Lenis from '@studio-freight/lenis'
-import { ScrollTrigger } from 'react-gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from 'gsap';
 
 
@@ -40,7 +40,7 @@ console.log("Initialized LocomotiveScroll.");
       }
     };
   }, []);
-
+ 
 
 
   
