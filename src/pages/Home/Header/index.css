@@ -28,7 +28,6 @@ header {
     width: 100%;
     margin: 0 auto;
     padding-top: 20em;
-    display: none;
     color: #1A1918;
     display: flex;
     align-items: center;
@@ -40,7 +39,7 @@ header {
 
 .header-title-information {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  
   align-items: center;
   width: 100svw;
 }
@@ -64,10 +63,11 @@ header {
 .header-title-container h1{
     font-size: 12svw;
     margin-left: 5%;
+    display: none;
     opacity: 0;
      color: #1A1918;
 
-
+  
 }
 
 
