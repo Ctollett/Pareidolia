@@ -38,33 +38,22 @@
 
 }
 
-.flower2Background {
-  background-color: #D0263D;
-  position: absolute;
-  width: 2.5%;
-  left: 10%;
-  top: 60%;
-  border-radius: 50%;
-  height: 2%;
-  display: flex;
-  z-index: 1;
-  filter: blur(5px)
-}
 
 .quote-div {
   color: white;
   font-family: 'Satori';
-  font-size: 25px;
+  font-size: 18px;
   width: 50%;
   height: 35%;
   text-align: center;
 }
 
+
 .background-circle {
-  width: 200px;  
-  height: 200px;
+  width: 300px;  
+  height: 300px;
   border-radius: 50%; 
-  margin-bottom: 55%; 
+  margin-bottom: 40%; 
   position: absolute;
   z-index: -4;
   background-color: #1A1918;
@@ -74,9 +63,9 @@
 
 
 .artImage {
-  top: 13%; 
-  width: 50%;  
-  height: 20%;
+  top: 17%; 
+  width: 30%;  
+  height: 15%;
   opacity: 1;
   position: absolute;
 
@@ -85,7 +74,7 @@
 
 .artImage2 {
   top: 60%;
-  width: 40%;  
+  width: 30%;  
   left: 0;
   height: 10%;
   position: absolute;
@@ -97,35 +86,44 @@
 
 
 
-/* Existing Global Styles */
-body, html {
-  font-size: 16px; /* Establish a base font-size for REM calculations */
-}
-
-
 @media (max-width: 768px) {
-  .infoSection2Container {
+  .quote-section-container {
     margin-top: 0%;
     padding-bottom: 50%;
 
   }
 
-  .infoSection2Wrapper {
+  .quote-section-wrapper {
     margin-top: 0%;
   }
 
 
   .quote-div {
-    font-size: 15px;  /* Adjust based on your preference */
-    width: 90%;
+    font-size: 14px;  
+    width: 80%;
+    text-align: left;
     margin: 0 auto;
+  }
+
+  .artImage {
+    top: 17%; 
+    width: 40%;  
+    height: 20%;
+    opacity: 1;
+    position: absolute;
+  
+  }
+
+  .nameDiv {
+    margin-top: 5%;
   }
   
 
 .background-circle {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%; 
+  margin-bottom: 900px;
   position: absolute;
   z-index: -4;
   background-color: #1A1918;
@@ -137,28 +135,55 @@ body, html {
 
 
 @media (min-width: 769px) and (max-width: 1024px){
-  .infoSection2Container {
+  .quote-section-container {
     margin-top: 0%;
     padding-bottom: 50%;
 
   }
 
-  .infoSection2Wrapper {
+  .quote-section-wrapper {
     margin-top: 0%;
   }
 
 
   .quote-div {
-    font-size: 18px;  /* Adjust based on your preference */
-    width: 90%;
+    font-size: 18px;  
+    width: 70%;
+    text-align: left;
     margin: 0 auto;
   }
+
+  .artImage {
+    top: 17%; 
+    width: 40%;  
+    height: 15%;
+    opacity: 1;
+    position: absolute;
+  
+  }
+
+  .nameDiv {
+    margin-top: 5%;
+  }
+
+
+.artImage2 {
+  top: 60%;
+  width: 15%;  
+  left: 65px;
+  height: 10%;
+  position: absolute;
+  z-index: 1;
+  filter: blur(4px);
+
+}
   
 
 .background-circle {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%; 
+  margin-bottom: 900px;
   position: absolute;
   z-index: -4;
   background-color: #1A1918;
@@ -167,30 +192,46 @@ body, html {
 
 
 }
+
 
 @media (min-width: 1025px) and (max-width: 1365px){
-  .infoSection2Container {
+  .quote-section-container {
     margin-top: 0%;
     padding-bottom: 50%;
 
   }
 
-  .infoSection2Wrapper {
+  .quote-section-wrapper {
     margin-top: 0%;
   }
 
 
   .quote-div {
-    font-size: 18px;  /* Adjust based on your preference */
-    width: 90%;
+    font-size: 14px;  
+    width: 80%;
+    text-align: left;
     margin: 0 auto;
+  }
+
+  .artImage {
+    top: 17%;   
+    width: 40%;  
+    height: 20%;
+    opacity: 1;
+    position: absolute;
+  
+  }
+
+  .nameDiv {
+    margin-top: 5%;
   }
   
 
 .background-circle {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%; 
+  margin-bottom: 900px;
   position: absolute;
   z-index: -4;
   background-color: #1A1918;
@@ -206,10 +247,13 @@ body, html {
 
 
 
+
+
+
   
 
 
-
+ 
 
 
 

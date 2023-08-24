@@ -9,14 +9,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 import "./assets/globalstyles.css"
 
-
-
-  
-
 export default function App() {  
 
   
-   
   return (
     <Router>
         <div className="App">
@@ -26,7 +21,7 @@ export default function App() {
               <Route path="/work" component={Work} />
               <Route path="/contact" component={Contact} />
               <Route path="/work/:id" component={Work} />
-              <Route path="/blog/:id" component={BlogPost} /> {/* New route for BlogPost */}
+              <Route path="/blog/:id" component={BlogPost} />
             </Switch>
           </div>
         </div>

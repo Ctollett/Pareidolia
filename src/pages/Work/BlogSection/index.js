@@ -14,19 +14,13 @@ const BlogSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [inTransition, setInTransition] = useState(false);  // New state for transition
 
-
-const handleSearch = (event) => {  
-    const newQuery = event.target.value;
-    setSearchQuery(newQuery);
-
-    // Delay the transition effect
-    if (newQuery !== searchQuery) { 
-        setInTransition(true);
-        setTimeout(() => {
-            setInTransition(false);
-        }, 300);
-    }
-};
+  const handleSearch = (event) => {   
+    setInTransition(true);
+    setTimeout(() => {
+      setSearchQuery(event.target.value);
+      setInTransition(false);
+    },)  
+  };
 
   const handleFilter = (value) => {
     setInTransition(true);

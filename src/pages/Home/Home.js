@@ -21,6 +21,7 @@ function Home() {
   const locomotiveScrollRef = useRef(null);
   const history = useHistory();
 
+
   // Disabling native browser scroll restoration
   useEffect(() => {
     if ('scrollRestoration' in history) {

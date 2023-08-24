@@ -1,334 +1,134 @@
-
-
-.scroll {
-  height: 500svh;
-  width: 400svw;
-  display: flex;  
-  flex-wrap: nowrap;
-  position: absolute;
-  padding-left: 10%;
-  top: 0;
-}
-
-.scroll-section-container {
-  height: 150vh;
-  overflow: hidden;
-  position: relative;
-}
-
-
-
-
-.scroll-title-wrapper {
-  display: flex;
-  justify-content: right;
-  flex-direction: row;
-  align-items: center;
-  width: 100svw;
-  padding-right: 5%;
-  padding-top: 7%;
-  column-gap: 0.6%;
-  padding-left: 10%;
-  z-index: 1;
-  position: absolute;
-}
-
-
-
-.scroll-wrap { 
-  overflow-x: scroll;
-}
-
-
-
-
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-@keyframes rotateArrow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(10deg);
-  }
-}
-
-.scroll .scroll-item-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 100svh;
-  opacity: 1;
-  width: 40svw;
-  padding-top: 5%;
-  position: relative;
-
-
-}
-
-.scroll .scroll-item-wrapper:not(:first-child) {
-  margin-left: -30svw; /* Adjust the value for desired overlap, '5em' is an example */
-  z-index: 2;        /* Ensure newer items stack on top */
-}
-
-
-
-.scroll-title-wrapper span{  
-  font-size: 10svh; 
-  font-family: 'LeonardoFascia';
-  font-weight: 700;
-  margin: 0.5%;
-
-}
-
-.scrollSectionTitle {
+.category-section-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 100%;
+  width: 100svw;
+  height: 100svh;
 }
 
-.scrollSectionTitle p {
-  font-size: 14px;
-  text-align: center;
-  width: 80%;
-
-}
-
-.scroll-line {
-  width: 0svw;
-  height: 2px;
-  background-color: black;
-}
-
-.scroll-title-image {
-  width: 40%;
-  height: 20%;
-}
-
-
-.scroll-item {
+.category-section-wrapper {
   display: flex;
-  flex-direction: row;
-  height: 30em;
-  width: 30em;
-  column-gap: 40px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1A1918;
-  color: #D4CFC4;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-
+  width: 100%;
+  row-gap: 80px;
+  padding: 5%;
 }
 
-.scrollSectionTitle {
+.category-section-title {
+  width: 100%;
   font-family: 'LeonardoFascia';
-  font-weight: 200;
-  font-size: 20px;
-}
-
-.scrollSectionTitle h2{
-  margin-bottom: 20px;
+  font-weight: 700;
+  padding-left: 5%;
+  font-size: 3.5svh;
 }
 
 
-
-.sectionNumber h3 {
-  font-family: 'LeonardoFascia';
-  font-weight: 200;
-  font-size: 65px;
-  color: black;
-}
-
-.sectionNumber {
-  margin-top: 5%;
+.category-section-entry {
   display: flex;
-  justify-content: right;
-  
+  justify-content: center;  
+  align-items: center;
+  width: 60%;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entry-num {
+  font-family: 'LeonardoFascia';
+  font-weight: 100;
+  font-size: 2svh;
 }
 
 
 
-/* Existing styles... */
 
-/* Media queries for mobile */
-
-@media (max-width: 768px) {
-  .scroll {
-    width: 100vw;
- 
-  }
-
-  .scroll-section-container {
-    height: 100vh;
-  }
-
-
-  .scroll-title-wrapper span {
-    font-size: 5vh;
-  }
-
-  .scroll-title-wrapper {
-    padding-top: 15%;
-    height: 50%;
-
-  }
-
-  .scroll-wrap {
-    overflow-x: auto; 
-  }
-
-  .scroll .scroll-item-wrapper:not(:first-child) {
-    margin-left: -250px; /* Adjust the value for desired overlap, '5em' is an example */
-    z-index: 2;        /* Ensure newer items stack on top */
-  
-  }
-
-  .scrollSectionTitle p {
-    font-size: 9px;
-
-  }
-
-
-
-  .scrollSectionTitle {
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .scroll-title-image {
-    width: 30%;  
-    height: 25%;
-  }
-
-  .sectionNumber h3 {
-    font-size: 40px;
-  }
-
-
-  .scroll .scroll-item-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 100svh;
-    padding-top: 50%;
-    opacity: 1;
-    width: 300px;
-    position: relative;  
-  
-  
-  }
-
-  .scroll-item {
-    display: flex;
-    flex-direction: row;
-    height: 250px;
-    width: 250px;
-    column-gap: 90px;
-    justify-content: center;
-    align-items: center;
-    background-color: #1A1918;
-    color: #D4CFC4;
-    border-radius: 50%;
-    box-shadow: none;
-  
-  }
+.entry-line {
+  width: 100%;
+  height: 0.5px;
+  background-color: black;
+  margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .scroll {
+.entry-title-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  row-gap: 5px;
+}
 
-    width: 100vw;
+.entry-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 50px;
+  align-items: left;
+  font-family: 'LeonardoFascia';
+}
+
+.entry-title h2{
+  font-size: 3svh;
+  width: 100%;
+  text-align: left;
+  font-family: 'LeonardoFascia';
+}
+
+.entry-title p{
+  font-family: 'Satori';
+  font-size: 1.5svh;
+}
+
+@media (max-width: 1024px) {
+
+  .category-section-container {
+    padding: 10px;
+    height: auto;  
   }
 
-  .scroll-section-container {
-    height: 100vh;
+  .category-section-wrapper {
+    padding: 10% 2%;
+    row-gap: 40px;  
   }
 
-
-  .scroll-title-wrapper span {
-    font-size: 5vh;
+  .category-section-title {
+    font-size: 2vh;
+    padding-left: 0%;  
   }
 
-  .scroll-title-wrapper {
-    padding-top: 0%;
-    height: 50%;
-
+  .category-section-entry {
+    width: 90%;  
   }
 
-  .scroll-wrap {
-    overflow-x: auto; 
+  .entry-num {
+    font-size: 1.5vh;
   }
 
-  .scroll .scroll-item-wrapper:not(:first-child) {
-    z-index: 2;        /* Ensure newer items stack on top */
-  
+  .entry-title {
+    column-gap: 30px;  
   }
 
-  .scrollSectionTitle p {
-    font-size: 9px;
-
+  .entry-title h2 {
+    font-size: 2.5vh;
   }
 
-
-
-  .scrollSectionTitle {
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .scroll-title-image {
-    width: 30%;  
-    height: 25%;
-  }
-
-  .sectionNumber h3 {
-    font-size: 40px;
-  }
-
-
-  .scroll .scroll-item-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 100svh;
-    opacity: 1;
-    width: 300px;
-    padding-top: 30%;
-    position: relative;  
-  
-    
-  }
-
-  .scroll-item {
-    display: flex;
-    flex-direction: row;
-    height: 300px;
-    column-gap: 90px;
-    justify-content: center;
-    align-items: center;
-    background-color: #1A1918;
-    color: #D4CFC4;
-    border-radius: 50%;
-    box-shadow: none;
-  
+  .entry-title p {
+    font-size: 1.2vh;
   }
 
 }
+
+
+
+
+
 
 

@@ -10,7 +10,6 @@ import { Elastic } from 'gsap';
 function Person({number, imageUrl, title, name, description}) {
     return (
         <div className='people-section'>
-          <div className='people-divide-line'></div>
           <div className='people-title-section'>
             <div className='people-num'>
               <h3>{number}</h3>
@@ -100,6 +99,7 @@ let stickyMenuTitle = document.querySelector(".sticky-menu-title");
 let divideLine = document.querySelector(".divide-line");
 let peopleSection = document.querySelectorAll(".people-section");
 let flower4 = document.querySelector(".flower4");
+let title = document.querySelector('.sticky-menu-title');
 
 const mobileSettings = {
   scrollTrigger: {
@@ -131,14 +131,24 @@ gsap.to(peopleSection, {
     stagger: 0.2, // 0.2 seconds delay for each consecutive animation
     scrollTrigger: {
       trigger: ".people-section",
-      start: "top 100%",
+      start: "top 50%",
       endTrigger: ".infoSectionContainer5",
       end: "bottom bottom",
       scrub: 1
     }
   });
 
-
+  gsap.from(title, { 
+    scrollTrigger: {
+      start: "top 80%",
+      trigger: ".sticky-menu-wrapper",
+      onEnter: () => title.classList.add('animate-in'),
+      onLeaveBack: () => title.classList.remove('animate-in'),
+      once: true,
+      end: "bottom bottom",  
+      toggleActions: "play reverse play reverse",
+    },
+  }) 
 
     gsap.to(divideLine, {
         width: 1150,
@@ -149,36 +159,17 @@ gsap.to(peopleSection, {
           scrub: 5,
         }   
       });
-      gsap.to(flower4, { 
-        scrollTrigger: {
-          start: "top 20%",  
-          trigger: flower4,
-          ease: Elastic.easeOut(1, 0.3),   
-          scrub: 8,
-          end: "center center",
-          onUpdate: function(self) {
-            if (self.direction === 1) {
-              // Scrolling down
-              gsap.to(flower4, { rotate: 10 });
-            } else if (self.direction === -1) {
-              // Scrolling up
-              gsap.to(flower4, { rotate: -10 });
-            }
-          }  
-        }
-      });
+     
       
       }, []); 
 
 return (
     <section className="infoSectionContainer5">
+      
         <div className='sticky-menu-wrapper'>
+        <div className='divide-line'></div>
             <div className='sticky-menu-title'>
-            <div className='divide-line'></div>
-            <div className='flower-icon-wrapper'>
-                <img className='flower4' src={flower4} ></img>
                 <h2>Who We Are</h2>
-            </div>
             </div>
             <div className='sticky-menu-content'>
             {peopleData.map(person => 

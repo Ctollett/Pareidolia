@@ -1,15 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import "../../../assets/globalstyles.css";
 import "./index.css";
 import BlogPreviewLarge from "../../../components/BlogPreviewLarge/BlogPreviewLarge";
 import BlogPreviewSmall from "../../../components/BlogPreviewSmall/BlogPreviewSmall";
 
+
+
 const LatestWork = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const ref = useRef(null);
+
+
 
   useEffect(() => {
     const fetchBlogs = async () => {

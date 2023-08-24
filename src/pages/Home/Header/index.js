@@ -13,7 +13,7 @@ const Header = () => {
   const isMobile = () => window.innerWidth <= 768;
   const isTablet = () => window.innerWidth > 768 && window.innerWidth <= 1024;
   const isSmlDesktop = () => window.innerWidth > 1025 && window.innerWidth <= 1366;
-  const islrgDesktop = () => window.innerWidth > 1366
+  const islrgDesktop = () => window.innerWidth > 1367
 
   
   const deviceType = islrgDesktop() ? 'lrgDesktop' : isSmlDesktop() ? 'smallDesktop' : isMobile() ? 'mobile' : isTablet() ? 'tablet' : 'desktop';
@@ -26,7 +26,7 @@ const Header = () => {
       cy: 100,
       rx: 34,  
       ry: 35,
-      textProps: { style: { fontSize: 12 } },
+      textProps: { style: { fontSize: 13 } },
       tspanProps: { dy: '20' }
     },
     tablet: {
@@ -79,71 +79,34 @@ const Header = () => {
 
   useEffect(() => {
     let tl = gsap.timeline();
-    const deviceType = isMobile() ? "mobile" : isTablet() ? "tablet" : "desktop";
 
-    if (deviceType === "mobile") {
-      // Mobile device animation
-      tl.from(".titleContainer h1", 1.8, {
-        top: 90,
+      tl.to(".header-title-container h1", 1.8, {
         ease: "power4.out",
+        opacity: 1,
         delay: 1,
-        duration: 0.3,
+        duration: 4,
         scrub: 1,
-        skewY: 9,
-        stagger: {  
-          amount: 0.9
-        }     
+       
       });
+
+
+    
   
       tl.from(".scrollText-container", 1.8, {
         opacity: 1, 
         ease: "power4.out",
       }); 
-    } else if (deviceType === "tablet") {
-      // Tablet device animation
-      tl.from(".titleContainer h1", 1.8, {
-        top: 400,
-        ease: "power4.out",
-        delay: 1,
-        duration: 0.3,
-        scrub: 1,
-        skewY: 9,
-        stagger: {  
-          amount: 0.9
-        }     
-      });
-  
-      tl.from(".scrollText-container", 1.8, {
-        opacity: 1, 
-        ease: "power4.out",
-      }); 
-    } else {
-      // Non-mobile, non-tablet device animation
-      tl.from(".titleContainer h1", 1.8, {
-        top: 700,
-        ease: "power4.out",
-        delay: 1,
-        duration: 0.3,
-        scrub: 1,
-        skewY: 9,
-        stagger: {  
-          amount: 0.9
-        }     
-      });
-  
-      tl.from(".scrollText-container", 1.8, {
-        opacity: 1, 
-        ease: "power4.out",
-      }); 
-    }
   }, []);
 
 
 
-    
+      
   return (
+
+    
     <header>
       <div className="header-title">
+      <div class="paper-overlay"></div>
         <p>        
           Pareidolia: n. misperception of random stimuli as real things or people, as when faces are vividly seen in the flames of a fire.
         </p>

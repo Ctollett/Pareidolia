@@ -51,8 +51,8 @@ const Navbar = ({ handleMenuClick, isContentVisible }) => {
       gsap.to(line, { 
       opacity: 0,
       scrollTrigger: {
-        start: "top top",  
-        trigger: ".titleSection p",   
+        start: "top 10%",  
+        trigger: ".header-title p",   
         scrub: 2,
         end: "bottom bottom",  
         toggleActions: "play reverse play reverse",

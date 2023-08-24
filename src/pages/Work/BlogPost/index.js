@@ -4,10 +4,7 @@ import profilePic from '../../../assets/portrait1.jpg';
 import "./index.css";  
 import "../../../components/ckeditor.css";
 import "../../../assets/globalstyles.css";
-import Lenis from "@studio-freight/lenis"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { gsap } from "gsap";
-import LocomotiveScroll from 'locomotive-scroll';  
+
 
 
 
@@ -85,7 +82,7 @@ const FullBlogPost = () => {
   
 
   return (
-    <div className="blog-post">
+    <div className="blog-post" >
       <div key={id}>
       <div className='blog-post-heading'>
             <div className="blog-title-section">

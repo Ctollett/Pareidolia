@@ -62,22 +62,11 @@ header {
 
 .header-title-container h1{
     font-size: 12svw;
-    position: absolute;
+    margin-left: 5%;
+    opacity: 0;
      color: #1A1918;
-     top: 3svh;
-    
-
-}
-
-.header-title-container {
-  height: 32svh;
-  margin-left: 5%;
-  overflow: hidden;   
- position: relative;  
-  width: 100%;
 
 
-  
 }
 
 
@@ -146,7 +135,7 @@ header {
       flex-direction: column;
       margin: 0 auto;
       padding-top: 5em;  
-      row-gap: 10px;
+      row-gap: 60px;
       color: black;
       padding-bottom: none;
       display: flex;
@@ -155,28 +144,19 @@ header {
       transition: opacity 0.8s ease-in-out;
      
   }
+
+  .header-title-container {
+    margin-bottom: 20%;
+  }
   
     .header-title-container h1{  
       font-size: 70px;
-      position: absolute;
       color: black;
       top: 0;
       right: 0%;
   
   }
   
-  .header-title-container {  
-      height: 75px;
-      margin-top: 10%;
-      margin-bottom: 40%;
-      position: relative; 
-      overflow: hidden;  
-      width: 310px;
-   
-  
-  
-  
-    }
   
     .header-title-information {
       display: flex;
@@ -234,7 +214,7 @@ header {
 
  
 
-    .titleSection {
+    .header-title {
       display: flex;
       flex-direction: column;
       margin: 0 auto;
@@ -250,16 +230,13 @@ header {
      
   }
   
-    .titleContainer h1{  
+    .header-title-container h1{  
       font-size: 600%;
-      position: absolute;
       color: black;
-      top: 0;
-      left: 5%;
   
   }
   
-  .titleContainer {  
+  .header-title-container {  
       height: 102px;
       margin-top: 10%;
       margin-bottom: 30%;
@@ -273,7 +250,7 @@ header {
   
     }
   
-    .titleInformation {
+    .header-title-information {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -284,7 +261,7 @@ header {
     }
   
   
-  .titleSection p{
+  .header-title p{
     font-size: 22px;
     text-align: left;
     font-family: 'Satori';

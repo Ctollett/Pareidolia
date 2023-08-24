@@ -11,6 +11,7 @@ import { gsap } from 'gsap';
 
 function Work() {
   const [isContentVisible, setContentVisible] = useState(true);
+  const locomotiveScrollRef = useRef(null);
 
   const handleMenuClick = () => {
     setContentVisible(prevState => !prevState);
@@ -19,6 +20,27 @@ function Work() {
   const ref = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const initializeLocomotiveScroll = async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      console.log("Initializing LocomotiveScroll...");
+locomotiveScrollRef.current = new LocomotiveScroll();
+console.log("Initialized LocomotiveScroll.");
+
+      // Scroll to top  
+      locomotiveScrollRef.current.scrollTo(0);
+    };
+    initializeLocomotiveScroll();
+
+    return () => {
+      // Cleanup: destroy the locomotive scroll instance when the component unmounts
+      if (locomotiveScrollRef.current) {
+        locomotiveScrollRef.current.destroy();
+      }
+    };
+  }, []);
+
 
 
   
@@ -30,8 +52,8 @@ function Work() {
        <Navbar2 handleMenuClick={handleMenuClick} />
        <div className={isContentVisible ? 'fade-in' : 'fade-out'}>
       <Switch>
-        <Route exact path="/work" component={BlogSection} />
-        <Route path="/work/:id/:title" component={BlogPost} />
+        <Route exact path="/work/:category?" component={BlogSection} />
+        <Route path="/work/:id/:title/" component={BlogPost} />
       </Switch>
       </div>
       </div>

@@ -32,7 +32,7 @@ function InfoSection2() {
 
 
     gsap.to(backgroundCircle, { 
-      duration: 5,
+      duration: 3,
       scale: 30,
       scrollTrigger: {
         start: "35% 80%",  
@@ -81,9 +81,9 @@ function InfoSection2() {
     // Pinning the flower to the top while scrolling
     gsap.to(artContainer, {
       scrollTrigger: {
-        trigger: ".artImageContainer",
+        trigger: ".art-image-container",
         start: "top top",
-        endTrigger: ".infoSection2Container",
+        endTrigger: ".quote-section-container",
         end: "bottom bottom",
         pin: true,
         scrub: 1
@@ -108,7 +108,7 @@ function InfoSection2() {
 
 
 
-
+ 
               
 
   return (
@@ -116,8 +116,8 @@ function InfoSection2() {
            <img className='artImage2' src={flower3}></img>
      <div className='quote-section-wrapper'>
             <div className='art-image-container'>
+            <div className='background-circle'></div>
           <img className='artImage' src={flower2}/>
-          <div className='background-circle'> </div>
           <div className='quote-div'>
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit </span> 
                   <span>sed do eiusmod tempor incididunt ut </span>

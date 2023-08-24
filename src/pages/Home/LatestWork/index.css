@@ -10,7 +10,6 @@
   height: auto;
   width: 100svw;
   padding: 5%;
-  padding-top: 5em;
 
 }
 
@@ -18,7 +17,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-row-gap: 50px;  
+  grid-row-gap: 100px;  
+  grid-column-gap: 50px;
   width: 60svw; 
 
 }
@@ -56,12 +56,12 @@
   width: 100%;
   font-family: 'LeonardoFascia';
   font-weight: 700;
-  font-size: 5svh; 
+  font-size: 30px; 
 }
 
 @media (max-width: 768px) {
   .featuredContainer {
-    padding: 2%;
+    padding: 5%;
     padding-top: 2em;
     padding-bottom: 10%;
   }
@@ -89,9 +89,14 @@
   }
 
   .featured-work-title {
-    font-size: 4vh;  /* Adjust title font size for smaller screens */
-    text-align: center;
+    font-size: 2vh;  /* Adjust title font size for smaller screens */
+    text-align: left;
     padding: 1em 0;  /* Give some spacing above and below the title */
+  }
+
+    .featured-work-title h2 {
+
+      padding-left: 1em 1em;  /* Give some spacing above and below the title */
   }
 }
 
@@ -125,7 +130,7 @@
   }
 
   .featured-work-title {
-    font-size: 4vh;  /* Adjust title font size for smaller screens */
+    font-size: 2vh;  /* Adjust title font size for smaller screens */
     text-align: center;
     padding: 1em 0;  /* Give some spacing above and below the title */
   }

@@ -11,6 +11,22 @@ function AboutSection() {
 const ref = useRef(null);
 const spansRef = useRef([]);  
 gsap.registerPlugin(ScrollTrigger);
+const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+useEffect(() => {
+  // Function to handle updates to resize event
+  const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+  }
+
+  // Attach the event listener
+  window.addEventListener("resize", handleResize);
+
+  // Clean up the event listener on component unmount
+  return () => {
+      window.removeEventListener("resize", handleResize);
+  }
+}, []);
 
   
 
@@ -19,50 +35,12 @@ gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => {
       const spans = ref.current.querySelectorAll(".infoSectionHeadline span");
       spansRef.current = Array.from(spans)
-
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top top",
-          trigger: ".infoSectionContainer",
-          scrub: 3,   
-          end: "bottom bottom",    
-          toggleActions: "play reverse play reverse",
-            
-        },
-      })
-      
-      tl.fromTo(spansRef.current, {  
-        color: "#E0DACF",
-      },
-      {
-        color: "#1A1918",
-        stagger: 3,
-        duration: 3,
-        immediateRender: true,
-      }) 
-
-      const textSpans = document.querySelectorAll('.secondaryText span');
-
-      gsap.to(textSpans, {
-        duration: 5,  
-        opacity: 1,
-        stagger: 1, 
-        scrollTrigger: {
-          start: "top 80%",
-          trigger: ".secondaryText span",
-          scrub: 5,
-          delay: 1,  
-          once: true,
-          end: "bottom bottom",  
-          toggleActions: "play reverse play reverse",
-        },
-      })  
-
+      const title = document.querySelector(".about-section-title")
 
       gsap.to(".contactBtn", { 
         duration: 10, 
         delay: 6,
-        opacity: 1, 
+        opacity: 1,
         scrollTrigger: {
           start: "top 80%",
           trigger: ".contactBtn",
@@ -74,39 +52,27 @@ gsap.registerPlugin(ScrollTrigger);
       }) 
 
 
-      gsap.to(".flowerIcon img", { 
-        rotate: 5,
-        duration: 4, 
-        yoyo: true,
-        repeat: 10,    
+      gsap.from(title, { 
         scrollTrigger: {
-          start: "top 60%",
-          trigger: ".flowerIcon img",
-          scrub: 4,  
+          start: "top 50%",
+          trigger: ".about-section-title",
+          onEnter: () => title.classList.add('animate-in'),
+          onLeaveBack: () => title.classList.remove('animate-in'),
+          once: true,
           end: "bottom bottom",  
           toggleActions: "play reverse play reverse",
-        },    
+        },
       }) 
 
-      gsap.to(".flowerIcon img", { 
-        duration: 4, 
-        opacity: 0.6, 
-        scrollTrigger: {
-          start: "top 60%",
-          trigger: ".flowerIcon img",
-          scrub: 4,  
-          end: "bottom bottom",  
-          toggleActions: "play reverse play reverse",
-        },    
-      })
+
 
       gsap.to(".imageBackground", { 
         scale: 4.7,
         duration: 4,   
         opacity: 1, 
         scrollTrigger: {
-          start: "top 60%",
-          trigger: ".flowerIcon img",
+          start: "top 80%",
+          trigger: ".infoSectionContainer",
           scrub: 4,  
           end: "bottom bottom",  
           toggleActions: "play reverse play reverse",
@@ -114,12 +80,14 @@ gsap.registerPlugin(ScrollTrigger);
       }) 
 
 
+     
+
       gsap.to(".imageBackground img", { 
         duration: 2,   
         scale: 1.3, 
         top: -10,
         scrollTrigger: {
-          start: "top 70%",   
+          start: "top center",   
           trigger: ".imageBackground img",
           delay: 1, 
           scrub: 5, 
@@ -127,12 +95,28 @@ gsap.registerPlugin(ScrollTrigger);
           toggleActions: "play reverse play reverse",
         },    
       }) 
+
+
+      gsap.from(".line", { 
+        duration: 2,   
+        height: 0, 
+        scrollTrigger: {
+          start: "top center",   
+          trigger: ".line",
+          delay: 1, 
+          once: true,
+          scrub: 5, 
+          end: "bottom bottom",  
+          toggleActions: "play reverse play reverse",
+        },    
+      }) 
+
 
       gsap.to(".imageBackground img", { 
         opacity: 1,
         filter: "grayscale(0)",
         scrollTrigger: {
-          start: "top 70%",   
+          start: "top center",   
           trigger: ".imageBackground img",
           delay: 1, 
           scrub: 5, 
@@ -140,43 +124,45 @@ gsap.registerPlugin(ScrollTrigger);
           toggleActions: "play reverse play reverse",
         },    
       }) 
-
-   
-
-    
- 
     });
-  }, []);  
-
+  }, []);   
+ 
    
      
 
   return (
     <section className="infoSectionContainer"ref={ref}>
          <div className='infoSectionWrapper'> 
-         <div className='infoSectionHeadlineWrapper'> 
-         <div className="infoSectionHeadline">      
-         <div className='flowerIcon'>
-            <img src={flowerIcon}></img>
-          </div>
-          <span>What</span>  
-          <div className='infoSectionHeadlineRow'>  
-           <span>We</span> <span>Do.</span>      
-          </div>
-          </div>  
           <div className='infoSectionImageSection'>
             <div className='imageBackground'>
               <img src={displayArt2}></img>
             </div>
-          </div>
-          </div>
-          <div className='secondaryText'>
+          </div> 
+          <div className='line'></div>
+         <div className="about-section-title-container">
+         <div className='about-section-title'>
+                    {
+                        windowWidth <= 1364 ? (
+                            // JSX for mobile view
+                            <div>
+                                <h2>What We Do</h2>
+                            </div>
+                        ) : (
+                            // JSX for desktop view
+                            <>  
+                                <h2>What</h2>
+                                <h2>We Do</h2>
+                            </>
+                        )
+                    }
+                </div>
+            <div className='line-2'></div>
             <div className='secondaryTextContainer'>
-          <span>Pareidolia is an interdisciplinary research and arts collective interrogating the role of digital </span>
-          <span>technology and aesthetics in contemporary American culture. Consisting of researchers in the </span>
-          <span>humanities and social sciences as well as artists and computer programmers, this group aims to </span>
-          <span>expand our general understanding of technology in our current networked landscape. </span>   
-          </div>  
+          <p>Pareidolia is an interdisciplinary research and arts collective interrogating the role of digital 
+          technology and aesthetics in contemporary American culture. Consisting of researchers in the
+          humanities and social sciences as well as artists and computer programmers, this group aims to 
+          expand our general understanding of technology in our current networked landscape.</p>  
+          </div> 
             <div className='contactSection'>
               <button href="/about" className='contactBtn' >
                 Contact Us
@@ -184,6 +170,9 @@ gsap.registerPlugin(ScrollTrigger);
               </div>     
           </div>
           </div>
+                
+     
+
         </section>  
            
        
