@@ -24,7 +24,6 @@
     "react-markdown": "^8.0.7",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
-    "react-typist": "^2.0.5",
     "rehype-raw": "^6.1.1",
     "sass": "^1.63.6",
     "scrollmagic": "^2.0.8",
